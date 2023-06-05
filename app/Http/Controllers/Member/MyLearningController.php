@@ -10,6 +10,7 @@ use DB;
 use Hash;
 
 use Illuminate\Support\Arr;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
     
 
@@ -23,7 +24,8 @@ class MyLearningController extends Controller
 
     public function index(Request $request)
     {
-        return view('member/mylearning');
+        $link = "www.supresso.com/beta";
+        return view('member/mylearning',compact('link'));
     }
 
 

@@ -53,7 +53,11 @@
                 {{--  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 mb-5 mb-xl-10 g-3 g-md-4 g-xl-10"> --}}
                 <div class="row mb-5 mb-xl-10 g-3 g-md-4 g-xl-10">
                     
-                   
+                    <div class="visible-print text-center">
+                        {!! QrCode::size(100)->generate($link); !!}
+                     
+                        <p>Scan me to return to the original page.</p>
+                    </div>
 
                 </div>
 
