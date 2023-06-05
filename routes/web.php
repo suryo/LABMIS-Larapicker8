@@ -8,6 +8,17 @@ use App\Http\Controllers\Back\CrudBuilderController;
 use App\Http\Controllers\Back\ApiBuilderController;
 
 use App\Http\Controllers\Back\DashboardController;
+
+
+use App\Http\Controllers\Member\DashboardMemberController;
+use App\Http\Controllers\Member\AchievementController;
+use App\Http\Controllers\Member\BrowseCourseController;
+use App\Http\Controllers\Member\DiscussionController;
+use App\Http\Controllers\Member\LeaderboardController;
+use App\Http\Controllers\Member\MyLearningController;
+use App\Http\Controllers\Member\TutorialController;
+
+
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\RoleController;
 
@@ -72,6 +83,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('news-category', NewsCategoryController::class);
     Route::resource('news', NewsController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    
+    Route::get('/member/board', [DashboardMemberController::class, 'index'])->name('dashboard_member');
+    Route::get('/member/achievement', [AchievementController::class, 'index'])->name('member.achievement');
+    Route::get('/member/browsecourse', [BrowseCourseController::class, 'index'])->name('member.browsecourse');
+    Route::get('/member/discussion', [DiscussionController::class, 'index'])->name('member.discussion');
+    Route::get('/member/leaderboard', [LeaderboardController::class, 'index'])->name('member.leaderboard');
+    Route::get('/member/mylearning', [MyLearningController::class, 'index'])->name('member.mylearning');
+    Route::get('/member/tutorial', [TutorialController::class, 'index'])->name('member.tutorial');
 
     Route::get('/crud', [CrudBuilderController::class, 'index'])->name('crud.index');
     Route::post('/crud', [CrudBuilderController::class, 'index'])->name('crud.index');

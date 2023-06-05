@@ -68,6 +68,8 @@ class LoginController extends Controller
         // dump($user->id);
         // dump($user->name);
         // dump($user);
+        // dump($user->hasRole('member'));
+        // dump($user->hasRole('Member'));
         // dd("test auth");
         if ($user->hasRole('Admin')) {
             return redirect('/dashboard');
@@ -77,15 +79,16 @@ class LoginController extends Controller
         }
         else if ($user->hasRole('admin02')) {
             return redirect('/dashboard');
-        } else  if ($user->hasRole('member')) {
-            $totalcart = Cart::getTotal();
-            if ($totalcart == 0) {
-                return redirect('/member/board');
-            }
-            else
-            {
-                return redirect('/fcheckouts');
-            }
+        } else  if ($user->hasRole('Member')) {
+            return redirect('/member/board');
+            // $totalcart = Cart::getTotal();
+            // if ($totalcart == 0) {
+            //     return redirect('/member/board');
+            // }
+            // else
+            // {
+            //     return redirect('/fcheckouts');
+            // }
           
             
         }

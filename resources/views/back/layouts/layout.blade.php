@@ -50,7 +50,21 @@
 						</div>
 						<!--end::Logo-->
 						<!--begin::sidebar menu-->
-						@include('back.layouts.sidebar')
+
+						@if (Auth::user()->hasRole('Admin')) {
+							@include('back.layouts.sidebar')
+						} 
+						@elseif (Auth::user()->hasRole('admin01')) {
+							@include('back.layouts.sidebar')
+						}
+						@elseif (Auth::user()->hasRole('admin02')) {
+							@include('back.layouts.sidebar')
+						} @elseif (Auth::user()->hasRole('Member')) {
+							@include('member.sidebar')
+						}
+							
+						@endif
+						
 						
 						<!--end::sidebar menu-->
 						<!--begin::Footer-->
