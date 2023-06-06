@@ -185,10 +185,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID TUTOR</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 1</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_tutor", null, array("placeholder" => "ID TUTOR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor1", null, array("placeholder" => "TUTOR 1","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -196,10 +196,45 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 2</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", null, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor2", null, array("placeholder" => "TUTOR 2","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 3</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_tutor3", null, array("placeholder" => "TUTOR 3","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">PRAKTIKUM</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_praktikum", null, array("placeholder" => "PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">HARI</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <select name="hari" aria-label="Select a hari" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+														<option value='senin'>senin</option><option value='selasa'>selasa</option><option value='rabu'>rabu</option><option value='kamis'>kamis</option><option value='jumat'>jumat</option><option value='sabtu'>sabtu</option><option value='minggu'>minggu</option>
+								</select>
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -284,10 +319,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID TUTOR</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 1</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_tutor", $akademik_jadwal_praktikum->id_tutor, array("placeholder" => "ID TUTOR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor1", $akademik_jadwal_praktikum->id_tutor1, array("placeholder" => "TUTOR 1","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -295,10 +330,45 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 2</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", $akademik_jadwal_praktikum->id_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor2", $akademik_jadwal_praktikum->id_tutor2, array("placeholder" => "TUTOR 2","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 3</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_tutor3", $akademik_jadwal_praktikum->id_tutor3, array("placeholder" => "TUTOR 3","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">PRAKTIKUM</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_praktikum", $akademik_jadwal_praktikum->id_praktikum, array("placeholder" => "PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">HARI</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <select name="hari" aria-label="Select a hari" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+														<option value='senin'>senin</option><option value='selasa'>selasa</option><option value='rabu'>rabu</option><option value='kamis'>kamis</option><option value='jumat'>jumat</option><option value='sabtu'>sabtu</option><option value='minggu'>minggu</option>
+								</select>
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -394,10 +464,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID TUTOR</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 1</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_tutor", $akademik_jadwal_praktikum->id_tutor, array("placeholder" => "ID TUTOR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor1", $akademik_jadwal_praktikum->id_tutor1, array("placeholder" => "TUTOR 1","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -405,10 +475,45 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 2</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", $akademik_jadwal_praktikum->id_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_tutor2", $akademik_jadwal_praktikum->id_tutor2, array("placeholder" => "TUTOR 2","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">TUTOR 3</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_tutor3", $akademik_jadwal_praktikum->id_tutor3, array("placeholder" => "TUTOR 3","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">PRAKTIKUM</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_praktikum", $akademik_jadwal_praktikum->id_praktikum, array("placeholder" => "PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">HARI</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <select name="hari" aria-label="Select a hari" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+														<option value='senin'>senin</option><option value='selasa'>selasa</option><option value='rabu'>rabu</option><option value='kamis'>kamis</option><option value='jumat'>jumat</option><option value='sabtu'>sabtu</option><option value='minggu'>minggu</option>
+								</select>
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -474,7 +579,7 @@
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Id Tutor</th><th class="min-w-125px sorting">Id Praktikum</th><th class="min-w-125px sorting">Jam Mulai</th><th class="min-w-125px sorting">Jam Selesai</th><th class="min-w-125px sorting">Tahun</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Id Tutor1</th><th class="min-w-125px sorting">Id Tutor2</th><th class="min-w-125px sorting">Id Tutor3</th><th class="min-w-125px sorting">Id Praktikum</th><th class="min-w-125px sorting">Hari</th><th class="min-w-125px sorting">Jam Mulai</th><th class="min-w-125px sorting">Jam Selesai</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
@@ -482,7 +587,7 @@
             @foreach ($data as $key => $akademik_jadwal_praktikum)
                 <tr>
                     <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    <td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_tutor,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_praktikum,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->jam_mulai,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->jam_selesai,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->tahun,25) }}</a></td>
+                    <td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_tutor1,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_tutor2,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_tutor3,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->id_praktikum,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->hari,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->jam_mulai,25) }}</a></td><td><a href="{{ route("akademik_jadwal_praktikum.show",$akademik_jadwal_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_jadwal_praktikum->jam_selesai,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>

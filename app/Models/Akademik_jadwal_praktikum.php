@@ -22,8 +22,11 @@
                 use HasFactory;
                 protected $table = "akademik_jadwal_praktikum";
                 protected $fillable = [
-                    "id_tutor",
+                    "id_tutor1",
+"id_tutor2",
+"id_tutor3",
 "id_praktikum",
+"hari",
 "jam_mulai",
 "jam_selesai",
 "tahun",
