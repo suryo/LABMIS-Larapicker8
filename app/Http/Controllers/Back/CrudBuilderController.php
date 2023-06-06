@@ -75,7 +75,7 @@ class CrudBuilderController extends Controller
               // $res_field[$i]->validation = "";
             }
 
-            dd($res_field);
+            //dd($res_field);
             $tabel = ($_POST['name_mvc']);
             $statusmvc = $this->set_mvc($tabel, $res_field, $subject, $label);
             $message = '<h3>MVC '.ucfirst($_POST["name_mvc"]).' alredy Setup</h3>'.$statusmvc;

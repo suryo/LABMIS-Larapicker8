@@ -29,17 +29,17 @@
             @php
             #GET MENU SIDEBAR FROM DATABASE
 
-            $res_label = DB::select('select * from setting_menu where type = "label" order by ord');
+            $res_label = DB::select('select * from setting_menu where type = "label" and deleted = "false" order by ord');
 
             for ($keylabel = 0; $keylabel < count($res_label); $keylabel++) { 
                 $lb = $res_label[$keylabel];
                 $array_label[$keylabel] = [];
-                $res_menu  =DB::select('select * from setting_menu where menu_parent = '.$res_label[$keylabel]->id.' order by ord');
+                $res_menu  =DB::select('select * from setting_menu where menu_parent = '.$res_label[$keylabel]->id.' and deleted = "false" order by ord');
                 $lmn = [];
                 for ($key = 0; $key < count($res_menu); $key++) {
                     $mn = $res_menu[$key];
                     $array_menu[$key] = [];
-                    $res_submenu[$key]  = DB::select('select * from setting_menu where menu_parent = '.$res_menu[$key]->id.' order by ord');
+                    $res_submenu[$key]  = DB::select('select * from setting_menu where menu_parent = '.$res_menu[$key]->id.' and deleted = "false" order by ord');
                     $smn = [];
                     for ($smnkey = 0; $smnkey < count($res_submenu[$key] ); $smnkey++) {
                     array_push($smn, $res_submenu[$key][$smnkey]);
@@ -107,14 +107,14 @@
                     @else
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="https://preview.keenthemes.com/html/metronic/docs/base/utilities" target="_blank">
+                            <a class="menu-link" href="{{ url('') }}/{{ $menu->menu_url }}" target="_blank">
                                 <span class="menu-icon">
                                     <i class="ki-duotone {{ $menu->menu_icon }} fs-2">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
                                     </i>
                                 </span>
-                                <span class="menu-title">{{ $menu->menu_name }}s</span>
+                                <span class="menu-title">{{ $menu->menu_name }}</span>
                             </a>
                             <!--end:Menu link-->
                         </div>
