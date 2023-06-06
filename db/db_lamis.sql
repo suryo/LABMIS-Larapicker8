@@ -11,11 +11,79 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 05/06/2023 16:58:10
+ Date: 06/06/2023 16:05:06
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for akademik_dosen
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_dosen`;
+CREATE TABLE `akademik_dosen`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `tgl_lahir` date NULL DEFAULT NULL,
+  `phone_wa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_dosen
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for akademik_jadwal_mk
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_jadwal_mk`;
+CREATE TABLE `akademik_jadwal_mk`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nip_dosen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_mk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `jam_mulai` time NULL DEFAULT NULL,
+  `jam_selesai` time NULL DEFAULT NULL,
+  `tahun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_jadwal_mk
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for akademik_jadwal_praktikum
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_jadwal_praktikum`;
+CREATE TABLE `akademik_jadwal_praktikum`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_tutor1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_tutor2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_tutor3` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_praktikum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `hari` enum('senin','selasa','rabu','kamis','jumat','sabtu','minggu') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `jam_mulai` time NULL DEFAULT NULL,
+  `jam_selesai` time NULL DEFAULT NULL,
+  `tahun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_jadwal_praktikum
+-- ----------------------------
+INSERT INTO `akademik_jadwal_praktikum` VALUES (1, '1', NULL, NULL, '3', 'kamis', '20:00:00', '21:30:00', '2023', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_krs
@@ -23,8 +91,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `akademik_krs`;
 CREATE TABLE `akademik_krs`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `id_mk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nip_mahasiswa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_jadwal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `tahun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `created_at` datetime NULL DEFAULT NULL,
@@ -52,11 +120,12 @@ CREATE TABLE `akademik_mhs`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_mhs
 -- ----------------------------
+INSERT INTO `akademik_mhs` VALUES (1, '06312062', 'Suryo Atmojo', NULL, 'member@gmail.com', '2006', '081217173406', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_mk
@@ -70,11 +139,12 @@ CREATE TABLE `akademik_mk`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_mk
 -- ----------------------------
+INSERT INTO `akademik_mk` VALUES (1, 'MK0002', 'COBA e', NULL, '2023-06-06 03:46:28', '2023-06-06 03:46:38');
 
 -- ----------------------------
 -- Table structure for akademik_praktikum
@@ -88,11 +158,15 @@ CREATE TABLE `akademik_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_praktikum
 -- ----------------------------
+INSERT INTO `akademik_praktikum` VALUES (1, 'APSI', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_praktikum` VALUES (2, 'MACHINE LEARNING', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_praktikum` VALUES (3, 'MOBILE', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_praktikum` VALUES (4, 'JARKOM', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_praktikum_materi
@@ -102,6 +176,7 @@ CREATE TABLE `akademik_praktikum_materi`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `short_desc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `short_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
@@ -118,11 +193,16 @@ CREATE TABLE `akademik_praktikum_materi`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_praktikum_materi
 -- ----------------------------
+INSERT INTO `akademik_praktikum_materi` VALUES (21, 'MATERI 1', 'Modul ini akan memperkenalkan Power Designer sebagai alat perancangan sistem informasi. Power Designer adalah perangkat lunak yang digunakan untuk merancang dan mengelola perancangan sistem informasi, termasuk pengembangan basis data, analisis data, dan d', 'Modul ini akan memperkenalkan Power Designer sebagai alat perancangan sistem informasi. Power Designer adalah perangkat lunak yang digunakan untuk merancang dan mengelola perancangan sistem informasi, termasuk pengembangan basis data, analisis data, dan dokumentasi perancangan. Dalam modul ini, Anda akan mempelajari tentang fitur-fitur utama Power Designer dan cara menggunakannya.', '<ol>\r\n	<li>\r\n	<p style=\"text-align:justify\">Apa itu Power Designer?</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Pengertian dan konsep dasar tentang Power Designer.</li>\r\n		<li style=\"text-align: justify;\">Peran Power Designer dalam perancangan sistem informasi.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Manfaat Power Designer dalam Perancangan Sistem Informasi:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Keuntungan menggunakan Power Designer dalam proses perancangan sistem informasi.</li>\r\n		<li style=\"text-align: justify;\">Meningkatkan efisiensi dan produktivitas dalam pengembangan sistem.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Antarmuka Power Designer:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Penjelasan tentang tampilan antarmuka Power Designer.</li>\r\n		<li style=\"text-align: justify;\">Menjelajahi menu, toolbar, panel, dan jendela yang tersedia.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Fitur Utama Power Designer:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Desain basis data: Pembuatan dan pengelolaan struktur basis data.</li>\r\n		<li style=\"text-align: justify;\">Analisis dan perancangan sistem: Menggunakan diagram alir data (DFD), diagram entitas hubungan (ERD), dan diagram alir proses (flowchart).</li>\r\n		<li style=\"text-align: justify;\">Rekayasa UML: Mendukung pemodelan berorientasi objek menggunakan notasi UML.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Langkah-langkah Penggunaan Power Designer:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Membuat proyek baru dalam Power Designer.</li>\r\n		<li style=\"text-align: justify;\">Mengatur preferensi dan pengaturan proyek.</li>\r\n		<li style=\"text-align: justify;\">Membuka, menyimpan, dan mengelola proyek-proyek dalam Power Designer.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Contoh Penggunaan Power Designer:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Menunjukkan contoh penggunaan Power Designer dalam perancangan sistem informasi.</li>\r\n		<li style=\"text-align: justify;\">Demonstrasi bagaimana Power Designer membantu dalam membuat diagram alir data, diagram entitas hubungan, dan diagram alur proses.</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p style=\"text-align:justify\">Sumber Daya dan Bahan Bacaan Tambahan:</p>\r\n\r\n	<ul>\r\n		<li style=\"text-align: justify;\">Referensi dan sumber daya online yang dapat digunakan untuk mempelajari lebih lanjut tentang Power Designer.</li>\r\n		<li style=\"text-align: justify;\">Buku dan artikel terkait yang membahas penggunaan Power Designer dalam perancangan sistem informasi.</li>\r\n	</ul>\r\n	</li>\r\n</ol>\r\n\r\n<p style=\"text-align:justify\">Kegiatan Praktikum: Dalam kegiatan praktikum, peserta diminta untuk mengunduh dan menginstal Power Designer, menjelajahi antarmuka, dan mencoba beberapa fitur dasar Power Designer. Peserta juga dapat mencoba membuat proyek sederhana dan mempelajari cara menyimpan dan mengelola proyek dalam Power Designer.</p>\r\n\r\n<p style=\"text-align:justify\">Penilaian: Penilaian praktikum dapat dilakukan berdasarkan pemahaman peserta tentang Power Designer, kemampuan mereka dalam menjelajahi antarmuka, dan kemahiran dalam menggunakan fitur-fitur dasar Power Designer. Penilaian dapat dilakukan melalui ujian tulis atau presentasi praktikum.</p>\r\n\r\n<p style=\"text-align:justify\">Catatan: Pastikan peserta praktikum memiliki akses dan izin untuk menginstal dan menggunakan Power Designer sebelum menjalankan modul ini.</p>\r\n', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `akademik_praktikum_materi` VALUES (22, 'MATERI 2', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `akademik_praktikum_materi` VALUES (23, 'MATERI 3', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `akademik_praktikum_materi` VALUES (24, 'MATERI 4', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `akademik_praktikum_materi` VALUES (25, 'MATERI 5', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_registrasi_praktikum
@@ -137,11 +217,35 @@ CREATE TABLE `akademik_registrasi_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_registrasi_praktikum
 -- ----------------------------
+INSERT INTO `akademik_registrasi_praktikum` VALUES (1, '06312062', '3', '2023', NULL, NULL, NULL);
+
+-- ----------------------------
+-- Table structure for akademik_tutor
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_tutor`;
+CREATE TABLE `akademik_tutor`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `tgl_lahir` date NULL DEFAULT NULL,
+  `phone_wa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_tutor
+-- ----------------------------
+INSERT INTO `akademik_tutor` VALUES (1, '0709018901', 'suryo', NULL, 'suryoatm@gmail.com', NULL, '081217173406', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for blog_article_category_models
@@ -1881,25 +1985,32 @@ CREATE TABLE `setting_menu`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of setting_menu
 -- ----------------------------
-INSERT INTO `setting_menu` VALUES (1, 'MASTER', NULL, '#', NULL, 0, NULL, 'label', 1, NULL, NULL, NULL, NULL, '2023-05-23 02:26:29');
-INSERT INTO `setting_menu` VALUES (2, 'Auth', NULL, '#', NULL, 1, 'ki-address-book', 'menu', 1, NULL, NULL, NULL, NULL, '2023-05-23 01:39:56');
-INSERT INTO `setting_menu` VALUES (3, 'Users', NULL, 'users', NULL, 2, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2023-05-22 09:56:14');
-INSERT INTO `setting_menu` VALUES (4, 'Roles', NULL, 'roles', NULL, 2, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2023-05-23 03:37:13');
-INSERT INTO `setting_menu` VALUES (5, 'Product', NULL, '#', NULL, 1, 'ki-element-7', 'menu', 2, NULL, NULL, NULL, NULL, '2023-05-23 01:39:56');
-INSERT INTO `setting_menu` VALUES (6, 'Category Product', NULL, '#', NULL, 5, NULL, 'menu', 1, NULL, NULL, NULL, NULL, '2023-05-23 03:37:13');
-INSERT INTO `setting_menu` VALUES (7, 'Product', NULL, '#', NULL, 5, NULL, 'menu', 2, NULL, NULL, NULL, NULL, '2023-05-23 03:37:13');
-INSERT INTO `setting_menu` VALUES (8, 'APPS', NULL, '#', NULL, 0, NULL, 'label', 2, NULL, NULL, NULL, NULL, '2023-05-23 02:26:30');
-INSERT INTO `setting_menu` VALUES (9, 'News', NULL, '#', NULL, 8, 'ki-book', 'menu', 1, NULL, NULL, NULL, NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (10, 'News Category', NULL, 'news_category', NULL, 8, 'ki-abstract-26', 'menu', 2, NULL, NULL, NULL, NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (11, 'Store', NULL, NULL, NULL, 8, 'ki-html', 'menu', 3, NULL, NULL, NULL, NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (12, 'Edit Stock', NULL, NULL, NULL, 12, NULL, 'menu', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `setting_menu` VALUES (13, 'Order History', NULL, NULL, NULL, 12, NULL, 'menu', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `setting_menu` VALUES (14, 'Discount Product', NULL, NULL, NULL, 12, NULL, 'menu', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `setting_menu` VALUES (1, 'MASTER', NULL, '#', NULL, 0, NULL, 'label', 1, NULL, NULL, 'false', NULL, '2023-05-23 02:26:29');
+INSERT INTO `setting_menu` VALUES (2, 'Auth', NULL, '#', NULL, 1, 'ki-address-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 01:39:56');
+INSERT INTO `setting_menu` VALUES (3, 'Users', NULL, 'users', NULL, 2, NULL, NULL, NULL, NULL, NULL, 'false', NULL, '2023-05-22 09:56:14');
+INSERT INTO `setting_menu` VALUES (4, 'Roles', NULL, 'roles', NULL, 2, NULL, NULL, NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:37:13');
+INSERT INTO `setting_menu` VALUES (5, 'Product', NULL, '#', NULL, 1, 'ki-element-7', 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 01:39:56');
+INSERT INTO `setting_menu` VALUES (6, 'Category Product', NULL, '#', NULL, 5, NULL, 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 03:37:13');
+INSERT INTO `setting_menu` VALUES (7, 'Product', NULL, '#', NULL, 5, NULL, 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 03:37:13');
+INSERT INTO `setting_menu` VALUES (8, 'AKADEMIK', NULL, '#', NULL, 0, NULL, 'label', 2, NULL, NULL, 'false', NULL, '2023-05-23 02:26:30');
+INSERT INTO `setting_menu` VALUES (9, 'Mahasiswa', NULL, 'akademik_mhs', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
+INSERT INTO `setting_menu` VALUES (10, 'Dosen', NULL, 'akademik_dosen', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
+INSERT INTO `setting_menu` VALUES (11, 'Tutor', NULL, 'akademik_tutor', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
+INSERT INTO `setting_menu` VALUES (12, 'MK', NULL, 'akademik_mk', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (13, 'Praktikum', NULL, 'akademik_praktikum', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (14, 'KULIAH', NULL, NULL, NULL, 0, NULL, 'label', 3, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (15, 'Resgistrasi Perkuliahan', NULL, 'akademik_krs', NULL, 14, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (16, 'Jadwal Kuliah', NULL, 'akademik_jadwal_mk', NULL, 14, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (17, 'PRAKTIKUM', NULL, NULL, NULL, 0, NULL, 'label', 4, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (18, 'Jadwal Praktikum', NULL, 'akademik_jadwal_praktikum', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (19, 'Registrasi Praktikum', NULL, 'akademik_registrasi_praktikum', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (20, 'Materi Praktikum', NULL, 'akademik_praktikum_materi', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (21, 'TUTORIAL', NULL, NULL, NULL, 0, NULL, 'label', 5, NULL, NULL, 'false', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for setting_route
@@ -1917,7 +2028,7 @@ CREATE TABLE `setting_route`  (
   `created_at` datetime NULL DEFAULT NULL,
   `update_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 95 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of setting_route
@@ -2001,6 +2112,21 @@ INSERT INTO `setting_route` VALUES (76, 'news', 'web', 'resources', 'App\\Http\\
 INSERT INTO `setting_route` VALUES (77, 'news', 'web', 'resources', 'App\\Http\\Controllers\\Back\\News\\NewsController', '', '', 'false', NULL, NULL);
 INSERT INTO `setting_route` VALUES (78, 'news', 'web', 'resources', 'App\\Http\\Controllers\\Back\\News\\NewsController', '', '', 'false', NULL, NULL);
 INSERT INTO `setting_route` VALUES (79, 'news', 'web', 'resources', 'App\\Http\\Controllers\\Back\\News\\NewsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (80, 'akademik_mhs', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_mhs\\Akademik_mhsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (81, 'akademik_mhs', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_mhs\\Akademik_mhsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (82, 'akademik_mhs', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_mhs\\Akademik_mhsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (83, 'akademik_mhs', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_mhs\\Akademik_mhsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (84, 'akademik_dosen', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_dosen\\Akademik_dosenController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (85, 'akademik_tutor', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_tutor\\Akademik_tutorController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (86, 'akademik_mk', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_mk\\Akademik_mkController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (87, 'akademik_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_praktikum\\Akademik_praktikumController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (88, 'akademik_krs', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_krs\\Akademik_krsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (89, 'akademik_jadwal_mk', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_mk\\Akademik_jadwal_mkController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (90, 'akademik_jadwal_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_praktikum\\Akademik_jadwal_praktikumController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (91, 'akademik_registrasi_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_registrasi_praktikum\\Akademik_registrasi_praktikumController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (92, 'akademik_praktikum_materi', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_praktikum_materi\\Akademik_praktikum_materiController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (93, 'akademik_jadwal_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_praktikum\\Akademik_jadwal_praktikumController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (94, 'akademik_jadwal_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_praktikum\\Akademik_jadwal_praktikumController', '', '', 'false', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for setting_web
