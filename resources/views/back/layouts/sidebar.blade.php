@@ -107,7 +107,7 @@
                     @else
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link" href="{{ url('') }}/{{ $menu->menu_url }}" target="_blank">
+                            <a class="menu-link" href="{{ url('') }}/{{ $menu->menu_url }}">
                                 <span class="menu-icon">
                                     <i class="ki-duotone {{ $menu->menu_icon }} fs-2">
                                         <span class="path1"></span>
