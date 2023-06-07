@@ -43,15 +43,10 @@
              */
         
             public function store(Request $request)
-            {
-               
-                    
+            {  
                 $input = $request->all();
-                
-                
                 $Akademik_praktikum = Akademik_praktikum::create($input);
                
-            
                 return redirect()->route("akademik_praktikum.index")
                 ->with("success","Akademik_praktikum created successfully");
             
@@ -68,11 +63,32 @@
                 public function show($id)
                 {
                     $Akademik_praktikum = Akademik_praktikum::find($id);
-                    $res_materi_praktikum = DB::select('select * from akademik_praktikum_materi where praktikum_id='.$Akademik_praktikum->id);
-                    return view("back.Akademik_praktikum.show",compact("Akademik_praktikum","res_materi_praktikum"));
-                }
-            
+                    $res_mahasiswa  =  DB::select('select * from akademik_mhs');
+                    $res_dosen  =  DB::select('select * from akademik_dosen');
+                    $res_tutor  =  DB::select('select * from akademik_tutor');
 
+                    $res_jadwal_praktikum =  DB::select('select * from akademik_jadwal_praktikum where id_praktikum='.$Akademik_praktikum->id);
+                   
+                    $jadwal_praktikum=[];
+                    for ($i=0; $i < count($res_jadwal_praktikum); $i++) { 
+                        $jadwal_praktikum[$i] = $res_jadwal_praktikum[$i];
+                        $jadwal_praktikum[$i]->peserta = "test";
+                    }
+                    dd($jadwal_praktikum);
+                    $res_tutor_praktikum =  DB::select('select 
+                    (select nama from akademik_tutor where id=jp.id_tutor1) as namatutor1,
+                    (select nama from akademik_tutor where id=jp.id_tutor2) as namatutor2,
+                    (select nama from akademik_tutor where id=jp.id_tutor3) as namatutor3
+                     from akademik_jadwal_praktikum as jp where jp.id='.$Akademik_praktikum->id);
+                    $res_materi_praktikum = DB::select('select * from akademik_praktikum_materi where praktikum_id='.$Akademik_praktikum->id);
+                    $res_registrasi_praktikum = DB::select('select rp.nip,rp.id_praktikum, rp.tahun, rp.status, mhs.nama, mhs.email, mhs.phone_wa  from akademik_registrasi_praktikum as rp INNER JOIN akademik_mhs as mhs on rp.nip = mhs.nip where rp.id_praktikum='.$Akademik_praktikum->id);
+                    
+                    return view("back.Akademik_praktikum.show",compact("Akademik_praktikum","res_materi_praktikum","res_jadwal_praktikum","res_tutor_praktikum","res_registrasi_praktikum","res_mahasiswa","res_dosen","res_tutor"));
+
+
+
+            
+                }
             
                 /**
                  * Show the form for editing the specified resource.
@@ -87,8 +103,6 @@
                     return view("back.Akademik_praktikum.edit",compact("Akademik_praktikum"));
                 }
             
-
-            
                 /**
                  * Update the specified resource in storage.
                  *
@@ -99,16 +113,7 @@
             
                 public function update(Request $request, $id)
                 {
-                
-                   
-                        
-                        
-
-                    $input = $request->all();
-
-                    
-                    
-                    
+                    $input = $request->all();   
                     $Akademik_praktikum = Akademik_praktikum::find($id);
                     $Akademik_praktikum->update($input);
                 

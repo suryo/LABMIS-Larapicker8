@@ -44,12 +44,17 @@
 
 		<!--end::Custom Javascript-->
 
-		
+        <script src="{{ URL::asset('/assets/libs/jquery/jquery.min.js')}}"></script>
     	<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
     	<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
     	<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
-		
+        <script src="{{ URL::asset('/assets/libs/ckeditor/ckeditor.min.js') }}"></script>
+        <script src="{{ URL::asset('/assets/libs/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ URL::asset('/assets/js/pages/form-editor.init.js') }}"></script>
+        <script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
+
+        <script src="{{ URL::asset('/assets/js/app.min.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="{{ url('') }}/parentchild/jquery.nestable.js"></script>
 <script>

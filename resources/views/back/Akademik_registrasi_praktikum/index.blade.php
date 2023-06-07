@@ -196,10 +196,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", null, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", null, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -295,10 +295,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", $akademik_registrasi_praktikum->id_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", $akademik_registrasi_praktikum->id_jadwal_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -408,7 +408,7 @@
                 <label class=" fw-semibold fs-6 mb-2">ID PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("id_praktikum", $akademik_registrasi_praktikum->id_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", $akademik_registrasi_praktikum->id_jadwal_praktikum, array("placeholder" => "ID PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -482,7 +482,7 @@
             @foreach ($data as $key => $akademik_registrasi_praktikum)
                 <tr>
                     <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    <td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->nip,25) }}</a></td><td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->id_praktikum,25) }}</a></td><td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->tahun,25) }}</a></td>
+                    <td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->nip,25) }}</a></td><td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->id_jadwal_praktikum,25) }}</a></td><td><a href="{{ route("akademik_registrasi_praktikum.show",$akademik_registrasi_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_registrasi_praktikum->tahun,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>

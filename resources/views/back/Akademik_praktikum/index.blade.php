@@ -239,6 +239,11 @@
               </div>
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_praktikum-->
       
+
+
+
+
+
               @foreach ($data as $key => $akademik_praktikum)
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Akademik_praktikum-->
               <div class="modal fade" id="kt_modal_edit_akademik_praktikum{{ $akademik_praktikum->id }}" tabindex="-1" aria-hidden="true">

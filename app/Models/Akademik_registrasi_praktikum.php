@@ -23,7 +23,7 @@
                 protected $table = "akademik_registrasi_praktikum";
                 protected $fillable = [
                     "nip",
-"id_praktikum",
+"id_jadwal_praktikum",
 "tahun",
 "status",
 

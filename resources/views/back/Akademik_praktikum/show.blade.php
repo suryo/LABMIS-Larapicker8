@@ -96,7 +96,7 @@
                                     <!--end::Position-->
                                     <!--begin::Info-->
                                     <!--begin::Info heading-->
-                                    <div class="fw-bold mb-3">Assigned Tickets
+                                    <div class="fw-bold mb-3">Assigned Member
                                     <span class="ms-2" ddata-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Number of support tickets assigned, closed and pending this week.">
                                         <i class="ki-duotone ki-information fs-7">
                                             <span class="path1"></span>
@@ -109,7 +109,7 @@
                                         <!--begin::Stats-->
                                         <div class="border border-gray-300 border-dashed rounded py-3 px-3 mb-3">
                                             <div class="fs-4 fw-bold text-gray-700">
-                                                <span class="w-75px">243</span>
+                                                <span class="w-75px">{{ count($res_registrasi_praktikum) }}</span>
                                                 <i class="ki-duotone ki-arrow-up fs-3 text-success">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
@@ -127,7 +127,7 @@
                                                     <span class="path2"></span>
                                                 </i>
                                             </div>
-                                            <div class="fw-semibold text-muted">Solved</div>
+                                            <div class="fw-semibold text-muted">Ongoing</div>
                                         </div>
                                         <!--end::Stats-->
                                         <!--begin::Stats-->
@@ -139,7 +139,7 @@
                                                     <span class="path2"></span>
                                                 </i>
                                             </div>
-                                            <div class="fw-semibold text-muted">Open</div>
+                                            <div class="fw-semibold text-muted">Done</div>
                                         </div>
                                         <!--end::Stats-->
                                     </div>
@@ -163,29 +163,24 @@
                                 <div id="kt_user_view_details" class="collapse show">
                                     <div class="pb-5 fs-6">
                                         <!--begin::Details item-->
-                                        <div class="fw-bold mt-5">Account ID</div>
-                                        <div class="text-gray-600">ID-45453423</div>
+                                        <div class="fw-bold mt-5">Deskripsi</div>
+                                        <div class="text-gray-600">{{ $Akademik_praktikum->deskripsi }}</div>
                                         <!--begin::Details item-->
+                                     
                                         <!--begin::Details item-->
-                                        <div class="fw-bold mt-5">Email</div>
-                                        <div class="text-gray-600">
-                                            <a href="#" class="text-gray-600 text-hover-primary">info@keenthemes.com</a>
-                                        </div>
+                                        <div class="fw-bold mt-5">Tutor</div>
+                                        <div class="text-gray-600"> 
+                                            @if (count($res_tutor_praktikum)!=0)
+                                                {{ $res_tutor_praktikum[0]->namatutor1 }}
+                                        <br /> {{ $res_tutor_praktikum[0]->namatutor2 }}
+                                        <br /> {{ $res_tutor_praktikum[0]->namatutor3 }}
+                                        @else
+                                        Tutor Undefined
+                                            @endif  
+                                            </div>
                                         <!--begin::Details item-->
-                                        <!--begin::Details item-->
-                                        <div class="fw-bold mt-5">Address</div>
-                                        <div class="text-gray-600">101 Collin Street,
-                                        <br />Melbourne 3000 VIC
-                                        <br />Australia</div>
-                                        <!--begin::Details item-->
-                                        <!--begin::Details item-->
-                                        <div class="fw-bold mt-5">Language</div>
-                                        <div class="text-gray-600">English</div>
-                                        <!--begin::Details item-->
-                                        <!--begin::Details item-->
-                                        <div class="fw-bold mt-5">Last Login</div>
-                                        <div class="text-gray-600">20 Dec 2023, 11:30 am</div>
-                                        <!--begin::Details item-->
+                                      
+                                      
                                     </div>
                                 </div>
                                 <!--end::Details content-->
@@ -198,7 +193,7 @@
                             <!--begin::Card header-->
                             <div class="card-header border-0">
                                 <div class="card-title">
-                                    <h3 class="fw-bold m-0">PERATURAN PRAKTIKUM</h3>
+                                    <h3 class="fw-bold m-0">REFERENSI</h3>
                                 </div>
                             </div>
                             <!--end::Card header-->
@@ -224,77 +219,46 @@
                                 <!--end::Notice-->
                                 <!--begin::Items-->
                                 <div class="py-2">
+                                       <!--begin::Item-->
+                                       <div class="d-flex flex-stack">
+                                        <div class="d-flex">
+                                            <img src="{{ url('template') }}/assets/media/svg/brand-logos/youtube.svg" class="w-30px me-6" alt="" />
+                                            <div class="d-flex flex-column">
+                                                <a href="#" class="fs-5 text-dark text-hover-primary fw-bold">Youtube</a>
+                                                <div class="fs-6 fw-semibold text-muted">Integrate Projects Discussions</div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!--end::Item-->
+                                    <div class="separator separator-dashed my-5"></div>
+                                   
                                     <!--begin::Item-->
                                     <div class="d-flex flex-stack">
                                         <div class="d-flex">
-                                            <img src="assets/media/svg/brand-logos/google-icon.svg" class="w-30px me-6" alt="" />
+                                            <img src="{{ url('template') }}/assets/media/svg/brand-logos/google-icon.svg" class="w-30px me-6" alt="" />
                                             <div class="d-flex flex-column">
                                                 <a href="#" class="fs-5 text-dark text-hover-primary fw-bold">Google</a>
                                                 <div class="fs-6 fw-semibold text-muted">Plan properly your workflow</div>
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-end">
-                                            <!--begin::Switch-->
-                                            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                                <!--begin::Input-->
-                                                <input class="form-check-input" name="google" type="checkbox" value="1" id="kt_modal_connected_accounts_google" checked="checked" />
-                                                <!--end::Input-->
-                                                <!--begin::Label-->
-                                                <span class="form-check-label fw-semibold text-muted" for="kt_modal_connected_accounts_google"></span>
-                                                <!--end::Label-->
-                                            </label>
-                                            <!--end::Switch-->
-                                        </div>
+                                        
                                     </div>
                                     <!--end::Item-->
                                     <div class="separator separator-dashed my-5"></div>
                                     <!--begin::Item-->
                                     <div class="d-flex flex-stack">
                                         <div class="d-flex">
-                                            <img src="assets/media/svg/brand-logos/github.svg" class="w-30px me-6" alt="" />
+                                            <img src="{{ url('template') }}/assets/media/svg/brand-logos/github.svg" class="w-30px me-6" alt="" />
                                             <div class="d-flex flex-column">
                                                 <a href="#" class="fs-5 text-dark text-hover-primary fw-bold">Github</a>
                                                 <div class="fs-6 fw-semibold text-muted">Keep eye on on your Repositories</div>
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-end">
-                                            <!--begin::Switch-->
-                                            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                                <!--begin::Input-->
-                                                <input class="form-check-input" name="github" type="checkbox" value="1" id="kt_modal_connected_accounts_github" checked="checked" />
-                                                <!--end::Input-->
-                                                <!--begin::Label-->
-                                                <span class="form-check-label fw-semibold text-muted" for="kt_modal_connected_accounts_github"></span>
-                                                <!--end::Label-->
-                                            </label>
-                                            <!--end::Switch-->
-                                        </div>
+                                      
                                     </div>
                                     <!--end::Item-->
-                                    <div class="separator separator-dashed my-5"></div>
-                                    <!--begin::Item-->
-                                    <div class="d-flex flex-stack">
-                                        <div class="d-flex">
-                                            <img src="assets/media/svg/brand-logos/slack-icon.svg" class="w-30px me-6" alt="" />
-                                            <div class="d-flex flex-column">
-                                                <a href="#" class="fs-5 text-dark text-hover-primary fw-bold">Slack</a>
-                                                <div class="fs-6 fw-semibold text-muted">Integrate Projects Discussions</div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end">
-                                            <!--begin::Switch-->
-                                            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                                <!--begin::Input-->
-                                                <input class="form-check-input" name="slack" type="checkbox" value="1" id="kt_modal_connected_accounts_slack" />
-                                                <!--end::Input-->
-                                                <!--begin::Label-->
-                                                <span class="form-check-label fw-semibold text-muted" for="kt_modal_connected_accounts_slack"></span>
-                                                <!--end::Label-->
-                                            </label>
-                                            <!--end::Switch-->
-                                        </div>
-                                    </div>
-                                    <!--end::Item-->
+                                  
                                 </div>
                                 <!--end::Items-->
                             </div>
@@ -318,17 +282,17 @@
                             </li>
                             <!--end:::Tab item-->
                             <!--begin:::Tab item-->
-                            <li class="nav-item d-none">
-                                <a class="nav-link text-active-primary pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_user_view_overview_security">Security</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_tutor">Tutor</a>
                             </li>
                             <!--end:::Tab item-->
                             <!--begin:::Tab item-->
-                            <li class="nav-item d-none">
-                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#kt_user_view_overview_events_and_logs_tab">Events & Logs</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#kt_peserta">Peserta</a>
                             </li>
                             <!--end:::Tab item-->
                             <!--begin:::Tab item-->
-                            <li class="nav-item ms-auto d-none">
+                            <li class="nav-item ms-auto">
                                 <!--begin::Action menu-->
                                 <a href="#" class="btn btn-primary ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">Actions
                                 <i class="ki-duotone ki-down fs-2 me-0"></i></a>
@@ -336,17 +300,75 @@
                                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold py-4 w-250px fs-6" data-kt-menu="true">
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <div class="menu-content text-muted pb-2 px-5 fs-7 text-uppercase">Payments</div>
+                                        <div class="menu-content text-muted pb-2 px-5 fs-7 text-uppercase">Master</div>
+                                    </div>
+                                    <!--end::Menu item-->
+
+                                    
+                                   <!--begin::Menu item-->
+                                   <div class="menu-item px-5">
+                                    <a class="menu-link flex-stack px-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_registrasi_praktikum">Add Peserta
+                                    <span class="ms-2" data-bs-toggle="tooltip" title="Tambah Peserta Praktikum">
+                                        <i class="ki-duotone ki-information fs-7">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                        </i>
+                                    </span></a>
+                                    </div>
+                                    <!--end::Menu item-->
+
+                                     <!--begin::Menu item-->
+                                     <div class="menu-item px-5">
+                                        <a class="menu-link flex-stack px-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_tutor">Add Tutor/Asisten
+                                        <span class="ms-2" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference">
+                                            <i class="ki-duotone ki-information fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span></a>
+                                    </div>
+                                    <!--end::Menu item-->
+
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-5">
+                                        <a class="menu-link flex-stack px-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_praktikum_materi">Add Materi
+                                        <span class="ms-2" data-bs-toggle="tooltip" title="Tambah Materi Praktikum">
+                                            <i class="ki-duotone ki-information fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span></a>
+                                    </div>
+                                    <!--end::Menu item-->
+
+
+                                      <!--begin::Menu item-->
+                                      <div class="menu-item px-5">
+                                        <a class="menu-link flex-stack px-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_jadwal_praktikum">Add Jadwal Praktikum
+                                        <span class="ms-2" data-bs-toggle="tooltip" title="Tambah Materi Praktikum">
+                                            <i class="ki-duotone ki-information fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                            </i>
+                                        </span></a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                   
+                                    <!--begin::Menu separator-->
+                                    <div class="separator my-3"></div>
+                                    <!--end::Menu separator-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-5">
+                                        <div class="menu-content text-muted pb-2 px-5 fs-7 text-uppercase">Info</div>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="#" class="menu-link px-5">Create invoice</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <a href="#" class="menu-link flex-stack px-5">Create payments
+                                        <a href="#" class="menu-link flex-stack px-5">Penilaian Peserta
                                         <span class="ms-2" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference">
                                             <i class="ki-duotone ki-information fs-7">
                                                 <span class="path1"></span>
@@ -357,68 +379,11 @@
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
-                                    <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start">
-                                        <a href="#" class="menu-link px-5">
-                                            <span class="menu-title">Subscription</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-5">Apps</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-5">Billing</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-5">Statements</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <div class="menu-content px-3">
-                                                    <label class="form-check form-switch form-check-custom form-check-solid">
-                                                        <input class="form-check-input w-30px h-20px" type="checkbox" value="" name="notifications" checked="checked" id="kt_user_menu_notifications" />
-                                                        <span class="form-check-label text-muted fs-6" for="kt_user_menu_notifications">Notifications</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator my-3"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <div class="menu-content text-muted pb-2 px-5 fs-7 text-uppercase">Account</div>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <a href="#" class="menu-link px-5">Reports</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
                                     <div class="menu-item px-5 my-1">
-                                        <a href="#" class="menu-link px-5">Account Settings</a>
+                                        <a href="#" class="menu-link px-5">Report Praktikum</a>
                                     </div>
                                     <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <a href="#" class="menu-link text-danger px-5">Delete customer</a>
-                                    </div>
-                                    <!--end::Menu item-->
+                                   
                                 </div>
                                 <!--end::Menu-->
                                 <!--end::Menu-->
@@ -483,366 +448,14 @@
                             </div>
                             <!--end:::Tab pane-->
                             <!--begin:::Tab pane-->
-                            <div class="tab-pane fade" id="kt_user_view_overview_security" role="tabpanel">
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
+                            <div class="tab-pane fade" id="kt_tutor" role="tabpanel">
+                                 <!--begin::Card-->
+                                 <div class="card pt-4 mb-6 mb-xl-9">
                                     <!--begin::Card header-->
                                     <div class="card-header border-0">
                                         <!--begin::Card title-->
                                         <div class="card-title">
-                                            <h2>Profile</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0 pb-5">
-                                        <!--begin::Table wrapper-->
-                                        <div class="table-responsive">
-                                            <!--begin::Table-->
-                                            <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
-                                                <tbody class="fs-6 fw-semibold text-gray-600">
-                                                    <tr>
-                                                        <td>Email</td>
-                                                        <td>smith@kpmg.com</td>
-                                                        <td class="text-end">
-                                                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_email">
-                                                                <i class="ki-duotone ki-pencil fs-3">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Password</td>
-                                                        <td>******</td>
-                                                        <td class="text-end">
-                                                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_password">
-                                                                <i class="ki-duotone ki-pencil fs-3">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Role</td>
-                                                        <td>Administrator</td>
-                                                        <td class="text-end">
-                                                            <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">
-                                                                <i class="ki-duotone ki-pencil fs-3">
-                                                                    <span class="path1"></span>
-                                                                    <span class="path2"></span>
-                                                                </i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Table wrapper-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Card-->
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
-                                    <!--begin::Card header-->
-                                    <div class="card-header border-0">
-                                        <!--begin::Card title-->
-                                        <div class="card-title flex-column">
-                                            <h2 class="mb-1">Two Step Authentication</h2>
-                                            <div class="fs-6 fw-semibold text-muted">Keep your account extra secure with a second authentication step.</div>
-                                        </div>
-                                        <!--end::Card title-->
-                                        <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
-                                            <!--begin::Add-->
-                                            <button type="button" class="btn btn-light-primary btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                            <i class="ki-duotone ki-fingerprint-scanning fs-3">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                                <span class="path4"></span>
-                                                <span class="path5"></span>
-                                            </i>Add Authentication Step</button>
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-6 w-200px py-4" data-kt-menu="true">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_add_auth_app">Use authenticator app</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">Enable one-time password</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu-->
-                                            <!--end::Add-->
-                                        </div>
-                                        <!--end::Card toolbar-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pb-5">
-                                        <!--begin::Item-->
-                                        <div class="d-flex flex-stack">
-                                            <!--begin::Content-->
-                                            <div class="d-flex flex-column">
-                                                <span>SMS</span>
-                                                <span class="text-muted fs-6">+61 412 345 678</span>
-                                            </div>
-                                            <!--end::Content-->
-                                            <!--begin::Action-->
-                                            <div class="d-flex justify-content-end align-items-center">
-                                                <!--begin::Button-->
-                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto me-5" data-bs-toggle="modal" data-bs-target="#kt_modal_add_one_time_password">
-                                                    <i class="ki-duotone ki-pencil fs-3">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </button>
-                                                <!--end::Button-->
-                                                <!--begin::Button-->
-                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" id="kt_users_delete_two_step">
-                                                    <i class="ki-duotone ki-trash fs-3">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>
-                                                </button>
-                                                <!--end::Button-->
-                                            </div>
-                                            <!--end::Action-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin:Separator-->
-                                        <div class="separator separator-dashed my-5"></div>
-                                        <!--end:Separator-->
-                                        <!--begin::Disclaimer-->
-                                        <div class="text-gray-600">If you lose your mobile device or security key, you can
-                                        <a href='#' class="me-1">generate a backup code</a>to sign in to your account.</div>
-                                        <!--end::Disclaimer-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Card-->
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
-                                    <!--begin::Card header-->
-                                    <div class="card-header border-0">
-                                        <!--begin::Card title-->
-                                        <div class="card-title flex-column">
-                                            <h2>Email Notifications</h2>
-                                            <div class="fs-6 fw-semibold text-muted">Choose what messages you’d like to receive for each of your accounts.</div>
-                                        </div>
-                                        <!--end::Card title-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body">
-                                        <!--begin::Form-->
-                                        <form class="form" id="kt_users_email_notification_form">
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_0" type="checkbox" value="0" id="kt_modal_update_email_notification_0" checked='checked' />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_0">
-                                                        <div class="fw-bold">Successful Payments</div>
-                                                        <div class="text-gray-600">Receive a notification for every successful payment.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_1" type="checkbox" value="1" id="kt_modal_update_email_notification_1" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_1">
-                                                        <div class="fw-bold">Payouts</div>
-                                                        <div class="text-gray-600">Receive a notification for every initiated payout.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_2" type="checkbox" value="2" id="kt_modal_update_email_notification_2" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_2">
-                                                        <div class="fw-bold">Application fees</div>
-                                                        <div class="text-gray-600">Receive a notification each time you collect a fee from an account.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_3" type="checkbox" value="3" id="kt_modal_update_email_notification_3" checked='checked' />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_3">
-                                                        <div class="fw-bold">Disputes</div>
-                                                        <div class="text-gray-600">Receive a notification if a payment is disputed by a customer and for dispute resolutions.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_4" type="checkbox" value="4" id="kt_modal_update_email_notification_4" checked='checked' />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_4">
-                                                        <div class="fw-bold">Payment reviews</div>
-                                                        <div class="text-gray-600">Receive a notification if a payment is marked as an elevated risk.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_5" type="checkbox" value="5" id="kt_modal_update_email_notification_5" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_5">
-                                                        <div class="fw-bold">Mentions</div>
-                                                        <div class="text-gray-600">Receive a notification if a teammate mentions you in a note.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_6" type="checkbox" value="6" id="kt_modal_update_email_notification_6" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_6">
-                                                        <div class="fw-bold">Invoice Mispayments</div>
-                                                        <div class="text-gray-600">Receive a notification if a customer sends an incorrect amount to pay their invoice.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_7" type="checkbox" value="7" id="kt_modal_update_email_notification_7" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_7">
-                                                        <div class="fw-bold">Webhooks</div>
-                                                        <div class="text-gray-600">Receive notifications about consistently failing webhook endpoints.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <div class='separator separator-dashed my-5'></div>
-                                            <!--begin::Item-->
-                                            <div class="d-flex">
-                                                <!--begin::Checkbox-->
-                                                <div class="form-check form-check-custom form-check-solid">
-                                                    <!--begin::Input-->
-                                                    <input class="form-check-input me-3" name="email_notification_8" type="checkbox" value="8" id="kt_modal_update_email_notification_8" />
-                                                    <!--end::Input-->
-                                                    <!--begin::Label-->
-                                                    <label class="form-check-label" for="kt_modal_update_email_notification_8">
-                                                        <div class="fw-bold">Trial</div>
-                                                        <div class="text-gray-600">Receive helpful tips when you try out our products.</div>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                <!--end::Checkbox-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Action buttons-->
-                                            <div class="d-flex justify-content-end align-items-center mt-12">
-                                                <!--begin::Button-->
-                                                <button type="button" class="btn btn-light me-5" id="kt_users_email_notification_cancel">Cancel</button>
-                                                <!--end::Button-->
-                                                <!--begin::Button-->
-                                                <button type="button" class="btn btn-primary" id="kt_users_email_notification_submit">
-                                                    <span class="indicator-label">Save</span>
-                                                    <span class="indicator-progress">Please wait...
-                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                </button>
-                                                <!--end::Button-->
-                                            </div>
-                                            <!--begin::Action buttons-->
-                                        </form>
-                                        <!--end::Form-->
-                                    </div>
-                                    <!--end::Card body-->
-                                    <!--begin::Card footer-->
-                                    <!--end::Card footer-->
-                                </div>
-                                <!--end::Card-->
-                            </div>
-                            <!--end:::Tab pane-->
-                            <!--begin:::Tab pane-->
-                            <div class="tab-pane fade" id="kt_user_view_overview_events_and_logs_tab" role="tabpanel">
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
-                                    <!--begin::Card header-->
-                                    <div class="card-header border-0">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Login Sessions</h2>
+                                            <h2>Tutor</h2>
                                         </div>
                                         <!--end::Card title-->
                                         <!--begin::Card toolbar-->
@@ -866,37 +479,149 @@
                                             <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
                                                 <thead class="border-bottom border-gray-200 fs-7 fw-bold">
                                                     <tr class="text-start text-muted text-uppercase gs-0">
-                                                        <th class="min-w-100px">Location</th>
-                                                        <th>Device</th>
-                                                        <th>IP Address</th>
-                                                        <th class="min-w-125px">Time</th>
-                                                        <th class="min-w-70px">Actions</th>
+                                                        <th class="min-w-100px">NIP</th>
+                                                        <th>Nama</th>
+                                                        <th>Email</th>
+                                                        <th class="min-w-125px">Phone / WA</th>
+                                                       
                                                     </tr>
                                                 </thead>
                                                 <tbody class="fs-6 fw-semibold text-gray-600">
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td>Chome - Windows</td>
-                                                        <td>207.17.19.343</td>
-                                                        <td>23 seconds ago</td>
-                                                        <td>Current session</td>
+                                                    @foreach ($res_registrasi_praktikum  as $mhs)
+                                                        <tr>
+                                                        <td>{{ $mhs->nip }}</td>
+                                                        <td>{{ $mhs->nama }}</td>
+                                                        <td>{{ $mhs->email }}</td>
+                                                        <td>{{ $mhs->phone_wa }}</td>
+                                                    </tr> 
+                                                    @endforeach
+                                                   
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table wrapper-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card-->
+                                
+                               
+                            </div>
+                            <!--end:::Tab pane-->
+                            <!--begin:::Tab pane-->
+                            <div class="tab-pane fade" id="kt_peserta" role="tabpanel">
+                                @foreach ($res_jadwal_praktikum as $jadwal)
+                                    <!--begin::Card-->
+                                <div class="card pt-4 mb-6 mb-xl-9">
+                                    <!--begin::Card header-->
+                                    <div class="card-header border-0">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <h2>Peserta</h2>
+                                        </div>
+                                        <!--end::Card title-->
+                                        <!--begin::Card toolbar-->
+                                        <div class="card-toolbar">
+                                            <!--begin::Filter-->
+                                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" id="kt_modal_sign_out_sesions">
+                                            <i class="ki-duotone ki-entrance-right fs-3">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>Sign out all sessions</button>
+                                            <!--end::Filter-->
+                                        </div>
+                                        <!--end::Card toolbar-->
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0 pb-5">
+                                        <!--begin::Table wrapper-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
+                                                <thead class="border-bottom border-gray-200 fs-7 fw-bold">
+                                                    <tr class="text-start text-muted text-uppercase gs-0">
+                                                        <th class="min-w-100px">NIP</th>
+                                                        <th>Nama</th>
+                                                        <th>Email</th>
+                                                        <th class="min-w-125px">Phone / WA</th>
+                                                       
                                                     </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td>Safari - iOS</td>
-                                                        <td>207.21.12.268</td>
-                                                        <td>3 days ago</td>
-                                                        <td>
-                                                            <a href="#" data-kt-users-sign-out="single_user">Sign out</a>
-                                                        </td>
+                                                </thead>
+                                                <tbody class="fs-6 fw-semibold text-gray-600">
+                                                    @foreach ($res_registrasi_praktikum  as $mhs)
+                                                        <tr>
+                                                        <td>{{ $mhs->nip }}</td>
+                                                        <td>{{ $mhs->nama }}</td>
+                                                        <td>{{ $mhs->email }}</td>
+                                                        <td>{{ $mhs->phone_wa }}</td>
+                                                    </tr> 
+                                                    @endforeach
+                                                   
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table wrapper-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card--> 
+                                @endforeach
+
+
+
+                                <!--begin::Card-->
+                                <div class="card pt-4 mb-6 mb-xl-9">
+                                    <!--begin::Card header-->
+                                    <div class="card-header border-0">
+                                        <!--begin::Card title-->
+                                        <div class="card-title">
+                                            <h2>Peserta</h2>
+                                        </div>
+                                        <!--end::Card title-->
+                                        <!--begin::Card toolbar-->
+                                        <div class="card-toolbar">
+                                            <!--begin::Filter-->
+                                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" id="kt_modal_sign_out_sesions">
+                                            <i class="ki-duotone ki-entrance-right fs-3">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>Sign out all sessions</button>
+                                            <!--end::Filter-->
+                                        </div>
+                                        <!--end::Card toolbar-->
+                                    </div>
+                                    <!--end::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body pt-0 pb-5">
+                                        <!--begin::Table wrapper-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
+                                                <thead class="border-bottom border-gray-200 fs-7 fw-bold">
+                                                    <tr class="text-start text-muted text-uppercase gs-0">
+                                                        <th class="min-w-100px">NIP</th>
+                                                        <th>Nama</th>
+                                                        <th>Email</th>
+                                                        <th class="min-w-125px">Phone / WA</th>
+                                                       
                                                     </tr>
-                                                    <tr>
-                                                        <td>Australia</td>
-                                                        <td>Chrome - Windows</td>
-                                                        <td>207.28.34.180</td>
-                                                        <td>last week</td>
-                                                        <td>Expired</td>
-                                                    </tr>
+                                                </thead>
+                                                <tbody class="fs-6 fw-semibold text-gray-600">
+                                                    @foreach ($res_registrasi_praktikum  as $mhs)
+                                                        <tr>
+                                                        <td>{{ $mhs->nip }}</td>
+                                                        <td>{{ $mhs->nama }}</td>
+                                                        <td>{{ $mhs->email }}</td>
+                                                        <td>{{ $mhs->phone_wa }}</td>
+                                                    </tr> 
+                                                    @endforeach
+                                                   
+                                                    
                                                 </tbody>
                                             </table>
                                             <!--end::Table-->
@@ -912,7 +637,7 @@
                                     <div class="card-header border-0">
                                         <!--begin::Card title-->
                                         <div class="card-title">
-                                            <h2>Logs</h2>
+                                            <h2>Penilaian Peserta</h2>
                                         </div>
                                         <!--end::Card title-->
                                         <!--begin::Card toolbar-->
@@ -979,102 +704,7 @@
                                     <!--end::Card body-->
                                 </div>
                                 <!--end::Card-->
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
-                                    <!--begin::Card header-->
-                                    <div class="card-header border-0">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Events</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                        <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
-                                            <!--begin::Button-->
-                                            <button type="button" class="btn btn-sm btn-light-primary">
-                                            <i class="ki-duotone ki-cloud-download fs-3">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>Download Report</button>
-                                            <!--end::Button-->
-                                        </div>
-                                        <!--end::Card toolbar-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body py-0">
-                                        <!--begin::Table-->
-                                        <table class="table align-middle table-row-dashed fs-6 text-gray-600 fw-semibold gy-5" id="kt_table_customers_events">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Melody Macy</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#XRS-45670</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">21 Feb 2023, 2:40 pm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Max Smith</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#SDK-45670</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">20 Jun 2023, 5:30 pm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Max Smith</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#SDK-45670</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">25 Oct 2023, 11:05 am</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">Invoice
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary me-1">#KIO-45656</a>status has changed from
-                                                    <span class="badge badge-light-succees me-1">In Transit</span>to
-                                                    <span class="badge badge-light-success">Approved</span></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">21 Feb 2023, 6:43 am</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Max Smith</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#SDK-45670</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">22 Sep 2023, 2:40 pm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Emma Smith</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#XRS-45670</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">05 May 2023, 11:05 am</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">Invoice
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary me-1">#LOP-45640</a>has been
-                                                    <span class="badge badge-light-danger">Declined</span></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">22 Sep 2023, 11:30 am</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">
-                                                    <a href="#" class="text-gray-600 text-hover-primary me-1">Brian Cox</a>has made payment to
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary">#OLP-45690</a></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">10 Mar 2023, 8:43 pm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">Invoice
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary me-1">#LOP-45640</a>has been
-                                                    <span class="badge badge-light-danger">Declined</span></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">20 Dec 2023, 5:30 pm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="min-w-400px">Invoice
-                                                    <a href="#" class="fw-bold text-gray-900 text-hover-primary me-1">#SEP-45656</a>status has changed from
-                                                    <span class="badge badge-light-warning me-1">Pending</span>to
-                                                    <span class="badge badge-light-info">In Progress</span></td>
-                                                    <td class="pe-0 text-gray-600 text-end min-w-200px">21 Feb 2023, 11:30 am</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!--end::Table-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Card-->
+                              
                             </div>
                             <!--end:::Tab pane-->
                         </div>
@@ -2295,6 +1925,588 @@
     <!--end::Content-->
 
 
+                   <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
+                   <div class="modal fade" id="kt_modal_add_Akademik_praktikum_materi" tabindex="-1" aria-hidden="true">
+               
+                    <div class="modal-dialog modal-dialog-centered mw-650px">
+                    
+                      <div class="modal-content">
+                     
+                        <div class="modal-header" id="kt_modal_add_Akademik_praktikum_materi_header">
+                   
+                          <h2 class="fw-bold">ADD PRAKTIKUM MATERI</h2>
+                        
+                          <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_praktikum_materis-modal-action="close">
+                            <i class="ki-duotone ki-cross fs-1">
+                              <span class="path1"></span>
+                              <span class="path2"></span>
+                            </i>
+                          </div>
+                        
+                        </div>
+                      
+                        <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                        
+                          {!! Form::open(array("route" => "akademik_praktikum_materi.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                        
+                            <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_praktikum_materi_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_praktikum_materi_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_praktikum_materi_scroll" data-kt-scroll-offset="300px">
+                             
+                              
+                 
+                  <div class="fv-row mb-7">
+                    <label class=" fw-semibold fs-6 mb-2">TITLE</label>
+                    {!! Form::text("title", null, array("placeholder" => "TITLE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                  </div>
+    
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">SHORT DESC</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {!! Form::text("short_desc", null, array("placeholder" => "SHORT DESC","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">TEXT</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {{-- <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="" /> --}}
+                    <textarea id="elm1" name="text"></textarea>
+                  
+                   
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">TYPE</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="text" name="type" class="form-control form-control-sm form-control-solid" placeholder="type" value="" />
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class="d-block fw-semibold fs-6 mb-5">Image</label>
+                    <!--end::Label-->
+                    <!--begin::Image placeholder-->
+                    <style>.image-input-placeholder { background-image: url("assets/media/svg/files/blank-image.svg"); } [data-bs-theme="dark"] .image-input-placeholder { background-image: url("assets/media/svg/files/blank-image-dark.svg"); }</style>
+                    <!--end::Image placeholder-->
+                    <!--begin::Image input-->
+                    <div class="image-input image-input-outline image-input-placeholder" data-kt-image-input="true">
+                      <!--begin::Preview existing avatar-->
+                      <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-6.jpg);"></div>
+                      <!--end::Preview existing avatar-->
+                      <!--begin::Label-->
+                      <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change image">
+                        <i class="ki-duotone ki-pencil fs-7">
+                          <span class="path1"></span>
+                          <span class="path2"></span>
+                        </i>
+                        <!--begin::Inputs-->
+                        <input type="file" name="image" accept=".png, .jpg, .jpeg" />
+                        <input type="hidden" name="image_remove" />
+                        <!--end::Inputs-->
+                      </label>
+                      <!--end::Label-->
+                      <!--begin::Cancel-->
+                      <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel image">
+                        <i class="ki-duotone ki-cross fs-2">
+                          <span class="path1"></span>
+                          <span class="path2"></span>
+                        </i>
+                      </span>
+                      <!--end::Cancel-->
+                      <!--begin::Remove-->
+                      <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove image">
+                        <i class="ki-duotone ki-cross fs-2">
+                          <span class="path1"></span>
+                          <span class="path2"></span>
+                        </i>
+                      </span>
+                      <!--end::Remove-->
+                    </div>
+                    <!--end::Image input-->
+                    <!--begin::Hint-->
+                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                    <!--end::Hint-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">FILE</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="file" name="file" class="form-control form-control-sm form-control-solid" placeholder="insert file" value="" />
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">VIDEO</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="text" name="video" class="form-control form-control-sm form-control-solid" placeholder="video" value="" />
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">QUOTE TEXT</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="text" name="quote_text" class="form-control form-control-sm form-control-solid" placeholder="quote_text" value="" />
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">QUOTE AUTHOR</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    <input type="text" name="quote_author" class="form-control form-control-sm form-control-solid" placeholder="quote_author" value="" />
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">AUTHOR</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {!! Form::text("author", null, array("placeholder" => "AUTHOR","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">SLUG</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {!! Form::text("slug", null, array("placeholder" => "SLUG","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">STATUS</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {!! Form::text("status", null, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                  <!--begin::Input group-->
+                  <div class="fv-row mb-7">
+                    <!--begin::Label-->
+                    <label class=" fw-semibold fs-6 mb-2">IMAGES CODE</label>
+                    <!--end::Label-->
+                    <!--begin::Input-->
+                    {!! Form::text("images_code", null, array("placeholder" => "IMAGES CODE","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                    <!--end::Input-->
+                  </div>
+                  <!--end::Input group-->
+                  
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-7">
+                      <!--begin::Label-->
+                      <label class=" fw-semibold fs-6 mb-2">ORDER</label>
+                      <!--end::Label-->
+                      <!--begin::Input-->
+                      <input type="number" name="order" class="form-control form-control-sm form-control-solid" placeholder="order"  />
+                      <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-7">
+                      <!--begin::Label-->
+                      <label class=" fw-semibold fs-6 mb-2">PRAKTIKUM ID</label>
+                      <!--end::Label-->
+                      <!--begin::Input-->
+                      <input type="number" name="praktikum_id" class="form-control form-control-sm form-control-solid" placeholder="praktikum_id" value={{ $Akademik_praktikum->id }} />
+                      <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    
+                             
+                            </div>
+                            <!--end::Scroll-->
+                            <!--begin::Actions-->
+                            <div class="text-center pt-15">
+                              <button type="reset" class="btn btn-light me-3" data-kt-Akademik_praktikum_materi-modal-action="cancel">Discard</button>
+                              <button type="submit" class="btn btn-primary" data-kt-Akademik_praktikum_materi-modal-action="submit">
+                                <span class="indicator-label">Submit</span>
+                                <span class="indicator-progress">Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                              </button>
+                            </div>
+                         
+                            {!! Form::close() !!}
+                       
+                        </div>
+                    
+                      </div>
+                  
+                    </div>
+                 
+                  </div>
+                  <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_praktikum_materi-->
+          
+
+                      <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
+              <div class="modal fade" id="kt_modal_add_Akademik_registrasi_praktikum" tabindex="-1" aria-hidden="true">
+                <!--begin::Modal dialog-->
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                  <!--begin::Modal content-->
+                  <div class="modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_add_Akademik_registrasi_praktikum_header">
+                      <!--begin::Modal title-->
+                      <h2 class="fw-bold">ADD REGISTRASI PRAKTIKUM</h2>
+                      <!--end::Modal title-->
+                      <!--begin::Close-->
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_registrasi_praktikums-modal-action="close">
+                        <i class="ki-duotone ki-cross fs-1">
+                          <span class="path1"></span>
+                          <span class="path2"></span>
+                        </i>
+                      </div>
+                      <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                      <!--begin::Form-->
+                      {!! Form::open(array("route" => "akademik_registrasi_praktikum.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                      {{-- <form id="kt_modal_add_Akademik_registrasi_praktikum_form" class="form" action="#"> --}}
+                        <!--begin::Scroll-->
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_registrasi_praktikum_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_registrasi_praktikum_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_registrasi_praktikum_scroll" data-kt-scroll-offset="300px">
+                         
+                          
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {{-- {!! Form::text("nip", null, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!} --}}
+                <!--end::Input-->
+
+                    <select class="form-select form-select-solid" name="nip" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_641ac41e77927" data-allow-clear="true">
+                        <option></option>
+                        @foreach ($res_mahasiswa as $mahasiswa)
+                        <option value="{{ $mahasiswa->nip }}">{{ $mahasiswa->nip }}-{{ $mahasiswa->nama }}</option>
+                        @endforeach   
+                    </select>
+
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("id_jadwal_praktikum", $Akademik_praktikum->id , array("placeholder" => "ID JADWAL PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">TAHUN</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {{-- {!! Form::text("tahun", null, array("placeholder" => "TAHUN","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!} --}}
+                <!--end::Input-->
+                <select class="form-select form-select-solid" name="tahun" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_641ac41e77927" data-allow-clear="true">
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                  </select>
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7 d-none">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">STATUS</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("status", null, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+                         
+                        </div>
+                        <!--end::Scroll-->
+                        <!--begin::Actions-->
+                        <div class="text-center pt-15">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Akademik_registrasi_praktikum-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Akademik_registrasi_praktikum-modal-action="submit">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                          </button>
+                        </div>
+                        <!--end::Actions-->
+                        {!! Form::close() !!}
+                      <!--end::Form-->
+                    </div>
+                    <!--end::Modal body-->
+                  </div>
+                  <!--end::Modal content-->
+                </div>
+                <!--end::Modal dialog-->
+              </div>
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_registrasi_praktikum-->
+      
+   <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
+   <div class="modal fade" id="kt_modal_add_Akademik_tutor" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+      <!--begin::Modal content-->
+      <div class="modal-content">
+        <!--begin::Modal header-->
+        <div class="modal-header" id="kt_modal_add_Akademik_tutor_header">
+          <!--begin::Modal title-->
+          <h2 class="fw-bold">ADD TUTOR</h2>
+          <!--end::Modal title-->
+          <!--begin::Close-->
+          <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_tutors-modal-action="close">
+            <i class="ki-duotone ki-cross fs-1">
+              <span class="path1"></span>
+              <span class="path2"></span>
+            </i>
+          </div>
+          <!--end::Close-->
+        </div>
+        <!--end::Modal header-->
+        <!--begin::Modal body-->
+        <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+          <!--begin::Form-->
+          {!! Form::open(array("route" => "akademik_tutor.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+          {{-- <form id="kt_modal_add_Akademik_tutor_form" class="form" action="#"> --}}
+            <!--begin::Scroll-->
+            <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_tutor_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_tutor_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_tutor_scroll" data-kt-scroll-offset="300px">
+             
+              
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">NIP</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    {!! Form::text("nip", null, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    {!! Form::text("nama", null, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="" />
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    {!! Form::text("email", null, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    {!! Form::text("phone_wa", null, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+  <!--begin::Input group-->
+  <div class="fv-row mb-7">
+    <!--begin::Label-->
+    <label class=" fw-semibold fs-6 mb-2">STATUS</label>
+    <!--end::Label-->
+    <!--begin::Input-->
+    {!! Form::text("status", null, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+    <!--end::Input-->
+  </div>
+  <!--end::Input group-->
+  
+             
+            </div>
+            <!--end::Scroll-->
+            <!--begin::Actions-->
+            <div class="text-center pt-15">
+              <button type="reset" class="btn btn-light me-3" data-kt-Akademik_tutor-modal-action="cancel">Discard</button>
+              <button type="submit" class="btn btn-primary" data-kt-Akademik_tutor-modal-action="submit">
+                <span class="indicator-label">Submit</span>
+                <span class="indicator-progress">Please wait...
+                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+              </button>
+            </div>
+            <!--end::Actions-->
+            {!! Form::close() !!}
+          <!--end::Form-->
+        </div>
+        <!--end::Modal body-->
+      </div>
+      <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+  </div>
+  <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_tutor-->
+
+             <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
+             <div class="modal fade" id="kt_modal_add_Akademik_jadwal_praktikum" tabindex="-1" aria-hidden="true">
+                <!--begin::Modal dialog-->
+                <div class="modal-dialog modal-dialog-centered mw-650px">
+                  <!--begin::Modal content-->
+                  <div class="modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_add_Akademik_jadwal_praktikum_header">
+                      <!--begin::Modal title-->
+                      <h2 class="fw-bold">ADD JADWAL PRAKTIKUM</h2>
+                      <!--end::Modal title-->
+                      <!--begin::Close-->
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_jadwal_praktikums-modal-action="close">
+                        <i class="ki-duotone ki-cross fs-1">
+                          <span class="path1"></span>
+                          <span class="path2"></span>
+                        </i>
+                      </div>
+                      <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                      {!! Form::open(array("route" => "akademik_jadwal_praktikum.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_jadwal_praktikum_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_jadwal_praktikum_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_jadwal_praktikum_scroll" data-kt-scroll-offset="300px">
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">TUTOR 1</label>
+                                {!! Form::text("id_tutor1", null, array("placeholder" => "TUTOR 1","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">TUTOR 2</label>
+                                {!! Form::text("id_tutor2", null, array("placeholder" => "TUTOR 2","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">TUTOR 3</label>
+                                {!! Form::text("id_tutor3", null, array("placeholder" => "TUTOR 3","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">PRAKTIKUM</label>
+                                {!! Form::text("id_praktikum", null, array("placeholder" => "PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">HARI</label>
+                                <select name="hari" aria-label="Select a hari" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                                    <option value='senin'>senin</option>
+                                    <option value='selasa'>selasa</option>
+                                    <option value='rabu'>rabu</option>
+                                    <option value='kamis'>kamis</option>
+                                    <option value='jumat'>jumat</option>
+                                    <option value='sabtu'>sabtu</option>
+                                    <option value='minggu'>minggu</option>
+                                </select>
+                            </div>
+                            
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">TAHUN</label>
+                                {!! Form::text("tahun", null, array("placeholder" => "TAHUN","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                            
+                            <div class="fv-row mb-7">
+                                <label class=" fw-semibold fs-6 mb-2">STATUS</label>
+                                {!! Form::text("status", null, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                            </div>
+                            
+                        </div>
+
+                        <div class="text-center pt-15">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Akademik_jadwal_praktikum-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Akademik_jadwal_praktikum-modal-action="submit">
+                            <span class="indicator-label">Submit</span>
+                            <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                          </button>
+                        </div>
+
+                        {!! Form::close() !!}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_jadwal_praktikum-->
+      
 
 
 
