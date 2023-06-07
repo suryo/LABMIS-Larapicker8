@@ -42,15 +42,15 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">User Management</li>
+                        <li class="breadcrumb-item text-muted">Praktikum</li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item">
+                        <li class="breadcrumb-item d-none">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Users</li>
+                        <li class="breadcrumb-item text-muted d-none">Users</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -154,7 +154,7 @@
                                         <i class="ki-duotone ki-down fs-3"></i>
                                     </span></div>
                                     <span data-bs-toggle="tooltip" data-bs-trigger="hover" title="Edit customer details">
-                                        <a href="#" class="btn btn-sm btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_update_details">Edit</a>
+                                        <a href="#" class="btn btn-sm btn-light-primary {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}" data-bs-toggle="modal" data-bs-target="#kt_modal_update_details">Edit</a>
                                     </span>
                                 </div>
                                 <!--end::Details toggle-->
@@ -264,7 +264,7 @@
                             </div>
                             <!--end::Card body-->
                             <!--begin::Card footer-->
-                            <div class="card-footer border-0 d-flex justify-content-center pt-0">
+                            <div class="card-footer border-0 d-flex justify-content-center pt-0 {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}">
                                 <button class="btn btn-sm btn-light-primary">Save Changes</button>
                             </div>
                             <!--end::Card footer-->
@@ -292,7 +292,7 @@
                             </li>
                             <!--end:::Tab item-->
                             <!--begin:::Tab item-->
-                            <li class="nav-item ms-auto">
+                            <li class="nav-item ms-auto {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}">
                                 <!--begin::Action menu-->
                                 <a href="#" class="btn btn-primary ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">Actions
                                 <i class="ki-duotone ki-down fs-2 me-0"></i></a>
@@ -414,7 +414,7 @@
                                                         </div>
                                                         <div class="flex-1 overflow-hidden">
                                                             <h5 class="font-size-16 mb-1">{{ $materi->title }}</h5>
-                                                            <p class="text-muted text-truncate mb-0">{{ $materi->short_desc }}</p>
+                                                            <p class="text-muted text-truncate mb-0">{{ $materi->short_desc }} | Author : {{ $materi->author }}</p>
                                                         </div>
                                                         <i class="mdi mdi-chevron-up accor-down-icon font-size-24"></i>
                                                     </div>
@@ -459,7 +459,7 @@
                                         </div>
                                         <!--end::Card title-->
                                         <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
+                                        <div class="card-toolbar d-none">
                                             <!--begin::Filter-->
                                             <button type="button" class="btn btn-sm btn-flex btn-light-primary" id="kt_modal_sign_out_sesions">
                                             <i class="ki-duotone ki-entrance-right fs-3">
@@ -519,11 +519,11 @@
                                     <div class="card-header border-0">
                                         <!--begin::Card title-->
                                         <div class="card-title">
-                                            <h2>Peserta</h2>
+                                            <h2>Peserta {{$jadwal->hari}}({{$jadwal->jam_mulai}} - {{$jadwal->jam_selesai}})</h2>
                                         </div>
                                         <!--end::Card title-->
                                         <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
+                                        <div class="card-toolbar d-none">
                                             <!--begin::Filter-->
                                             <button type="button" class="btn btn-sm btn-flex btn-light-primary" id="kt_modal_sign_out_sesions">
                                             <i class="ki-duotone ki-entrance-right fs-3">
@@ -551,7 +551,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="fs-6 fw-semibold text-gray-600">
-                                                    @foreach ($res_registrasi_praktikum  as $mhs)
+                                                    @foreach ($jadwal->peserta  as $mhs)
                                                         <tr>
                                                         <td>{{ $mhs->nip }}</td>
                                                         <td>{{ $mhs->nama }}</td>
@@ -574,63 +574,7 @@
 
 
 
-                                <!--begin::Card-->
-                                <div class="card pt-4 mb-6 mb-xl-9">
-                                    <!--begin::Card header-->
-                                    <div class="card-header border-0">
-                                        <!--begin::Card title-->
-                                        <div class="card-title">
-                                            <h2>Peserta</h2>
-                                        </div>
-                                        <!--end::Card title-->
-                                        <!--begin::Card toolbar-->
-                                        <div class="card-toolbar">
-                                            <!--begin::Filter-->
-                                            <button type="button" class="btn btn-sm btn-flex btn-light-primary" id="kt_modal_sign_out_sesions">
-                                            <i class="ki-duotone ki-entrance-right fs-3">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>Sign out all sessions</button>
-                                            <!--end::Filter-->
-                                        </div>
-                                        <!--end::Card toolbar-->
-                                    </div>
-                                    <!--end::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body pt-0 pb-5">
-                                        <!--begin::Table wrapper-->
-                                        <div class="table-responsive">
-                                            <!--begin::Table-->
-                                            <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
-                                                <thead class="border-bottom border-gray-200 fs-7 fw-bold">
-                                                    <tr class="text-start text-muted text-uppercase gs-0">
-                                                        <th class="min-w-100px">NIP</th>
-                                                        <th>Nama</th>
-                                                        <th>Email</th>
-                                                        <th class="min-w-125px">Phone / WA</th>
-                                                       
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="fs-6 fw-semibold text-gray-600">
-                                                    @foreach ($res_registrasi_praktikum  as $mhs)
-                                                        <tr>
-                                                        <td>{{ $mhs->nip }}</td>
-                                                        <td>{{ $mhs->nama }}</td>
-                                                        <td>{{ $mhs->email }}</td>
-                                                        <td>{{ $mhs->phone_wa }}</td>
-                                                    </tr> 
-                                                    @endforeach
-                                                   
-                                                    
-                                                </tbody>
-                                            </table>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Table wrapper-->
-                                    </div>
-                                    <!--end::Card body-->
-                                </div>
-                                <!--end::Card-->
+                            
                                 <!--begin::Card-->
                                 <div class="card pt-4 mb-6 mb-xl-9">
                                     <!--begin::Card header-->

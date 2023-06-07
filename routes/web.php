@@ -18,6 +18,8 @@ use App\Http\Controllers\Member\LeaderboardController;
 use App\Http\Controllers\Member\MyLearningController;
 use App\Http\Controllers\Member\TutorialController;
 
+use App\Http\Controllers\Back\Akademik_mhs\Akademik_mhsController;
+
 
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\RoleController;
@@ -105,3 +107,6 @@ Route::group(['middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('mhsboom', [Akademik_mhsController::class, 'mhsboom'])->name('mhsboom');

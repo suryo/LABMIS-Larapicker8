@@ -456,11 +456,11 @@
     @foreach ($res_praktikum as $key => $akademik_praktikum)
         <tr>
         <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->mk_praktikum,25) }}</a></td>
-        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->tahun,25) }}</a></td>
-        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{  ucfirst(Str::limit($akademik_praktikum->hari,25)) }}</a></td>
-        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_mulai,25) }}</a></td>
-        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_selesai,25) }}</a></td>
+        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->mk_praktikum,25) }}</a></td>
+        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->tahun,25) }}</a></td>
+        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{  ucfirst(Str::limit($akademik_praktikum->hari,25)) }}</a></td>
+        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_mulai,25) }}</a></td>
+        <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_selesai,25) }}</a></td>
 <td class="text-end">
       <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
         <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
@@ -468,17 +468,17 @@
         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
           <!--begin::Menu item-->
           <div class="menu-item px-3">
-            <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_akademik_praktikum{{ $akademik_praktikum->id }}">Show</a>
+            <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_akademik_praktikum{{ $akademik_praktikum->id_praktikum }}">Show</a>
           </div>
           <!--end::Menu item-->
           <!--begin::Menu item-->
           <div class="menu-item px-3">
-            <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_praktikum{{ $akademik_praktikum->id }}">Edit</a>
+            <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_praktikum{{ $akademik_praktikum->id_praktikum }}">Edit</a>
           </div>
           <!--end::Menu item-->
           <!--begin::Menu item-->
           <div class="menu-item px-3">
-            {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_praktikum.destroy", $akademik_praktikum->id],"style"=>"display:inline"]) !!}
+            {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_praktikum.destroy", $akademik_praktikum->id_praktikum],"style"=>"display:inline"]) !!}
             {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
             <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_praktikums-table-filter="delete_row"> Delete</a>
             {!! Form::close() !!} 

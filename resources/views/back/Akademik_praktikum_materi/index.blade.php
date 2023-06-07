@@ -203,7 +203,8 @@
                 <label class=" fw-semibold fs-6 mb-2">TEXT</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="" />
+                {{-- <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="" /> --}}
+                <textarea id="elm1" name="text"></textarea>
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -406,7 +407,7 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Akademik_praktikum_materi-->
               <div class="modal fade" id="kt_modal_edit_akademik_praktikum_materi{{ $akademik_praktikum_materi->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
-                <div class="modal-dialog modal-dialog-centered mw-650px">
+                <div class="modal-dialog modal-dialog-centered mw-800px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
@@ -461,7 +462,8 @@
                 <label class=" fw-semibold fs-6 mb-2">TEXT</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="{{$akademik_praktikum_materi->text}}" />
+                {{-- <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="{{$akademik_praktikum_materi->text}}" /> --}}
+                <textarea id="elm3" name="text">{!!$akademik_praktikum_materi->text!!}</textarea>
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -648,7 +650,7 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowAkademik_praktikum_materi-->
               <div class="modal fade" id="kt_modal_show_akademik_praktikum_materi{{ $akademik_praktikum_materi->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
-                <div class="modal-dialog modal-dialog-centered mw-650px">
+                <div class="modal-dialog modal-dialog-centered mw-800px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
@@ -714,7 +716,10 @@
                 <label class=" fw-semibold fs-6 mb-2">TEXT</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="{{$akademik_praktikum_materi->text}}" />
+                {{-- <input type="text" name="text" class="form-control form-control-sm form-control-solid" placeholder="text" value="{{$akademik_praktikum_materi->text}}" /> --}}
+                {{-- <textarea id="elm4" name="text"> --}}
+                  {!!$akademik_praktikum_materi->text!!}
+                {{-- </textarea> --}}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -911,7 +916,8 @@
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_praktikum_materi{{ $akademik_praktikum_materi->id }}">Edit</a>
+                    <a class="menu-link px-3" href="{{ route("akademik_praktikum_materi.edit",$akademik_praktikum_materi->id) }}">Edit</a>
+                    {{-- <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_praktikum_materi{{ $akademik_praktikum_materi->id }}">Edit</a> --}}
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->

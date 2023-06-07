@@ -32,9 +32,9 @@ class MyLearningController extends Controller
 
         $i = 0;
 
-        $res_praktikum = DB::select('select rp.*, p.mk_praktikum, p.deskripsi, jp.hari, jp.jam_mulai, jp.jam_selesai from akademik_registrasi_praktikum as rp 
-        INNER JOIN akademik_praktikum as p on rp.id_praktikum = p.id
-        INNER JOIN akademik_jadwal_praktikum as jp on jp.id_praktikum = rp.id_praktikum 
+        $res_praktikum = DB::select('select rp.*, p.id as id_praktikum, p.mk_praktikum, p.deskripsi, jp.hari, jp.jam_mulai, jp.jam_selesai from akademik_registrasi_praktikum as rp 
+        INNER JOIN akademik_jadwal_praktikum as jp on jp.id = rp.id_jadwal_praktikum 
+        INNER JOIN akademik_praktikum as p on jp.id_praktikum = p.id
         where rp.nip='.$nip);
         //dd($res_praktikum);
 
