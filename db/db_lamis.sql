@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : xampp74
+ Source Server         : xampp72
  Source Server Type    : MySQL
  Source Server Version : 100414
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 06/06/2023 16:05:06
+ Date: 07/06/2023 16:54:56
 */
 
 SET NAMES utf8mb4;
@@ -78,12 +78,21 @@ CREATE TABLE `akademik_jadwal_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_jadwal_praktikum
 -- ----------------------------
-INSERT INTO `akademik_jadwal_praktikum` VALUES (1, '1', NULL, NULL, '3', 'kamis', '20:00:00', '21:30:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (1, '1', NULL, NULL, '1', 'jumat', '08:00:00', '09:30:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (2, NULL, NULL, NULL, '1', 'selasa', '20:00:00', '21:30:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (3, NULL, NULL, NULL, '2', 'senin', '13:30:00', '15:00:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (4, NULL, NULL, NULL, '2', 'rabu', '18:15:00', '19:45:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (5, NULL, NULL, NULL, '3', 'kamis', '20:00:00', '21:30:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (6, NULL, NULL, NULL, '3', 'kamis', '20:00:00', '21:30:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (7, NULL, NULL, NULL, '4', 'jumat', '09:30:00', '11:00:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (8, NULL, NULL, NULL, '4', 'kamis', '18:15:00', '19:45:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (9, NULL, NULL, NULL, '5', 'selasa', '10:00:00', '12:00:00', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_jadwal_praktikum` VALUES (10, NULL, NULL, NULL, '5', 'jumat', '18:15:00', '19:45:00', '2023', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_krs
@@ -120,12 +129,72 @@ CREATE TABLE `akademik_mhs`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_mhs
 -- ----------------------------
 INSERT INTO `akademik_mhs` VALUES (1, '06312062', 'Suryo Atmojo', NULL, 'member@gmail.com', '2006', '081217173406', NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (2, '20053006', NULL, NULL, '20053006@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (3, '20053013', NULL, NULL, '20053013@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (4, '20053016', NULL, NULL, '20053016@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (5, '20053021', NULL, NULL, '20053021@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (6, '20053028', NULL, NULL, '20053028@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (7, '19053025', NULL, NULL, '19053025@uwp.ac.id', '2019', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (8, '20053002', NULL, NULL, '20053002@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (9, '20053003', NULL, NULL, '20053003@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (10, '20053004', NULL, NULL, '20053004@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (11, '20053005', NULL, NULL, '20053005@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (12, '20053007', NULL, NULL, '20053007@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (13, '20053009', NULL, NULL, '20053009@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (14, '20053014', NULL, NULL, '20053014@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (15, '20053015', NULL, NULL, '20053015@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (16, '20053017', NULL, NULL, '20053017@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (17, '20053019', NULL, NULL, '20053019@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (18, '20053020', NULL, NULL, '20053020@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (19, '20053022', NULL, NULL, '20053022@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (20, '20053023', NULL, NULL, '20053023@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (21, '20053024', NULL, NULL, '20053024@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (22, '20053026', NULL, NULL, '20053026@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (23, '20053027', NULL, NULL, '20053027@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (24, '22053001', NULL, NULL, '22053001@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (25, '22053003', NULL, NULL, '22053003@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (26, '22053009', NULL, NULL, '22053009@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (27, '22053010', NULL, NULL, '22053010@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (28, '22053011', NULL, NULL, '22053011@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (29, '22053013', NULL, NULL, '22053013@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (30, '22053018', NULL, NULL, '22053018@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (31, '22053022', NULL, NULL, '22053022@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (32, '22053024', NULL, NULL, '22053024@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (33, '22053028', NULL, NULL, '22053028@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (34, '22053032', NULL, NULL, '22053032@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (35, '22053034', NULL, NULL, '22053034@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (36, '22053038', NULL, NULL, '22053038@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (37, '22053004', NULL, NULL, '22053004@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (38, '22053005', NULL, NULL, '22053005@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (39, '22053006', NULL, NULL, '22053006@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (40, '22053007', NULL, NULL, '22053007@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (41, '22053008', NULL, NULL, '22053008@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (42, '22053012', NULL, NULL, '22053012@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (43, '22053014', NULL, NULL, '22053014@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (44, '22053015', NULL, NULL, '22053015@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (45, '22053017', NULL, NULL, '22053017@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (46, '22053019', NULL, NULL, '22053019@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (47, '22053020', NULL, NULL, '22053020@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (48, '22053021', NULL, NULL, '22053021@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (49, '22053023', NULL, NULL, '22053023@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (50, '22053025', NULL, NULL, '22053025@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (51, '22053026', NULL, NULL, '22053026@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (52, '22053027', NULL, NULL, '22053027@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (53, '22053029', NULL, NULL, '22053029@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (54, '22053030', NULL, NULL, '22053030@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (55, '22053031', NULL, NULL, '22053031@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (56, '22053033', NULL, NULL, '22053033@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (57, '22053036', NULL, NULL, '22053036@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (58, '22053037', NULL, NULL, '22053037@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (59, '22053039', NULL, NULL, '22053039@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (60, '22053040', NULL, NULL, '22053040@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (61, '22053041', NULL, NULL, '22053041@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_mk
@@ -158,7 +227,7 @@ CREATE TABLE `akademik_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_praktikum
@@ -167,6 +236,7 @@ INSERT INTO `akademik_praktikum` VALUES (1, 'APSI', NULL, NULL, NULL, NULL);
 INSERT INTO `akademik_praktikum` VALUES (2, 'MACHINE LEARNING', NULL, NULL, NULL, NULL);
 INSERT INTO `akademik_praktikum` VALUES (3, 'MOBILE', NULL, NULL, NULL, NULL);
 INSERT INTO `akademik_praktikum` VALUES (4, 'JARKOM', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_praktikum` VALUES (5, 'PBO', NULL, NULL, '2023-06-07 08:31:27', '2023-06-07 08:31:40');
 
 -- ----------------------------
 -- Table structure for akademik_praktikum_materi
@@ -211,18 +281,20 @@ DROP TABLE IF EXISTS `akademik_registrasi_praktikum`;
 CREATE TABLE `akademik_registrasi_praktikum`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `id_praktikum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_jadwal_praktikum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `tahun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of akademik_registrasi_praktikum
 -- ----------------------------
 INSERT INTO `akademik_registrasi_praktikum` VALUES (1, '06312062', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (2, NULL, '4', NULL, NULL, '2023-06-07 04:50:18', '2023-06-07 04:50:18');
+INSERT INTO `akademik_registrasi_praktikum` VALUES (3, '16010012', '4', NULL, NULL, '2023-06-07 04:52:10', '2023-06-07 04:52:10');
 
 -- ----------------------------
 -- Table structure for akademik_tutor
@@ -1991,25 +2063,25 @@ CREATE TABLE `setting_menu`  (
 -- Records of setting_menu
 -- ----------------------------
 INSERT INTO `setting_menu` VALUES (1, 'MASTER', NULL, '#', NULL, 0, NULL, 'label', 1, NULL, NULL, 'false', NULL, '2023-05-23 02:26:29');
-INSERT INTO `setting_menu` VALUES (2, 'Auth', NULL, '#', NULL, 1, 'ki-address-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 01:39:56');
-INSERT INTO `setting_menu` VALUES (3, 'Users', NULL, 'users', NULL, 2, NULL, NULL, NULL, NULL, NULL, 'false', NULL, '2023-05-22 09:56:14');
-INSERT INTO `setting_menu` VALUES (4, 'Roles', NULL, 'roles', NULL, 2, NULL, NULL, NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:37:13');
-INSERT INTO `setting_menu` VALUES (5, 'Product', NULL, '#', NULL, 1, 'ki-element-7', 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 01:39:56');
-INSERT INTO `setting_menu` VALUES (6, 'Category Product', NULL, '#', NULL, 5, NULL, 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 03:37:13');
-INSERT INTO `setting_menu` VALUES (7, 'Product', NULL, '#', NULL, 5, NULL, 'menu', NULL, NULL, NULL, 'true', NULL, '2023-05-23 03:37:13');
+INSERT INTO `setting_menu` VALUES (2, 'Auth', NULL, '#', NULL, 1, 'ki-address-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (3, 'Users', NULL, 'users', NULL, 2, NULL, NULL, 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (4, 'Roles', NULL, 'roles', NULL, 2, NULL, NULL, 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (5, 'Product', NULL, '#', NULL, 1, 'ki-element-7', 'menu', 2, NULL, NULL, 'true', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (6, 'Category Product', NULL, '#', NULL, 5, NULL, 'menu', 1, NULL, NULL, 'true', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (7, 'Product', NULL, '#', NULL, 5, NULL, 'menu', 2, NULL, NULL, 'true', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (8, 'AKADEMIK', NULL, '#', NULL, 0, NULL, 'label', 2, NULL, NULL, 'false', NULL, '2023-05-23 02:26:30');
-INSERT INTO `setting_menu` VALUES (9, 'Mahasiswa', NULL, 'akademik_mhs', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (10, 'Dosen', NULL, 'akademik_dosen', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (11, 'Tutor', NULL, 'akademik_tutor', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, '2023-05-23 03:23:28');
-INSERT INTO `setting_menu` VALUES (12, 'MK', NULL, 'akademik_mk', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (13, 'Praktikum', NULL, 'akademik_praktikum', NULL, 8, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (9, 'Mahasiswa', NULL, 'akademik_mhs', NULL, 8, 'ki-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (10, 'Dosen', NULL, 'akademik_dosen', NULL, 8, 'ki-book', 'menu', 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (11, 'Tutor', NULL, 'akademik_tutor', NULL, 8, 'ki-book', 'menu', 3, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (12, 'MK', NULL, 'akademik_mk', NULL, 8, 'ki-book', 'menu', 4, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (13, 'Praktikum', NULL, 'akademik_praktikum', NULL, 8, 'ki-book', 'menu', 5, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (14, 'KULIAH', NULL, NULL, NULL, 0, NULL, 'label', 3, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (15, 'Resgistrasi Perkuliahan', NULL, 'akademik_krs', NULL, 14, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (16, 'Jadwal Kuliah', NULL, 'akademik_jadwal_mk', NULL, 14, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (15, 'Resgistrasi Perkuliahan', NULL, 'akademik_krs', NULL, 14, 'ki-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (16, 'Jadwal Kuliah', NULL, 'akademik_jadwal_mk', NULL, 14, 'ki-book', 'menu', 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (17, 'PRAKTIKUM', NULL, NULL, NULL, 0, NULL, 'label', 4, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (18, 'Jadwal Praktikum', NULL, 'akademik_jadwal_praktikum', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (19, 'Registrasi Praktikum', NULL, 'akademik_registrasi_praktikum', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
-INSERT INTO `setting_menu` VALUES (20, 'Materi Praktikum', NULL, 'akademik_praktikum_materi', NULL, 17, 'ki-book', 'menu', NULL, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (18, 'Jadwal Praktikum', NULL, 'akademik_jadwal_praktikum', NULL, 17, 'ki-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (19, 'Registrasi Praktikum', NULL, 'akademik_registrasi_praktikum', NULL, 17, 'ki-book', 'menu', 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
+INSERT INTO `setting_menu` VALUES (20, 'Materi Praktikum', NULL, 'akademik_praktikum_materi', NULL, 17, 'ki-book', 'menu', 3, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (21, 'TUTORIAL', NULL, NULL, NULL, 0, NULL, 'label', 5, NULL, NULL, 'false', NULL, NULL);
 
 -- ----------------------------
