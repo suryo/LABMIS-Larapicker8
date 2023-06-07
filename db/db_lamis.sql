@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : xampp72
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100414
+ Source Server Version : 100422
  Source Host           : localhost:3306
  Source Schema         : db_lamis
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 07/06/2023 16:54:56
+ Date: 07/06/2023 23:04:56
 */
 
 SET NAMES utf8mb4;
@@ -33,7 +33,7 @@ CREATE TABLE `akademik_dosen`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_dosen
@@ -54,7 +54,7 @@ CREATE TABLE `akademik_jadwal_mk`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_jadwal_mk
@@ -78,7 +78,7 @@ CREATE TABLE `akademik_jadwal_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_jadwal_praktikum
@@ -107,7 +107,7 @@ CREATE TABLE `akademik_krs`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_krs
@@ -129,72 +129,86 @@ CREATE TABLE `akademik_mhs`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 76 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_mhs
 -- ----------------------------
 INSERT INTO `akademik_mhs` VALUES (1, '06312062', 'Suryo Atmojo', NULL, 'member@gmail.com', '2006', '081217173406', NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (2, '20053006', NULL, NULL, '20053006@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (3, '20053013', NULL, NULL, '20053013@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (4, '20053016', NULL, NULL, '20053016@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (5, '20053021', NULL, NULL, '20053021@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (6, '20053028', NULL, NULL, '20053028@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (7, '19053025', NULL, NULL, '19053025@uwp.ac.id', '2019', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (8, '20053002', NULL, NULL, '20053002@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (9, '20053003', NULL, NULL, '20053003@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (10, '20053004', NULL, NULL, '20053004@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (11, '20053005', NULL, NULL, '20053005@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (12, '20053007', NULL, NULL, '20053007@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (13, '20053009', NULL, NULL, '20053009@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (14, '20053014', NULL, NULL, '20053014@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (15, '20053015', NULL, NULL, '20053015@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (16, '20053017', NULL, NULL, '20053017@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (17, '20053019', NULL, NULL, '20053019@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (18, '20053020', NULL, NULL, '20053020@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (19, '20053022', NULL, NULL, '20053022@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (20, '20053023', NULL, NULL, '20053023@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (21, '20053024', NULL, NULL, '20053024@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (22, '20053026', NULL, NULL, '20053026@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (23, '20053027', NULL, NULL, '20053027@uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (24, '22053001', NULL, NULL, '22053001@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (25, '22053003', NULL, NULL, '22053003@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (26, '22053009', NULL, NULL, '22053009@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (27, '22053010', NULL, NULL, '22053010@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (28, '22053011', NULL, NULL, '22053011@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (29, '22053013', NULL, NULL, '22053013@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (30, '22053018', NULL, NULL, '22053018@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (31, '22053022', NULL, NULL, '22053022@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (32, '22053024', NULL, NULL, '22053024@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (33, '22053028', NULL, NULL, '22053028@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (34, '22053032', NULL, NULL, '22053032@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (35, '22053034', NULL, NULL, '22053034@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (36, '22053038', NULL, NULL, '22053038@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (37, '22053004', NULL, NULL, '22053004@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (38, '22053005', NULL, NULL, '22053005@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (39, '22053006', NULL, NULL, '22053006@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (40, '22053007', NULL, NULL, '22053007@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (41, '22053008', NULL, NULL, '22053008@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (42, '22053012', NULL, NULL, '22053012@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (43, '22053014', NULL, NULL, '22053014@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (44, '22053015', NULL, NULL, '22053015@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (45, '22053017', NULL, NULL, '22053017@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (46, '22053019', NULL, NULL, '22053019@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (47, '22053020', NULL, NULL, '22053020@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (48, '22053021', NULL, NULL, '22053021@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (49, '22053023', NULL, NULL, '22053023@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (50, '22053025', NULL, NULL, '22053025@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (51, '22053026', NULL, NULL, '22053026@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (52, '22053027', NULL, NULL, '22053027@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (53, '22053029', NULL, NULL, '22053029@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (54, '22053030', NULL, NULL, '22053030@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (55, '22053031', NULL, NULL, '22053031@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (56, '22053033', NULL, NULL, '22053033@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (57, '22053036', NULL, NULL, '22053036@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (58, '22053037', NULL, NULL, '22053037@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (59, '22053039', NULL, NULL, '22053039@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (60, '22053040', NULL, NULL, '22053040@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
-INSERT INTO `akademik_mhs` VALUES (61, '22053041', NULL, NULL, '22053041@uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (2, '20053006', 'ARKILA RAKASYAH MERIYANTO ', NULL, '20053006@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (3, '20053013', 'FERDIANUS FERNANDO ', NULL, '20053013@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (4, '20053016', 'HISYAM IB DANI ', NULL, '20053016@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (5, '20053021', 'ACHMAD STEVANY DWI AGUSTIN ', NULL, '20053021@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (6, '20053028', 'MUHAMMAD SHUBHAN', NULL, '20053028@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (7, '19053025', 'HARIS PRIAMBODO ', NULL, '19053025@mhs.uwp.ac.id', '2019', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (8, '20053002', 'SYAHRUL GALIH WIJAYA ', NULL, '20053002@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (9, '20053003', 'ANDY RACHMAT PRASETYO ', NULL, '20053003@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (10, '20053004', 'HENDRO IMAM SAPUTRO ', NULL, '20053004@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (11, '20053005', 'RIKKI WAHYU SAPUTRA ', NULL, '20053005@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (12, '20053007', 'INTAN RAHMA MONIKA ', NULL, '20053007@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (13, '20053009', 'FRENKY FIRNANDO ANTONI ', NULL, '20053009@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (14, '20053014', 'FAISAL RAHMA DANA WIDIANA PUTRA ', NULL, '20053014@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (15, '20053015', 'MUHAMAD LUTFI ', NULL, '20053015@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (16, '20053017', 'APRILIA INDRA ASANTI MAU ', NULL, '20053017@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (17, '20053019', 'PRIO DWI SANTOSO ', NULL, '20053019@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (18, '20053020', 'ANA FEBRI YANTI ', NULL, '20053020@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (19, '20053022', 'YULIAN VARANTINO ', NULL, '20053022@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (20, '20053023', 'RANU ADHI PANGESTU ', NULL, '20053023@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (21, '20053024', 'PASKALIS HARSENDRO UTUN ', NULL, '20053024@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (22, '20053026', 'DENISA DWI RULLYANE ', NULL, '20053026@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (23, '20053027', 'ALFIAN DARUL ILMI HUSADA SAMPURNO ', NULL, '20053027@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (24, '22053001', 'RAHMAWATI ', NULL, '22053001@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (25, '22053003', 'DEVINA INDAH PERMATASARI ', NULL, '22053003@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (26, '22053009', 'RENDY PUTRA FRISANDI ', NULL, '22053009@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (27, '22053010', 'MARSELINUS REINALDI ABANG ', NULL, '22053010@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (28, '22053011', 'FREDERICH EUGENE VERKINDS ', NULL, '22053011@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (29, '22053013', 'ANDRIAN ARDIANSYAH ', NULL, '22053013@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (30, '22053018', 'RIO SETIAWAN ', NULL, '22053018@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (31, '22053022', 'RAFAEL SUGIANTO CELI NGGANGGUS ', NULL, '22053022@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (32, '22053024', 'NICHOLAS WIJAYA ', NULL, '22053024@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (33, '22053028', 'RAFLI SANDIAR ', NULL, '22053028@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (34, '22053032', 'MARIANUS LAMBERTUS ASAMAL ', NULL, '22053032@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (35, '22053034', 'ABDURRAHMAN GHOZI ULAA ADANI ', NULL, '22053034@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (36, '22053038', 'AHMAD SYAIFUDIN', NULL, '22053038@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (37, '22053004', 'M.RIVALDY ALIF H. ', NULL, '22053004@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (38, '22053005', 'ANDIKA WICAKSONO ', NULL, '22053005@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (39, '22053006', 'RIZAL ANUGRAH MAULANA ', NULL, '22053006@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (40, '22053007', 'GAUDENSIANA MARIANA HOAR ', NULL, '22053007@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (41, '22053008', 'ANANDA BAYU IRSAYD RIZQULLAH ', NULL, '22053008@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (42, '22053012', 'EVAN EMHA WIDYADHANA ', NULL, '22053012@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (43, '22053014', 'FAEZA VANNY TAMA ', NULL, '22053014@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (44, '22053015', 'HADYAN ADI NUGRAHA ', NULL, '22053015@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (45, '22053017', 'ANDRIANSYAH ', NULL, '22053017@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (46, '22053019', 'HENDRY VIO RAMADHAN ', NULL, '22053019@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (47, '22053020', 'MUHAMMAD HAMDANI ', NULL, '22053020@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (48, '22053021', 'PETRUS DARUNG ', NULL, '22053021@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (49, '22053023', 'RYAN SAKTI SAPUTERA ', NULL, '22053023@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (50, '22053025', 'YORDAN SAPUTRA ', NULL, '22053025@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (51, '22053026', 'MUHAMMAD SIGIT RACHMATULLOH ', NULL, '22053026@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (52, '22053027', 'FARREL MARFANEMO HAMZAH ', NULL, '22053027@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (53, '22053029', 'ANDREW ', NULL, '22053029@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (54, '22053030', 'MAULANA ALIF ARRAZAQ ', NULL, '22053030@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (55, '22053031', 'REZZA PURNAMA BHIRAWA ANORAGA ', NULL, '22053031@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (56, '22053033', 'SYAHRUL RESNAN ADITIYA ', NULL, '22053033@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (57, '22053036', 'INZHAGI DEWAN RACHMANDIANSYAH ', NULL, '22053036@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (58, '22053037', 'WILLY THIMOTY SIPAHUTAR ', NULL, '22053037@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (59, '22053039', 'BUSRA RONO ', NULL, '22053039@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (60, '22053040', 'RENDY IRAWAN ', NULL, '22053040@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (61, '22053041', 'NOVALITA KRISTIANI TAUR', NULL, '22053041@mhs.uwp.ac.id', '2022', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (62, '21053002', 'MOCH NUR FAIZIN ', NULL, '21053002@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (63, '21053005', 'LAILY ALFINA WULANSARI ', NULL, '21053005@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (64, '21053007', 'ANDI FAIZAL CAHYADI ', NULL, '21053007@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (65, '21053009', 'MUHAMMAD REYHAN RIZQI ', NULL, '21053009@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (66, '21053011', 'ROSZI SYADILLAL JANNAH ', NULL, '21053011@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (67, '21053013', 'MUHAMMAD IQBAL IZZA ', NULL, '21053013@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (68, '21053001', 'DIKA PERTAMANINGTYAS RAHAYU ', NULL, '21053001@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (69, '21053003', 'RIONALDY AURIEL ARDANA ', NULL, '21053003@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (70, '21053004', 'FAHRIZAL AULIA RACHMAN ', NULL, '21053004@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (71, '21053006', 'HERU HERMANTO ', NULL, '21053006@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (72, '21053008', 'SULTAN AULIA RACHMAN ASNATH ', NULL, '21053008@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (73, '21053012', 'AMNDAN DWI YANTO ', NULL, '21053012@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (74, '21053016', 'MOHAMMAD RAMADHAN ADLY NADIF ', NULL, '21053016@mhs.uwp.ac.id', '2021', NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_mhs` VALUES (75, '20053012', 'BAYU TRIYA SAPUTRA ', NULL, '20053012@mhs.uwp.ac.id', '2020', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_mk
@@ -208,7 +222,7 @@ CREATE TABLE `akademik_mk`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_mk
@@ -227,7 +241,7 @@ CREATE TABLE `akademik_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_praktikum
@@ -263,7 +277,7 @@ CREATE TABLE `akademik_praktikum_materi`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_praktikum_materi
@@ -273,6 +287,7 @@ INSERT INTO `akademik_praktikum_materi` VALUES (22, 'MATERI 2', NULL, NULL, 'asd
 INSERT INTO `akademik_praktikum_materi` VALUES (23, 'MATERI 3', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO `akademik_praktikum_materi` VALUES (24, 'MATERI 4', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO `akademik_praktikum_materi` VALUES (25, 'MATERI 5', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `akademik_praktikum_materi` VALUES (26, 'Materi 1', 'Mengenal Framework Nuxt', 'Pada praktikum kali ini kita akan mempelajari Framework Nuxt.', '<h2><a name=\"_Toc77662638\"></a><strong>Apa itu Nuxt Js ?</strong></h2>\r\n<p><a href=\"https://nuxtjs.org/\"><strong>Nuxt Js</strong></a>&nbsp;atau bisa disebut <a href=\"https://nuxtjs.org/\"><strong>Nuxt</strong></a>&nbsp;merupakan sebuah framework yang dibangun di atas Vue Js. Yaps terdengar sangat aneh, karena Vue Js sendiri adalah framework, jadi <a href=\"https://nuxtjs.org/\"><strong><em><u>Nuxt Js</u></em></strong></a>&nbsp;merupakan framework di atas framework.</p>\r\n<p>Seperti yang kita tahu, jika mengembangkan aplikasi dengan Vue Js akan terkendala dengan yang namanya <strong><em>SEO</em></strong>&nbsp;atau <strong>Search Engine Optimization</strong>. Dengan menggunakan <strong><em>Nuxt</em></strong>&nbsp;kita bisa membuat aplikasi berbasis Vue Js tapi bisa melakukan <strong>server side rendering</strong>&nbsp;atau bisa disebut dengan <a href=\"https://nuxtjs.org/docs/2.x/concepts/server-side-rendering/\"><strong><em><u>SSR</u></em></strong></a>.</p>\r\n<p>Tidak hanya itu, dengan menggunakan <strong><em>Nuxt Js</em></strong>, project yang dikembangkan memiliki struktur folder yang bagus dan memiliki banyak fitur magic-nya. Jika sebelumnya di dalam Vue Js kita membuat router secara manual, maka di <strong><em>Nuxt Js</em></strong>&nbsp;kita sudah otomatis dibuatkan tanpa perlu mendefinisikan route-route secara manual lagi. Dan tentunya masih banyak lagi fitur-fitur yang disediakan di dalam <strong><em>Nuxt Js</em></strong>&nbsp;yang bisa membantu kita dalam membangun sebuah aplikasi.</p>\r\n<p><strong><em>Nuxt&nbsp;</em></strong>juga memiliki fitur lain di antaranya :</p>\r\n<ul>\r\n<li>Write Vue Files (*.vue)</li>\r\n<li>Automatic Code Splitting</li>\r\n<li>Server-Side Rendering</li>\r\n<li>Powerful Routing System with Asynchronous Data</li>\r\n<li>Static File Serving</li>\r\n<li>ES6/ES7 Transpilation</li>\r\n<li>Bundling and minifying of your JS &amp; CSS</li>\r\n<li>Managing&nbsp;&lt;head&gt;element (&lt;title&gt;,&nbsp;&lt;meta&gt;, etc.)</li>\r\n<li>Hot module replacement in Development (Hot Reload)</li>\r\n<li>Pre-processor: Sass, Less, Stylus, etc.</li>\r\n<li>HTTP/2 push headers ready</li>\r\n<li>Extending with Modular architecture</li>\r\n</ul>\r\n<p>Selain itu secara standar&nbsp;<strong><em>Nuxt</em></strong>&nbsp;sudah menyediakan plugin-plugin yang biasa kita gunakan saat menggunakan&nbsp;<strong><em>VueJS</em></strong>&nbsp;antara lain :</p>\r\n<ul>\r\n<li><a href=\"https://vuejs.org/\">Vue 2</a></li>\r\n<li><a href=\"https://router.vuejs.org/en/\">Vue Router</a></li>\r\n<li><a href=\"https://vuex.vuejs.org/en/\">Vuex</a>(included only when using the&nbsp;<a href=\"https://nuxtjs.org/guide/vuex-store\">store option</a>)</li>\r\n<li><a href=\"https://ssr.vuejs.org/en/\">Vue Server Renderer</a>(excluded when using&nbsp;<a href=\"https://nuxtjs.org/api/configuration-mode\">mode: \'spa\'</a>)</li>\r\n<li><a href=\"https://github.com/declandewet/vue-meta\">vue-meta</a></li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>Sebelum itu kita harus menginstall <a href=\"https://nodejs.org/en/\"><strong>Node Js</strong></a>&nbsp;terlebih dahulu di dalam komputer, karena paket-paket yang ada di dalam <strong><em>Nuxt Js</em></strong>&nbsp;akan diunduh menggunakan <strong><em>NPM</em></strong>&nbsp;yang ada di dalam <a href=\"https://nodejs.org/en/\"><strong>Node Js</strong></a>.</p>\r\n<h2><a name=\"_Toc77662639\"></a><strong>Membuat Project Baru di Nuxt Js</strong></h2>\r\n<p>Setelah Node Js berhasil terinstall, sekarang kita bisa memembuat project baru di Nuxt Js dengan menggunakan <strong><em>NPX</em></strong>. Silahkan masuk ke dalam folder dimana kita akan menyimpan project-nya. Dan jalankan perintah berikut ini di dalam terminal/CMD :</p>\r\n<p>npx&nbsp;create-nuxt-app nuxt-crud</p>\r\n<p>Perintah di atas digunakan untuk membuat project Nuxt Js baru dengan nama nuxt-crud. Jika keluar pilihan, bisa ikuti seperti berikut ini :</p>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>PERINTAH</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AKSI</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Project name:</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Programming language:</p>\r\n</td>\r\n<td>\r\n<p>Pilih JavaScript dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Package manager:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Npm dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>UI framework:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Bootstrap Vue dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Nuxt.js modules:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Axios dengan tekan SPACE, kemudian ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Linting tools:</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Testing framework:</p>\r\n</td>\r\n<td>\r\n<p>Pilih None dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Rendering mode:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Universal (SSR / SSG) dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Deployment target:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Server (Node.js hosting) dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Development tools:</p>\r\n</td>\r\n<td>\r\n<p>Pilih jsconfig.json dengan tekan SPACE dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>What is your GitHub username?</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Version control system:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Git dan ENTER</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Setelah itu, silahkan tunggu proses installasi Nuxt Js sampai selesai, disini akan memakan waktu lebih lama jika sebelumnya belum pernah melakukan installasi Nuxt Js.</p>\r\n<h2><a name=\"_Toc77662640\"></a><strong>Menjalankan Nuxt Js</strong></h2>\r\n<p>Setelah proses installasi selesai, sekarang kita lanjutkan untuk menjalankan project Nuxt Js kita. Silahkan jalankan perintah berikut ini :</p>\r\n<p>cd&nbsp;nuxt-crud</p>\r\n<p>Perintah cd di atas digunakan untuk masuk ke dalam folder nuxt-crud. Setelah itu, jalankan perintah berikut ini :</p>\r\n<p>npm&nbsp;run dev</p>\r\n<p>Silahkan tunggu proses compile sampai selesai dan jika sudah selsai, maka aplikasi Nuxt Js kita akan dijalankan menggunakan port 3000 di dalam localhost.</p>\r\n<p>SIlahkan buka di browser dengan mengetikkan <a href=\"http://localhost:3000\">http://localhost:3000</a>&nbsp;jika berhasil, maka kuurang lebih seperti berikut ini :</p>\r\n<p><img src=\"../images/materi/materi1_gambar1_nuxt.png\" alt=\"\" /></p>\r\n<h2><strong>Struktur Folder</strong></h2>\r\n<p>Pada artikel sebelumnya kita telah berhasil menginstall&nbsp;<strong><em>Nuxt</em></strong>&nbsp;pada PC / Laptop kita, kira-kira struktur foldernya seperti ini :</p>\r\n<p>Pada struktur folder di atas terdapat beberapa folder yang berarti sebagai berikut :</p>\r\n<ul>\r\n<li><strong><em>Assets&nbsp;</em></strong>&mdash; Folder yang berfungsi untuk menyimpan aset-aset seperti file SASS/SCSS, LESS atau JavaScript</li>\r\n<li><strong><em>Components</em></strong>&mdash; Folder yang berfungsi untuk menyimpan&nbsp;<strong>component</strong>&nbsp;yang kita buat dengan&nbsp;<strong><em>JS Component</em></strong></li>\r\n<li><strong><em>Layouts</em></strong>&mdash; Folder yang berisi file&nbsp;<strong><em>.vue</em></strong>&nbsp;yang menjadi layout halaman&nbsp;<strong>(parent templates)</strong></li>\r\n<li><strong><em>Middleware</em></strong>&mdash; Folder yang berisi file JavaScript yang bisa kita gunakan untuk membuat fungsi sebelum / sesudah halaman di&nbsp;<strong>render&nbsp;</strong>misal&nbsp;<strong>Auth</strong>,&nbsp;<strong>Checking Store&nbsp;</strong></li>\r\n<li><strong><em>Pages</em></strong>&mdash; Folder utama yang berisi file&nbsp;<strong><em>.vue</em></strong>, dimana file-file&nbsp;<strong><em>.vue&nbsp;</em></strong>didalam folder ini akan di render menjadi&nbsp;<strong>View</strong>&nbsp;dan&nbsp;<strong>Router</strong>&nbsp;oleh&nbsp;<strong><em>Nuxt</em></strong></li>\r\n<li><strong><em>Plugins</em></strong>&mdash; Folder yang berisi file JavaScript (sama dengan&nbsp;<strong>Middleware</strong>) dan dapat kita jalankan sebelum&nbsp;<strong>instantiating</strong>&nbsp;pada&nbsp;<strong>root</strong>&nbsp;aplikasi</li>\r\n<li><strong><em>Static</em></strong>&mdash; Berisi semua file statis yang akan kita gunakan di aplikasi seperti robot.txt, image, favicon dll. Semua file di folder ini dapat langsung di akses dari root URL, misal&nbsp;<strong>/favicon.ico</strong>&nbsp;atau&nbsp;<strong>/robot.txt</strong>.</li>\r\n<li><strong><em>config.js</em></strong>&mdash; File ini untuk meng&ndash;konfigurasi aplikasi</li>\r\n<li><strong><em>json</em></strong>&mdash; File yang berisi dependensi dan script yang kita gunakan untuk menjalankan&nbsp;<strong><em>Nuxt</em></strong></li>\r\n</ul>\r\n<p><strong><em>Catatan :</em></strong></p>\r\n<p>Sebagai alias anda dapat menggunakan ~ atau @ untuk menujukan <strong>source directory&nbsp;</strong>, misal&nbsp;<strong>~/components/mobile/header.vue&nbsp;</strong>atau&nbsp;<strong>~/assets/img/cat.jpg</strong></p>\r\n<p>Serta ~~ dan @@ untuk menunjukan&nbsp;<strong>root directory</strong>.</p>\r\n<p>&nbsp;</p>\r\n<h2><strong>Referensi<br /></strong></h2>\r\n<p><iframe title=\"YouTube video player\" src=\"https://www.youtube.com/embed/jE0mrhT3ZIc\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe></p>\r\n<h2><strong>Tugas Latihan</strong></h2>\r\n<p>Modifikasi tulisan \"NUXT CRUD\"&nbsp; pada tampilan aplikasi saat pertama kali dijalankan menjadi tulisan Nama Mahasiswa</p>', '-', '', '', NULL, NULL, NULL, 'Suryo Atmojo', NULL, NULL, NULL, NULL, 3, '2023-06-07 14:56:38', '2023-06-07 15:56:42');
 
 -- ----------------------------
 -- Table structure for akademik_registrasi_praktikum
@@ -287,14 +302,120 @@ CREATE TABLE `akademik_registrasi_praktikum`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 110 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_registrasi_praktikum
 -- ----------------------------
-INSERT INTO `akademik_registrasi_praktikum` VALUES (1, '06312062', '3', '2023', NULL, NULL, NULL);
-INSERT INTO `akademik_registrasi_praktikum` VALUES (2, NULL, '4', NULL, NULL, '2023-06-07 04:50:18', '2023-06-07 04:50:18');
-INSERT INTO `akademik_registrasi_praktikum` VALUES (3, '16010012', '4', NULL, NULL, '2023-06-07 04:52:10', '2023-06-07 04:52:10');
+INSERT INTO `akademik_registrasi_praktikum` VALUES (1, '22053001', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (2, '22053003', '9', '2023', NULL, '2023-06-07 04:50:18', '2023-06-07 04:50:18');
+INSERT INTO `akademik_registrasi_praktikum` VALUES (3, '22053009', '9', '2023', NULL, '2023-06-07 04:52:10', '2023-06-07 04:52:10');
+INSERT INTO `akademik_registrasi_praktikum` VALUES (4, '22053010', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (5, '22053011', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (6, '22053013', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (7, '22053018', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (8, '22053022', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (9, '22053024', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (10, '22053028', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (11, '22053032', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (12, '22053034', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (13, '22053038', '9', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (14, '22053004', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (15, '22053005', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (16, '22053006', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (17, '22053007', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (18, '22053008', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (19, '22053012', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (20, '22053014', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (21, '22053015', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (22, '22053017', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (23, '22053019', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (24, '22053020', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (25, '22053021', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (26, '22053023', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (27, '22053025', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (28, '22053026', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (29, '22053027', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (30, '22053029', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (31, '22053030', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (32, '22053031', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (33, '22053033', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (34, '22053036', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (35, '22053037', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (36, '22053039', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (37, '22053040', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (38, '22053041', '10', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (39, '21053002', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (40, '21053005', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (41, '21053007', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (42, '21053009', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (43, '21053011', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (44, '21053013', '1', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (45, '21053001', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (46, '21053003', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (47, '21053004', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (48, '21053006', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (49, '21053008', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (50, '21053012', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (51, '21053016', '2', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (52, '20053006', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (53, '20053013', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (54, '20053016', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (55, '20053021', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (56, '20053028', '3', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (57, '19053025', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (58, '20053002', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (59, '20053003', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (60, '20053004', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (61, '20053005', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (62, '20053007', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (63, '20053009', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (64, '20053012', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (65, '20053014', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (66, '20053015', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (67, '20053017', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (68, '20053019', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (69, '20053020', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (70, '20053022', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (71, '20053023', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (72, '20053024', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (73, '20053026', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (74, '20053027', '4', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (75, '20053006', '5', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (76, '20053013', '5', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (77, '20053016', '5', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (78, '20053021', '5', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (79, '20053028', '5', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (80, '19053025', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (81, '20053002', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (82, '20053003', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (83, '20053004', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (84, '20053005', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (85, '20053007', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (86, '20053009', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (87, '20053014', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (88, '20053015', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (89, '20053017', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (90, '20053019', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (91, '20053020', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (92, '20053022', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (93, '20053023', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (94, '20053024', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (95, '20053026', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (96, '20053027', '6', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (97, '21053002', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (98, '21053005', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (99, '21053007', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (100, '21053009', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (101, '21053011', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (102, '21053013', '7', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (103, '21053001', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (104, '21053003', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (105, '21053004', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (106, '21053006', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (107, '21053008', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (108, '21053012', '8', '2023', NULL, NULL, NULL);
+INSERT INTO `akademik_registrasi_praktikum` VALUES (109, '21053016', '8', '2023', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for akademik_tutor
@@ -312,7 +433,7 @@ CREATE TABLE `akademik_tutor`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_tutor
@@ -387,7 +508,7 @@ CREATE TABLE `failed_jobs`  (
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `failed_jobs_uuid_unique`(`uuid` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of failed_jobs
@@ -402,7 +523,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of migrations
@@ -423,7 +544,7 @@ CREATE TABLE `model_has_permissions`  (
   PRIMARY KEY (`permission_id`, `model_id`, `model_type`) USING BTREE,
   INDEX `model_has_permissions_model_id_model_type_index`(`model_id` ASC, `model_type` ASC) USING BTREE,
   CONSTRAINT `model_has_permissions_ibfk_1` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of model_has_permissions
@@ -440,7 +561,7 @@ CREATE TABLE `model_has_roles`  (
   PRIMARY KEY (`role_id`, `model_id`, `model_type`) USING BTREE,
   INDEX `model_has_roles_model_id_model_type_index`(`model_id` ASC, `model_type` ASC) USING BTREE,
   CONSTRAINT `model_has_roles_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of model_has_roles
@@ -450,6 +571,80 @@ INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 4);
 INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 7);
 INSERT INTO `model_has_roles` VALUES (2, 'App\\Models\\User', 3);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 2);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 5);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 6);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 7);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 8);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 9);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 10);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 11);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 12);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 13);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 14);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 15);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 16);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 17);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 18);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 19);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 20);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 21);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 22);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 23);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 24);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 25);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 26);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 27);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 28);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 29);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 30);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 31);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 32);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 33);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 34);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 35);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 36);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 37);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 38);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 39);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 40);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 41);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 42);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 43);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 44);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 45);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 46);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 47);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 48);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 49);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 50);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 51);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 52);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 53);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 54);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 55);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 56);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 57);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 58);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 59);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 60);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 61);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 62);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 63);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 64);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 65);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 66);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 67);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 68);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 69);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 70);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 71);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 72);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 73);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 74);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 75);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 76);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 77);
+INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 78);
 
 -- ----------------------------
 -- Table structure for news
@@ -569,7 +764,7 @@ CREATE TABLE `order_models`  (
   `country_code` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `shiping_status` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1936 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 1936 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_models
@@ -1943,7 +2138,7 @@ CREATE TABLE `password_resets`  (
   `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of password_resets
@@ -1961,7 +2156,7 @@ CREATE TABLE `permissions`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `permissions_name_guard_name_unique`(`name` ASC, `guard_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of permissions
@@ -1986,7 +2181,7 @@ CREATE TABLE `role_has_permissions`  (
   INDEX `role_has_permissions_role_id_foreign`(`role_id` ASC) USING BTREE,
   CONSTRAINT `role_has_permissions_ibfk_1` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `role_has_permissions_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of role_has_permissions
@@ -2028,7 +2223,7 @@ CREATE TABLE `roles`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `roles_name_guard_name_unique`(`name` ASC, `guard_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of roles
@@ -2100,7 +2295,7 @@ CREATE TABLE `setting_route`  (
   `created_at` datetime NULL DEFAULT NULL,
   `update_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 95 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 95 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of setting_route
@@ -2247,14 +2442,88 @@ CREATE TABLE `users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'admin@gmail.com', NULL, NULL, '081217173406', '$2y$10$d5/YyDOALW5i/9CxEsbdsOaYrmMa6VrYY5MttBTlCFxfSeAKut3kW', 'superwpdev.png', NULL, '2023-05-09 02:43:39', '2023-05-09 02:43:39');
-INSERT INTO `users` VALUES (2, 'Suryo Atmojo', 'member@gmail.com', NULL, NULL, '085649224822', '$2y$10$Esqu6DF8NPSfCqKDXLcQ5uSSSWjaDAa.7PolahZYYmQiyMdgLInay', '', NULL, '2023-05-09 03:05:47', '2023-06-05 02:08:01');
-INSERT INTO `users` VALUES (3, 'atmojo', 'suryoatmojo@uwp.ac.id', NULL, NULL, NULL, '$2y$10$z/jeK7/cfQ.eGQuAP74wDOr53nmui.OiR9JYlQ6lMDaP85F.tAuey', NULL, NULL, '2023-05-11 08:37:39', '2023-05-12 02:44:03');
-INSERT INTO `users` VALUES (4, 'sigit', 'sigitwahyu05@gmail.com', NULL, NULL, NULL, '$2y$10$//L19Sf8c7gpp6RMstpgkulVv89vs96NZI19K2rPq.P.Q4qgwy08a', '', NULL, '2023-05-11 09:09:28', '2023-05-12 06:03:18');
+INSERT INTO `users` VALUES (1, 'admin', 'admin@gmail.com', NULL, NULL, '081217173406', '$2y$10$Op0DTeCLqs0I37bW2p1c0eO3IYK5RrwOHMf2eBZr.YYwW2qK8MNpW', 'superwpdev.png', NULL, '2023-05-09 02:43:39', '2023-06-07 14:35:52');
+INSERT INTO `users` VALUES (2, 'Suryo Atmojo', 'member@gmail.com', NULL, NULL, '085649224822', '$2y$10$ssdSyJJFKjOiEjjf.kgw/OaSkTjgZDS5FggmpdQAuvW6Ap4ryF7Am', '', NULL, '2023-05-09 03:05:47', '2023-06-07 14:35:52');
+INSERT INTO `users` VALUES (3, 'atmojo', 'suryoatmojo@uwp.ac.id', NULL, NULL, NULL, '$2y$10$q5cr0tfbsKWqu0BGcTAtROjU351J5b62Y90Y9GXPfd2wsgyWZjQOW', NULL, NULL, '2023-05-11 08:37:39', '2023-06-07 14:35:52');
+INSERT INTO `users` VALUES (4, 'sigit', 'sigitwahyu05@gmail.com', NULL, NULL, NULL, '$2y$10$U/ZZivfO7eko78u7nbbOuu7pC2Zfh6BxW4Q6Jltzf.WZWT7.zR/V2', '', NULL, '2023-05-11 09:09:28', '2023-06-07 14:35:52');
+INSERT INTO `users` VALUES (5, 'ARKILA RAKASYAH MERIYANTO ', '20053006@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$aVZTtatS87pydNELYOUQ1OCgGje0rHnoShqIjwVUXtbNQJ2DU7gaa', NULL, NULL, '2023-06-07 14:32:13', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (6, 'FERDIANUS FERNANDO ', '20053013@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$xpHhunQs4eYJmmlugSf3FO3UZWnN2ES5bk2ypdIrmGGhuQ1B9vWYq', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (7, 'HISYAM IB DANI ', '20053016@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$IiMC0ApT6aE5T8rE6X7K5OyVRBO7Z0uqO4j/sjOM9znK/ew1osYQ6', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (8, 'ACHMAD STEVANY DWI AGUSTIN ', '20053021@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$ZSO3I6/1RAarXSIs24FtBuOPbcmGOf3LXp5AwUHXfiZoRakmugF7C', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (9, 'MUHAMMAD SHUBHAN', '20053028@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$Uv9fZzhM2.5Dr4xFSmP/4OsZqkM3NbJf73NZqWXDDuO8rJ/aGrnqq', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (10, 'HARIS PRIAMBODO ', '19053025@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$oQzYnigh4oqqJbuqfpktiertDSku2tu4sUejRa98QdZaxrxSK1Tcu', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (11, 'SYAHRUL GALIH WIJAYA ', '20053002@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$g7WN3UOvGQsxAq5BoC4k1eTXxmXRXmG4/5OJxF0RVmIBPRUTjc8E6', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (12, 'ANDY RACHMAT PRASETYO ', '20053003@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$8ewd1fvuBHv0KRVUEmSiYucach9w5whzBEi/E6mCzbEKM1klunRNW', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (13, 'HENDRO IMAM SAPUTRO ', '20053004@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$Ew9dX0zUR1zOObvxFW1hb.Hu556DVaqjFOOHJ/zf3anNgMAj7gn3i', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (14, 'RIKKI WAHYU SAPUTRA ', '20053005@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$6IajvYuWwyBDRuN5xquJXOgYXvz6yL4OilJu4k7I/mSz/GOk2OQLS', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (15, 'INTAN RAHMA MONIKA ', '20053007@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$8XaIGqq87hVpSo7FEBStHeLgjljLmrxTxdf503TdDj.1BCQlrEpne', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (16, 'FRENKY FIRNANDO ANTONI ', '20053009@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$t77WClfiyyPyngl56.mq8eF7MlsN6QPSqCSfhlOW5w1TMEXFCCI7W', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (17, 'FAISAL RAHMA DANA WIDIANA PUTRA ', '20053014@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$4fMeHuiuv65IXXkFF3HGw..8dvRwETPqIjsNTuvlBWzolZHuzNZhu', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (18, 'MUHAMAD LUTFI ', '20053015@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$TG/yZktUmA99qSMJ2EIvNOnq2PXcvlB5wJ9T7FS9LJOmnk27CmrT6', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:53');
+INSERT INTO `users` VALUES (19, 'APRILIA INDRA ASANTI MAU ', '20053017@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$bSI6O5kCGAqXn4/ciQ7SmukmiWqufpKmHSRQv1/Nax6Oy4gZeSp/6', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (20, 'PRIO DWI SANTOSO ', '20053019@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$WOi2oW/l3OFQyQIvHgvaNuIBK8ykKOaU3eVKU2VWJls3IpQpvXb/i', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (21, 'ANA FEBRI YANTI ', '20053020@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$/likHX6/dOAcg0sVwLrzGuvJaZ4vfdfPHw610iD8p5ROhWC6bhaHm', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (22, 'YULIAN VARANTINO ', '20053022@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$X/88PofSn.6zMotSdtKPMOIBpsc2Ccb7167yBxGMDhaZayVJnO.pW', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (23, 'RANU ADHI PANGESTU ', '20053023@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$GE04d3nSDOe/xF47xtYaYugCAEqm33mtWsRYjjA7Hi414X4XgxKfm', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (24, 'PASKALIS HARSENDRO UTUN ', '20053024@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$j1EV8WIs6Df9cCEOqYwNietMG8iTm/VMfbJsJ1dmdYQjfLKM4Gmfe', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (25, 'DENISA DWI RULLYANE ', '20053026@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$gO3ElZd4gthYHT1bU4fcKu7pnixDaBGEHhXNJeD1rLOP/CohQtwzu', NULL, NULL, '2023-06-07 14:32:28', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (26, 'ALFIAN DARUL ILMI HUSADA SAMPURNO ', '20053027@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$YRNqwSkgiItBpcc3sKdrEOB6e8Z6mjLu19FEftVS9dQ/CbCY/mh1K', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (27, 'RAHMAWATI ', '22053001@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$cSkr1fMNgc6JAz0YV.886.btXrVCi5P77Lbd4BWRoyqpx/2rr2eOO', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (28, 'DEVINA INDAH PERMATASARI ', '22053003@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$jXNNORInFRpejLF/eFFPvuHqqpBmgOVrjysox/PrI84092mo200Le', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (29, 'RENDY PUTRA FRISANDI ', '22053009@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$j3maohD24tD55WWyElEdOO25.qoxP9Xkrohxyre8lbyHfKEF4v8um', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (30, 'MARSELINUS REINALDI ABANG ', '22053010@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$mCtJuat6BaHkBgkHXLEONOCfCdMtlAwtnGDXNJCVWAzPLpSctdrJy', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (31, 'FREDERICH EUGENE VERKINDS ', '22053011@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$0B0HtY9BMWEi/WYz8Hlu.eDUp1xa..m082j02Ph.qQo3rxtPe.vpS', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (32, 'ANDRIAN ARDIANSYAH ', '22053013@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$08rkwvLZ/.mbWALdQbI8C.NoHkvkE87vdx5kkDqP/A2onH.UspJVW', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (33, 'RIO SETIAWAN ', '22053018@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$VM42swOx6Vvq9bbLrxnMlu8H/M0wb1DDGMwWhSfoRbYb.pZDurJ5a', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:54');
+INSERT INTO `users` VALUES (34, 'RAFAEL SUGIANTO CELI NGGANGGUS ', '22053022@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$6SbP6CH8bfSk03Vfw3MUuO0saLwBkIuRtdexodb3wx37or9kl7dPu', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (35, 'NICHOLAS WIJAYA ', '22053024@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$ctUpi3twHngdN55HAPdZCu6wdwDoMuoRQRWQuGlelhsuVKX/j/m7S', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (36, 'RAFLI SANDIAR ', '22053028@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$O/CcYeZvjA9NJ9oH.eBzFOpQBrVCQA8V0SVS58kxbpPBtyjqUzici', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (37, 'MARIANUS LAMBERTUS ASAMAL ', '22053032@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$Wo8eFQh8PQX2wnBBjqDYy.jNoEAiQSWefWTvmYL6RTNT1cblCt4mi', NULL, NULL, '2023-06-07 14:32:29', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (38, 'ABDURRAHMAN GHOZI ULAA ADANI ', '22053034@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$xjJmK.v68gdC6E5z.N56l.SYxOJJKk6h4Hyqjy2IKx9ys8b8EAaCC', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (39, 'AHMAD SYAIFUDIN', '22053038@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$FArPgW0G105Z3WB8AErEXeH0tUjMlN7y.vDJAJbOwjGyZA5SteBT2', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (40, 'M.RIVALDY ALIF H. ', '22053004@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$MUKw/om4gaiXbpOAKh.ive2xfGh9M7f2XpTVjuceCZDs5LQUzSPz2', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (41, 'ANDIKA WICAKSONO ', '22053005@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$1mYpu61Sfw.3aTJCBida6.hqukkUYZugOK4JsHC9t1M5J3bFUUEim', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (42, 'RIZAL ANUGRAH MAULANA ', '22053006@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$TG.6mFBypO5WbFaf0OeqpO.5lHKpZrCmz5gM5RBPLyBfpivZuj8sS', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (43, 'GAUDENSIANA MARIANA HOAR ', '22053007@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$uGoMI6LrOM1MlOobHOOHy.d5DTgo1J6U.HbkZmCqtJkDf6fawzEey', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (44, 'ANANDA BAYU IRSAYD RIZQULLAH ', '22053008@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$nKU0R3z2x5.D/qNGVgCO7.l0N3JjcaoNT1I/tdN8YRlZDzHuKfzci', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (45, 'EVAN EMHA WIDYADHANA ', '22053012@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$zwrQwEfYsBTQ/n0P7T1buuDX9QhZ7p.QvxN6C2EGTaB2IVz.Xqrw2', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (46, 'FAEZA VANNY TAMA ', '22053014@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$lK8xMBZwFmiZENYKyHtOreJcHNVS2FMATl7nJyZw41UYwOMBj9u.2', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (47, 'HADYAN ADI NUGRAHA ', '22053015@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$J39N6DWy1LhMQRGgiEXULOALyAETSxyhJqblW1V1dhc0R8Vtqke62', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:55');
+INSERT INTO `users` VALUES (48, 'ANDRIANSYAH ', '22053017@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$fOl/TtPGcY.itpT1uq36Qu5ebvtq6yiGKX2gBWUm39/Rk2j2unF12', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (49, 'HENDRY VIO RAMADHAN ', '22053019@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$0CXddgoNMM8200OLm6qjn.YTLKqRnj.NMhnGi57dLzxQcoQ4ePz6C', NULL, NULL, '2023-06-07 14:32:30', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (50, 'MUHAMMAD HAMDANI ', '22053020@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$b0hTvUS/611MoA795IDquuREI8Bl5/ibtnMH1BtPtnfniKtMRkkbO', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (51, 'PETRUS DARUNG ', '22053021@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$mxiugZA7Zj9Hg9NBYqsDnOSJse1.B2JdLcpGfECdf9qdU6NU9.qny', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (52, 'RYAN SAKTI SAPUTERA ', '22053023@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$F7JOd6PuaGRKbzFfwOAbWuhEsqJfKf1F0Yahq8EtXj7dtSGyM9iRG', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (53, 'YORDAN SAPUTRA ', '22053025@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$kIe0HhnHbJ/MOWqZ/k2gVuVBZvf6IZCVv.j8cCIEW6XNRv4t888A.', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (54, 'MUHAMMAD SIGIT RACHMATULLOH ', '22053026@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$VdXFAcgD9xFjMiNkgpuGeOjRZq7H6QuRlENXYnRaZhth07on5CR.a', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (55, 'FARREL MARFANEMO HAMZAH ', '22053027@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$boZxl5M3omJP2xHogKEeIu2KRR/CQ09aLNt4jnydBTIAWMU1Fan9q', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (56, 'ANDREW ', '22053029@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$EIwU/JTBWZRu5Qif5ScV0eyaSCkvooq9nzpv8AkQ1Lm9FkF7IrEui', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (57, 'MAULANA ALIF ARRAZAQ ', '22053030@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$QbhM2gbaIef3g8zadP8w7.zuQwI2.9gsjfJsEChCZM7Bms2mggH3C', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (58, 'REZZA PURNAMA BHIRAWA ANORAGA ', '22053031@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$nCJrr4rpyqUZPB0sxd3yNOjRdJ36SApuMCinJ/EXv00NpP4ZxzIyy', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (59, 'SYAHRUL RESNAN ADITIYA ', '22053033@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$lyOTRQy/YHLR5MCRdznez.Vo1EEBO2cknrGub2LSD2Ml8686RTId6', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (60, 'INZHAGI DEWAN RACHMANDIANSYAH ', '22053036@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$B0PMn9148hR1r0Fam2HeNeUxRk108rhjm3eyRkMvbXSatrBwKPO0K', NULL, NULL, '2023-06-07 14:32:31', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (61, 'WILLY THIMOTY SIPAHUTAR ', '22053037@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$LmmA4u5gOvBe2yvMOP2JD.hZAPJ8mzY6p/j5849A49u8IdmAGYoeG', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:56');
+INSERT INTO `users` VALUES (62, 'BUSRA RONO ', '22053039@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$r2lAH81B1lSC3UBJI0usuO7N1LuNztYIDiF21BFmh6YEtJw1TJiMq', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (63, 'RENDY IRAWAN ', '22053040@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$uevWuwAvSk5B7AZfgQ.3ZeYKPCcsqAGrAp4pXa2p.MHWXHU8.6TQS', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (64, 'NOVALITA KRISTIANI TAUR', '22053041@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$sh7LkrN9f1M4Wc3hQE2gVePcNk5wpUFNwP/k6Ueg.l.MXk2l2ElHG', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (65, 'MOCH NUR FAIZIN ', '21053002@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$ZcvqDEh/IsL3cunQngU6CeWCxh1wbMETNsDrKIdom2aSf9hJv6AYG', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (66, 'LAILY ALFINA WULANSARI ', '21053005@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$PeWBzuIPEhwSsF.FuAuRUOwa1PF3jTX0xJclDQsFJGMQQ2LMX26Me', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (67, 'ANDI FAIZAL CAHYADI ', '21053007@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$9wIEab2sEDD85HjYmSSbJ.SCaYIFAmLSxs5nSXha/naSfQtzJK63O', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (68, 'MUHAMMAD REYHAN RIZQI ', '21053009@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$HcEit5I6FN8gvOfgOkmFEeg3leH.xtqFwt.uIJQkvoId.YGb/0YwO', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (69, 'ROSZI SYADILLAL JANNAH ', '21053011@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$YMs115m6gwbMvIu4hDAt7uMry40m3eAc/EN7qUvTv.hV4W.NQSbAu', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (70, 'MUHAMMAD IQBAL IZZA ', '21053013@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$U9NxSigDnAtqh4AumzhEmuDe4yir.WpvqN1ZAo7YE3FPPRPJ7WzsG', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (71, 'DIKA PERTAMANINGTYAS RAHAYU ', '21053001@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$9u1DCvWQLEyGPRQ2czLIYuKb6ggwGyCDQRrTS5yjoDKZ323ZoFv7y', NULL, NULL, '2023-06-07 14:32:32', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (72, 'RIONALDY AURIEL ARDANA ', '21053003@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$qQ2YaKiyorXwQk9uf9CYxuBIeuBmKWm9y.huKBSp66jUXc/TBPl/q', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (73, 'FAHRIZAL AULIA RACHMAN ', '21053004@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$66Dsm.sxuAr.ar79w9VBguIXrGGebEV7T6m5twyzu5OVq8WJj3KxK', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (74, 'HERU HERMANTO ', '21053006@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$BnYhouxYoA901r91Cf3.QuZBvxDN3ONs7QnZrYL5X4IZ8Jiul1l5.', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:35:57');
+INSERT INTO `users` VALUES (75, 'SULTAN AULIA RACHMAN ASNATH ', '21053008@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$T88uNtaqIck7U9q4Tb6eqOWlnzT85jxYdmOp3xZznwP3515JOX.7O', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:35:58');
+INSERT INTO `users` VALUES (76, 'AMNDAN DWI YANTO ', '21053012@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
+INSERT INTO `users` VALUES (77, 'MOHAMMAD RAMADHAN ADLY NADIF ', '21053016@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
+INSERT INTO `users` VALUES (78, 'BAYU TRIYA SAPUTRA ', '20053012@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
 
 SET FOREIGN_KEY_CHECKS = 1;
