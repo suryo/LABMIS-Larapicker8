@@ -52,7 +52,7 @@
           <!--begin::Actions-->
           <div class="d-flex align-items-center gap-2 gap-lg-3">
             <!--begin::Filter menu-->
-            <div class="m-0">
+            <div class="m-0 {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}">
               <!--begin::Menu toggle-->
               <a href="#" class="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
               <i class="ki-duotone ki-filter fs-6 text-muted me-1">
@@ -142,7 +142,7 @@
             <!--end::Secondary button-->
             <!--begin::Primary button-->
             {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
-            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_praktikum">
+            <button type="button" class="btn btn-sm btn-primary {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_praktikum">
               <i class="ki-duotone ki-plus "></i>Add PRAKTIKUM</button>
             <!--end::Primary button-->
           </div>
@@ -448,7 +448,7 @@
 <th class="min-w-125px sorting">JAM SELESAI</th>
 
 
-<th class="text-center min-w-100px sorting_disabled">ACTION</th>
+<th class="text-center min-w-100px sorting_disabled {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}">ACTION</th>
    
     </tr>
   </thead>
@@ -462,7 +462,7 @@
         <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_mulai,25) }}</a></td>
         <td><a href="{{ route("akademik_praktikum.show",$akademik_praktikum->id_praktikum) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum->jam_selesai,25) }}</a></td>
 <td class="text-end">
-      <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
+      <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm {{Auth::user()->hasRole('Admin') ? "" : "d-none"}}" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
         <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
         <!--begin::Menu-->
         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">

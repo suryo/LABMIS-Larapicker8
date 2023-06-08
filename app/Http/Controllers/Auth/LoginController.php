@@ -80,7 +80,7 @@ class LoginController extends Controller
         else if ($user->hasRole('admin02')) {
             return redirect('/dashboard');
         } else  if ($user->hasRole('Member')) {
-            return redirect('/member/board');
+            return redirect('/member/mylearning');
             // $totalcart = Cart::getTotal();
             // if ($totalcart == 0) {
             //     return redirect('/member/board');
