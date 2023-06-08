@@ -14,7 +14,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../../../"/>
-		<title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
+		<title>Informatics UWP</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -85,12 +85,12 @@ License: For each use you must have a valid license purchased only from above li
 									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
 									<!--end::Title-->
 									<!--begin::Subtitle-->
-									<div class="text-gray-500 fw-semibold fs-6">Your Social Campaigns</div>
+									<div class="text-gray-500 fw-semibold fs-6">INFORMATICS LAB - MANAGEMENT INFORMATION SYSTEM</div>
 									<!--end::Subtitle=-->
 								</div>
 								<!--begin::Heading-->
 								<!--begin::Login options-->
-								<div class="row g-3 mb-9">
+								<div class="row g-3 mb-9 d-none">
 									<!--begin::Col-->
 									<div class="col-md-6">
 										<!--begin::Google link=-->
@@ -111,7 +111,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Login options-->
 								<!--begin::Separator-->
-								<div class="separator separator-content my-14">
+								<div class="separator separator-content my-14 d-none">
 									<span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
 								</div>
 								<!--end::Separator-->
@@ -139,7 +139,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Input group=-->
 								<!--begin::Wrapper-->
-								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
+								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8 d-none">
 									<div></div>
 									<!--begin::Link-->
 									<a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a>
@@ -160,7 +160,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
+								<div class="text-gray-500 text-center fw-semibold fs-6 d-none">Not a Member yet?
 								<a href="{{ route('register') }}" class="link-primary">Sign up</a></div>
 								<!--end::Sign up-->
 							</form>
@@ -168,7 +168,7 @@ License: For each use you must have a valid license purchased only from above li
 						</div>
 						<!--end::Wrapper-->
 						<!--begin::Footer-->
-						<div class="d-flex flex-stack px-lg-10">
+						<div class="d-flex flex-stack px-lg-10 d-none">
 							<!--begin::Languages-->
 							<div class="me-0">
 								<!--begin::Toggle-->
