@@ -60,7 +60,7 @@ $dataresource = array(
 );
 
 Route::resource('setting_menu', Setting_menuController::class);
-Route::resource('permissions', dPermissionsController::class);
+Route::resource('permissions', PermissionsController::class);
 // Route::resource($dataresource[2][0], Setting_webController::class);
 //Route::resource($res_setting_route[0]->route_name, 'App\Http\Controllers\Back\Setting_web\Setting_webController');
 

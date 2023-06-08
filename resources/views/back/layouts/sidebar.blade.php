@@ -6,7 +6,7 @@
             <!--begin:Menu item-->
            
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('dashboard')}}">
                     <span class="menu-icon">
@@ -53,6 +53,7 @@
             @endphp
 
             @foreach ($res_label as $label)
+            @can($label->menu_name.'-label')
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
                     <div class="menu-content">
@@ -60,11 +61,12 @@
                     </div>
                     <!--end:Menu content-->
                 </div>
-
+            @endcan
                 @foreach ($label->menu as $menu)
-
+                    
                     @if (count($menu->submenu)!=null)
                         <!--begin:Menu item-->
+                        @can($menu->menu_name.'-menu')
                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
@@ -103,8 +105,10 @@
                             </div>
                             <!--end:Menu sub-->
                         </div>
+                        @endcan
                         <!--end:Menu item-->
                     @else
+                    @can($menu->menu_url.'-menu')
                         <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link" href="{{ url('') }}/{{ $menu->menu_url }}">
@@ -118,11 +122,12 @@
                             </a>
                             <!--end:Menu link-->
                         </div>
+                        @endcan
                     @endif
                 @endforeach
             @endforeach
 
-            <div class="menu-item pt-5">
+            <div class="menu-item pt-5 {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu content-->
                 <div class="menu-content">
                     <span class="menu-heading fw-bold text-uppercase fs-7">Setting</span>
@@ -130,7 +135,7 @@
                 <!--end:Menu content-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="">
                     <span class="menu-icon">
@@ -144,7 +149,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="">
                     <span class="menu-icon">
@@ -158,7 +163,8 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="" target="_blank">
                     <span class="menu-icon">
@@ -172,7 +178,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item pt-5">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }} pt-5">
                 <!--begin:Menu content-->
                 <div class="menu-content">
                     <span class="menu-heading fw-bold text-uppercase fs-7">Tools</span>
@@ -180,7 +186,7 @@
                 <!--end:Menu content-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{ url('crud') }}" target="_blank">
                     <span class="menu-icon">
@@ -194,7 +200,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{ url('apibuilder') }}">
                     <span class="menu-icon">
@@ -208,7 +214,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{ url('/') }}" target="_blank">
                     <span class="menu-icon">
@@ -222,7 +228,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item {{ Auth::user()->hasRole('Admin') ? "" : "d-none" }}">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{ url('/setting_menu') }}" target="_blank">
                     <span class="menu-icon">

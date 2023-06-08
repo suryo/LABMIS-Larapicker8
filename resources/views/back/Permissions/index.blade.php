@@ -9,7 +9,7 @@
                   <div class="card">
                       <div class="card-body">
                           @can("product-create")
-                              <a class="btn btn-success" href="{{ route("akademik_dosen.create") }}"> Create New Akademik_dosen</a>
+                              <a class="btn btn-success" href="{{ route("permissions.create") }}"> Create New Permissions</a>
                           @endcan
         
                       </div>
@@ -28,7 +28,7 @@
                   <!--begin::Page title-->
                   <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">DOSEN LIST</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">PERMISSIONS LIST</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -43,7 +43,7 @@
                       </li>
                       <!--end::Item-->
                       <!--begin::Item-->
-                      <li class="breadcrumb-item text-muted">DOSEN</li>
+                      <li class="breadcrumb-item text-muted">PERMISSIONS</li>
                       <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -142,10 +142,8 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
-                    @can('akademik_dosen-create')
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_dosen">
-                      <i class="ki-duotone ki-plus "></i>Add DOSEN</button>
-                      @endcan
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Permissions">
+                      <i class="ki-duotone ki-plus "></i>Add PERMISSIONS</button>
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -155,18 +153,18 @@
               <!--end::Toolbar-->
         
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
-              <div class="modal fade" id="kt_modal_add_Akademik_dosen" tabindex="-1" aria-hidden="true">
+              <div class="modal fade" id="kt_modal_add_Permissions" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_Akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_Permissions_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">ADD DOSEN</h2>
+                      <h2 class="fw-bold">ADD PERMISSIONS</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Permissionss-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -178,19 +176,19 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {!! Form::open(array("route" => "akademik_dosen.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
-                      {{-- <form id="kt_modal_add_Akademik_dosen_form" class="form" action="#"> --}}
+                      {!! Form::open(array("route" => "permissions.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                      {{-- <form id="kt_modal_add_Permissions_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
-                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_dosen_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_dosen_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_dosen_scroll" data-kt-scroll-offset="300px">
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Permissions_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Permissions_header" data-kt-scroll-wrappers="#kt_modal_add_Permissions_scroll" data-kt-scroll-offset="300px">
                          
                           
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", null, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("name", null, array("placeholder" => "NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -198,54 +196,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">GUARD NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", null, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", null, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", null, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">STATUS</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("status", null, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("guard_name", null, array("placeholder" => "GUARD NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -255,8 +209,8 @@
                         <!--end::Scroll-->
                         <!--begin::Actions-->
                         <div class="text-center pt-15">
-                          <button type="reset" class="btn btn-light me-3" data-kt-Akademik_dosen-modal-action="cancel">Discard</button>
-                          <button type="submit" class="btn btn-primary" data-kt-Akademik_dosen-modal-action="submit">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Permissions-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Permissions-modal-action="submit">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -272,22 +226,22 @@
                 </div>
                 <!--end::Modal dialog-->
               </div>
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_dosen-->
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Permissions-->
       
-              @foreach ($data as $key => $akademik_dosen)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Akademik_dosen-->
-              <div class="modal fade" id="kt_modal_edit_akademik_dosen{{ $akademik_dosen->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $permissions)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Permissions-->
+              <div class="modal fade" id="kt_modal_edit_permissions{{ $permissions->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_permissions_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">EDIT DOSEN</h2>
+                      <h2 class="fw-bold">EDIT PERMISSIONS</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-permissionss-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -299,8 +253,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "akademik_dosen.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($akademik_dosen, ["method" => "PATCH","route" => ["akademik_dosen.update", $akademik_dosen->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "permissions.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($permissions, ["method" => "PATCH","route" => ["permissions.update", $permissions->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -308,10 +262,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", $akademik_dosen->nip, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("name", $permissions->name, array("placeholder" => "NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -319,54 +273,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">GUARD NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", $akademik_dosen->nama, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="{{$akademik_dosen->alamat}}" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", $akademik_dosen->email, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", $akademik_dosen->phone_wa, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">STATUS</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("status", $akademik_dosen->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("guard_name", $permissions->guard_name, array("placeholder" => "GUARD NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -395,20 +305,20 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - Edit user-->
               @endforeach
 
-              @foreach ($data as $key => $akademik_dosen)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowAkademik_dosen-->
-              <div class="modal fade" id="kt_modal_show_akademik_dosen{{ $akademik_dosen->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $permissions)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowPermissions-->
+              <div class="modal fade" id="kt_modal_show_permissions{{ $permissions->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_permissions_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">DETAIL DOSEN</h2>
+                      <h2 class="fw-bold">DETAIL PERMISSIONS</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-permissionss-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -420,8 +330,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "akademik_dosen.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($akademik_dosen, ["method" => "PATCH","route" => ["akademik_dosen.update", $akademik_dosen->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "permissions.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($permissions, ["method" => "PATCH","route" => ["permissions.update", $permissions->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -432,7 +342,7 @@
                 <label class=" fw-semibold fs-6 mb-2">ID</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$akademik_dosen->id}}" />
+                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$permissions->id}}" />
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -440,10 +350,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", $akademik_dosen->nip, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("name", $permissions->name, array("placeholder" => "NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -451,54 +361,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">GUARD NAME</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", $akademik_dosen->nama, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="{{$akademik_dosen->alamat}}" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", $akademik_dosen->email, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", $akademik_dosen->phone_wa, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">STATUS</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("status", $akademik_dosen->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("guard_name", $permissions->guard_name, array("placeholder" => "GUARD NAME","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -535,24 +401,22 @@
                   <!--begin::Card-->
                   <div class="card">
                     <div class="card-body">
-      @can('akademik_dosen-list')
-        
-      
+                      
       <div class="table-responsive">
                           <table id="datatable-buttons" class="table align-middle table-striped  table-row-dashed fs-6 gy-5 dt-responsive nowrap"
                               style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Nip</th><th class="min-w-125px sorting">Nama</th><th class="min-w-125px sorting">Email</th><th class="min-w-125px sorting">Phone Wa</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Name</th><th class="min-w-125px sorting">Guard Name</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
           <tbody>
-            @foreach ($data as $key => $akademik_dosen)
+            @foreach ($data as $key => $permissions)
                 <tr>
-                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    <td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->nip,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->nama,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->email,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->phone_wa,25) }}</a></td>
+                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("permissions.show",$permissions->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
+                    <td><a href="{{ route("permissions.show",$permissions->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($permissions->name,25) }}</a></td><td><a href="{{ route("permissions.show",$permissions->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($permissions->guard_name,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
@@ -560,19 +424,19 @@
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_akademik_dosen{{ $akademik_dosen->id }}">Show</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_permissions{{ $permissions->id }}">Show</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_dosen{{ $akademik_dosen->id }}">Edit</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_permissions{{ $permissions->id }}">Edit</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_dosen.destroy", $akademik_dosen->id],"style"=>"display:inline"]) !!}
+                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["permissions.destroy", $permissions->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
-                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_dosens-table-filter="delete_row"> Delete</a>
+                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-permissionss-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
                   
                   </div>
@@ -588,7 +452,6 @@
           </tbody>
           </table>
           </div>
-          @endcan
       
                     </div>
         

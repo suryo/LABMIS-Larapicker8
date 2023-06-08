@@ -9,7 +9,7 @@
                   <div class="card">
                       <div class="card-body">
                           @can("product-create")
-                              <a class="btn btn-success" href="{{ route("akademik_dosen.create") }}"> Create New Akademik_dosen</a>
+                              <a class="btn btn-success" href="{{ route("akademik_praktikum_jurnal.create") }}"> Create New Akademik_praktikum_jurnal</a>
                           @endcan
         
                       </div>
@@ -28,7 +28,7 @@
                   <!--begin::Page title-->
                   <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <!--begin::Title-->
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">DOSEN LIST</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">PRAKTIKUM JURNAL LIST</h1>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -43,7 +43,7 @@
                       </li>
                       <!--end::Item-->
                       <!--begin::Item-->
-                      <li class="breadcrumb-item text-muted">DOSEN</li>
+                      <li class="breadcrumb-item text-muted">PRAKTIKUM JURNAL</li>
                       <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -142,10 +142,8 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
-                    @can('akademik_dosen-create')
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_dosen">
-                      <i class="ki-duotone ki-plus "></i>Add DOSEN</button>
-                      @endcan
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_praktikum_jurnal">
+                      <i class="ki-duotone ki-plus "></i>Add PRAKTIKUM JURNAL</button>
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -155,18 +153,18 @@
               <!--end::Toolbar-->
         
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Add task-->
-              <div class="modal fade" id="kt_modal_add_Akademik_dosen" tabindex="-1" aria-hidden="true">
+              <div class="modal fade" id="kt_modal_add_Akademik_praktikum_jurnal" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_Akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_Akademik_praktikum_jurnal_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">ADD DOSEN</h2>
+                      <h2 class="fw-bold">ADD PRAKTIKUM JURNAL</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-Akademik_praktikum_jurnals-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -178,19 +176,19 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {!! Form::open(array("route" => "akademik_dosen.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
-                      {{-- <form id="kt_modal_add_Akademik_dosen_form" class="form" action="#"> --}}
+                      {!! Form::open(array("route" => "akademik_praktikum_jurnal.store","method"=>"POST","enctype"=>"multipart/form-data")) !!}
+                      {{-- <form id="kt_modal_add_Akademik_praktikum_jurnal_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
-                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_dosen_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_dosen_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_dosen_scroll" data-kt-scroll-offset="300px">
+                        <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_Akademik_praktikum_jurnal_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_Akademik_praktikum_jurnal_header" data-kt-scroll-wrappers="#kt_modal_add_Akademik_praktikum_jurnal_scroll" data-kt-scroll-offset="300px">
                          
                           
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", null, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", null, array("placeholder" => "ID JADWAL PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -198,43 +196,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">KETERANGAN</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", null, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", null, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", null, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("keterangan", null, array("placeholder" => "KETERANGAN","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -250,13 +215,35 @@
               </div>
               <!--end::Input group-->
               
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">CREATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("created_by", null, array("placeholder" => "CREATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">UPDATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("updated_by", null, array("placeholder" => "UPDATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
                          
                         </div>
                         <!--end::Scroll-->
                         <!--begin::Actions-->
                         <div class="text-center pt-15">
-                          <button type="reset" class="btn btn-light me-3" data-kt-Akademik_dosen-modal-action="cancel">Discard</button>
-                          <button type="submit" class="btn btn-primary" data-kt-Akademik_dosen-modal-action="submit">
+                          <button type="reset" class="btn btn-light me-3" data-kt-Akademik_praktikum_jurnal-modal-action="cancel">Discard</button>
+                          <button type="submit" class="btn btn-primary" data-kt-Akademik_praktikum_jurnal-modal-action="submit">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -272,22 +259,22 @@
                 </div>
                 <!--end::Modal dialog-->
               </div>
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_dosen-->
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - add Akademik_praktikum_jurnal-->
       
-              @foreach ($data as $key => $akademik_dosen)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Akademik_dosen-->
-              <div class="modal fade" id="kt_modal_edit_akademik_dosen{{ $akademik_dosen->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $akademik_praktikum_jurnal)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - Edit Akademik_praktikum_jurnal-->
+              <div class="modal fade" id="kt_modal_edit_akademik_praktikum_jurnal{{ $akademik_praktikum_jurnal->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_akademik_praktikum_jurnal_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">EDIT DOSEN</h2>
+                      <h2 class="fw-bold">EDIT PRAKTIKUM JURNAL</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_praktikum_jurnals-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -299,8 +286,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "akademik_dosen.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($akademik_dosen, ["method" => "PATCH","route" => ["akademik_dosen.update", $akademik_dosen->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "akademik_praktikum_jurnal.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($akademik_praktikum_jurnal, ["method" => "PATCH","route" => ["akademik_praktikum_jurnal.update", $akademik_praktikum_jurnal->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -308,10 +295,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", $akademik_dosen->nip, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", $akademik_praktikum_jurnal->id_jadwal_praktikum, array("placeholder" => "ID JADWAL PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -319,43 +306,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">KETERANGAN</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", $akademik_dosen->nama, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="{{$akademik_dosen->alamat}}" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", $akademik_dosen->email, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", $akademik_dosen->phone_wa, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("keterangan", $akademik_praktikum_jurnal->keterangan, array("placeholder" => "KETERANGAN","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -366,7 +320,29 @@
                 <label class=" fw-semibold fs-6 mb-2">STATUS</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("status", $akademik_dosen->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("status", $akademik_praktikum_jurnal->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">CREATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("created_by", $akademik_praktikum_jurnal->created_by, array("placeholder" => "CREATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">UPDATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("updated_by", $akademik_praktikum_jurnal->updated_by, array("placeholder" => "UPDATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -395,20 +371,20 @@
               <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end::Modal - Edit user-->
               @endforeach
 
-              @foreach ($data as $key => $akademik_dosen)
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowAkademik_dosen-->
-              <div class="modal fade" id="kt_modal_show_akademik_dosen{{ $akademik_dosen->id }}" tabindex="-1" aria-hidden="true">
+              @foreach ($data as $key => $akademik_praktikum_jurnal)
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin::Modal - ShowAkademik_praktikum_jurnal-->
+              <div class="modal fade" id="kt_modal_show_akademik_praktikum_jurnal{{ $akademik_praktikum_jurnal->id }}" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
                 <div class="modal-dialog modal-dialog-centered mw-650px">
                   <!--begin::Modal content-->
                   <div class="modal-content">
                     <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_add_akademik_dosen_header">
+                    <div class="modal-header" id="kt_modal_add_akademik_praktikum_jurnal_header">
                       <!--begin::Modal title-->
-                      <h2 class="fw-bold">DETAIL DOSEN</h2>
+                      <h2 class="fw-bold">DETAIL PRAKTIKUM JURNAL</h2>
                       <!--end::Modal title-->
                       <!--begin::Close-->
-                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_dosens-modal-action="close">
+                      <div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" data-kt-akademik_praktikum_jurnals-modal-action="close">
                         <i class="ki-duotone ki-cross fs-1">
                           <span class="path1"></span>
                           <span class="path2"></span>
@@ -420,8 +396,8 @@
                     <!--begin::Modal body-->
                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                       <!--begin::Form-->
-                      {{-- {!! Form::open(array("route" => "akademik_dosen.update","method"=>"POST")) !!} --}}
-                      {!! Form::model($akademik_dosen, ["method" => "PATCH","route" => ["akademik_dosen.update", $akademik_dosen->id], "enctype"=>"multipart/form-data"]) !!}
+                      {{-- {!! Form::open(array("route" => "akademik_praktikum_jurnal.update","method"=>"POST")) !!} --}}
+                      {!! Form::model($akademik_praktikum_jurnal, ["method" => "PATCH","route" => ["akademik_praktikum_jurnal.update", $akademik_praktikum_jurnal->id], "enctype"=>"multipart/form-data"]) !!}
                       {{-- <form id="kt_modal_add_user_form" class="form" action="#"> --}}
                         <!--begin::Scroll-->
                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -432,7 +408,7 @@
                 <label class=" fw-semibold fs-6 mb-2">ID</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$akademik_dosen->id}}" />
+                <input type="number" name="id" class="form-control form-control-sm form-control-solid" placeholder="id" value="{{$akademik_praktikum_jurnal->id}}" />
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -440,10 +416,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NIP</label>
+                <label class=" fw-semibold fs-6 mb-2">ID JADWAL PRAKTIKUM</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nip", $akademik_dosen->nip, array("placeholder" => "NIP","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("id_jadwal_praktikum", $akademik_praktikum_jurnal->id_jadwal_praktikum, array("placeholder" => "ID JADWAL PRAKTIKUM","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -451,43 +427,10 @@
               <!--begin::Input group-->
               <div class="fv-row mb-7">
                 <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">NAMA</label>
+                <label class=" fw-semibold fs-6 mb-2">KETERANGAN</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("nama", $akademik_dosen->nama, array("placeholder" => "NAMA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">ALAMAT</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                <input type="text" name="alamat" class="form-control form-control-sm form-control-solid" placeholder="alamat" value="{{$akademik_dosen->alamat}}" />
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">EMAIL</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("email", $akademik_dosen->email, array("placeholder" => "EMAIL","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
-                <!--end::Input-->
-              </div>
-              <!--end::Input group-->
-              
-              <!--begin::Input group-->
-              <div class="fv-row mb-7">
-                <!--begin::Label-->
-                <label class=" fw-semibold fs-6 mb-2">PHONE WA</label>
-                <!--end::Label-->
-                <!--begin::Input-->
-                {!! Form::text("phone_wa", $akademik_dosen->phone_wa, array("placeholder" => "PHONE WA","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("keterangan", $akademik_praktikum_jurnal->keterangan, array("placeholder" => "KETERANGAN","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -498,7 +441,29 @@
                 <label class=" fw-semibold fs-6 mb-2">STATUS</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                {!! Form::text("status", $akademik_dosen->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                {!! Form::text("status", $akademik_praktikum_jurnal->status, array("placeholder" => "STATUS","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">CREATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("created_by", $akademik_praktikum_jurnal->created_by, array("placeholder" => "CREATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
+                <!--end::Input-->
+              </div>
+              <!--end::Input group-->
+              
+              <!--begin::Input group-->
+              <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label class=" fw-semibold fs-6 mb-2">UPDATED BY</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                {!! Form::text("updated_by", $akademik_praktikum_jurnal->updated_by, array("placeholder" => "UPDATED BY","class" => "form-control form-control-solid mb-3 mb-lg-0")) !!}
                 <!--end::Input-->
               </div>
               <!--end::Input group-->
@@ -535,24 +500,22 @@
                   <!--begin::Card-->
                   <div class="card">
                     <div class="card-body">
-      @can('akademik_dosen-list')
-        
-      
+                      
       <div class="table-responsive">
                           <table id="datatable-buttons" class="table align-middle table-striped  table-row-dashed fs-6 gy-5 dt-responsive nowrap"
                               style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                               <thead>
                                   <tr>
                                       <th class="min-w-50px sorting">NO</th>                             
-      <th class="min-w-125px sorting">Nip</th><th class="min-w-125px sorting">Nama</th><th class="min-w-125px sorting">Email</th><th class="min-w-125px sorting">Phone Wa</th><th class="text-center min-w-100px sorting_disabled">Action</th>
+      <th class="min-w-125px sorting">Id Jadwal Praktikum</th><th class="min-w-125px sorting">Tanggal</th><th class="text-center min-w-100px sorting_disabled">Action</th>
            
             </tr>
           </thead>
           <tbody>
-            @foreach ($data as $key => $akademik_dosen)
+            @foreach ($data as $key => $akademik_praktikum_jurnal)
                 <tr>
-                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
-                    <td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->nip,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->nama,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->email,25) }}</a></td><td><a href="{{ route("akademik_dosen.show",$akademik_dosen->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_dosen->phone_wa,25) }}</a></td>
+                    <td style="color:rgba(80, 74, 74, 0.333)" class=" align-items-center text-center"> <a href="{{ route("akademik_praktikum_jurnal.show",$akademik_praktikum_jurnal->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ ++$i }}</a></td>
+                    <td><a href="{{ route("akademik_praktikum_jurnal.show",$akademik_praktikum_jurnal->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum_jurnal->id_jadwal_praktikum,25) }}</a></td><td><a href="{{ route("akademik_praktikum_jurnal.show",$akademik_praktikum_jurnal->id) }}" class="text-gray-800 text-hover-primary mb-1">{{ Str::limit($akademik_praktikum_jurnal->tanggal,25) }}</a></td>
       <td class="text-end">
               <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
@@ -560,19 +523,19 @@
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_akademik_dosen{{ $akademik_dosen->id }}">Show</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_show_akademik_praktikum_jurnal{{ $akademik_praktikum_jurnal->id }}">Show</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_dosen{{ $akademik_dosen->id }}">Edit</a>
+                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_praktikum_jurnal{{ $akademik_praktikum_jurnal->id }}">Edit</a>
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
                   <div class="menu-item px-3">
-                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_dosen.destroy", $akademik_dosen->id],"style"=>"display:inline"]) !!}
+                    {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_praktikum_jurnal.destroy", $akademik_praktikum_jurnal->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
-                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_dosens-table-filter="delete_row"> Delete</a>
+                    <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_praktikum_jurnals-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
                   
                   </div>
@@ -588,7 +551,6 @@
           </tbody>
           </table>
           </div>
-          @endcan
       
                     </div>
         

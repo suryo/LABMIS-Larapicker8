@@ -54,6 +54,12 @@
 						@if (Auth::user()->hasRole('Admin')) {
 							@include('back.layouts.sidebar')
 						} 
+						@elseif (Auth::user()->hasRole('Tutor')) {
+							@include('back.layouts.sidebar')
+						}
+						@elseif (Auth::user()->hasRole('Asisten Tutor')) {
+							@include('back.layouts.sidebar')
+						}
 						@elseif (Auth::user()->hasRole('admin01')) {
 							@include('back.layouts.sidebar')
 						}

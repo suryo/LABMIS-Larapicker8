@@ -33,13 +33,13 @@ class RoleController extends Controller
 
     {
 
-         $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
+        //  $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
 
-         $this->middleware('permission:role-create', ['only' => ['create','store']]);
+        //  $this->middleware('permission:role-create', ['only' => ['create','store']]);
 
-         $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
+        //  $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
 
-         $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+        //  $this->middleware('permission:role-delete', ['only' => ['destroy']]);
 
     }
 
@@ -235,7 +235,7 @@ class RoleController extends Controller
 
     
 
-        return redirect()->route('back/roles.index')
+        return redirect()->route('roles.index')
 
                         ->with('success','Role updated successfully');
 

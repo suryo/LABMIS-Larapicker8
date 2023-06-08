@@ -79,7 +79,14 @@ class LoginController extends Controller
         }
         else if ($user->hasRole('admin02')) {
             return redirect('/dashboard');
-        } else  if ($user->hasRole('Member')) {
+        } 
+        else if ($user->hasRole('Tutor')) {
+            return redirect('/dashboard');
+        }
+        else if ($user->hasRole('Asisten Tutor')) {
+            return redirect('/dashboard');
+        }
+        else  if ($user->hasRole('Member')) {
             return redirect('/member/mylearning');
             // $totalcart = Cart::getTotal();
             // if ($totalcart == 0) {
