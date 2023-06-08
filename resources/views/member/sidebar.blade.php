@@ -6,7 +6,7 @@
             <!--begin:Menu item-->
            
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('dashboard')}}">
                     <span class="menu-icon">
@@ -52,7 +52,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('member/achievement')}}">
                     <span class="menu-icon">
@@ -66,7 +66,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('member/browsecourse')}}">
                     <span class="menu-icon">
@@ -80,7 +80,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('member/discussion')}}">
                     <span class="menu-icon">
@@ -94,7 +94,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('member/tutorial')}}">
                     <span class="menu-icon">
@@ -108,7 +108,7 @@
                 <!--end:Menu link-->
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item d-none">
                 <!--begin:Menu link-->
                 <a class="menu-link" href="{{url('member/leaderboard')}}">
                     <span class="menu-icon">
