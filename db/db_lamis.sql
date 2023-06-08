@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : xampp72
  Source Server Type    : MySQL
- Source Server Version : 100422
+ Source Server Version : 100414
  Source Host           : localhost:3306
  Source Schema         : db_lamis
 
  Target Server Type    : MySQL
- Target Server Version : 100422
+ Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 07/06/2023 23:04:56
+ Date: 08/06/2023 16:56:12
 */
 
 SET NAMES utf8mb4;
@@ -253,6 +253,27 @@ INSERT INTO `akademik_praktikum` VALUES (4, 'JARKOM', NULL, NULL, NULL, NULL);
 INSERT INTO `akademik_praktikum` VALUES (5, 'PBO', NULL, NULL, '2023-06-07 08:31:27', '2023-06-07 08:31:40');
 
 -- ----------------------------
+-- Table structure for akademik_praktikum_jurnal
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_praktikum_jurnal`;
+CREATE TABLE `akademik_praktikum_jurnal`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_jadwal_praktikum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `tanggal` date NULL DEFAULT NULL,
+  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_praktikum_jurnal
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for akademik_praktikum_materi
 -- ----------------------------
 DROP TABLE IF EXISTS `akademik_praktikum_materi`;
@@ -288,6 +309,28 @@ INSERT INTO `akademik_praktikum_materi` VALUES (23, 'MATERI 3', NULL, NULL, 'asd
 INSERT INTO `akademik_praktikum_materi` VALUES (24, 'MATERI 4', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO `akademik_praktikum_materi` VALUES (25, 'MATERI 5', NULL, NULL, 'asdasd', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO `akademik_praktikum_materi` VALUES (26, 'Materi 1', 'Mengenal Framework Nuxt', 'Pada praktikum kali ini kita akan mempelajari Framework Nuxt.', '<h2><a name=\"_Toc77662638\"></a><strong>Apa itu Nuxt Js ?</strong></h2>\r\n<p><a href=\"https://nuxtjs.org/\"><strong>Nuxt Js</strong></a>&nbsp;atau bisa disebut <a href=\"https://nuxtjs.org/\"><strong>Nuxt</strong></a>&nbsp;merupakan sebuah framework yang dibangun di atas Vue Js. Yaps terdengar sangat aneh, karena Vue Js sendiri adalah framework, jadi <a href=\"https://nuxtjs.org/\"><strong><em><u>Nuxt Js</u></em></strong></a>&nbsp;merupakan framework di atas framework.</p>\r\n<p>Seperti yang kita tahu, jika mengembangkan aplikasi dengan Vue Js akan terkendala dengan yang namanya <strong><em>SEO</em></strong>&nbsp;atau <strong>Search Engine Optimization</strong>. Dengan menggunakan <strong><em>Nuxt</em></strong>&nbsp;kita bisa membuat aplikasi berbasis Vue Js tapi bisa melakukan <strong>server side rendering</strong>&nbsp;atau bisa disebut dengan <a href=\"https://nuxtjs.org/docs/2.x/concepts/server-side-rendering/\"><strong><em><u>SSR</u></em></strong></a>.</p>\r\n<p>Tidak hanya itu, dengan menggunakan <strong><em>Nuxt Js</em></strong>, project yang dikembangkan memiliki struktur folder yang bagus dan memiliki banyak fitur magic-nya. Jika sebelumnya di dalam Vue Js kita membuat router secara manual, maka di <strong><em>Nuxt Js</em></strong>&nbsp;kita sudah otomatis dibuatkan tanpa perlu mendefinisikan route-route secara manual lagi. Dan tentunya masih banyak lagi fitur-fitur yang disediakan di dalam <strong><em>Nuxt Js</em></strong>&nbsp;yang bisa membantu kita dalam membangun sebuah aplikasi.</p>\r\n<p><strong><em>Nuxt&nbsp;</em></strong>juga memiliki fitur lain di antaranya :</p>\r\n<ul>\r\n<li>Write Vue Files (*.vue)</li>\r\n<li>Automatic Code Splitting</li>\r\n<li>Server-Side Rendering</li>\r\n<li>Powerful Routing System with Asynchronous Data</li>\r\n<li>Static File Serving</li>\r\n<li>ES6/ES7 Transpilation</li>\r\n<li>Bundling and minifying of your JS &amp; CSS</li>\r\n<li>Managing&nbsp;&lt;head&gt;element (&lt;title&gt;,&nbsp;&lt;meta&gt;, etc.)</li>\r\n<li>Hot module replacement in Development (Hot Reload)</li>\r\n<li>Pre-processor: Sass, Less, Stylus, etc.</li>\r\n<li>HTTP/2 push headers ready</li>\r\n<li>Extending with Modular architecture</li>\r\n</ul>\r\n<p>Selain itu secara standar&nbsp;<strong><em>Nuxt</em></strong>&nbsp;sudah menyediakan plugin-plugin yang biasa kita gunakan saat menggunakan&nbsp;<strong><em>VueJS</em></strong>&nbsp;antara lain :</p>\r\n<ul>\r\n<li><a href=\"https://vuejs.org/\">Vue 2</a></li>\r\n<li><a href=\"https://router.vuejs.org/en/\">Vue Router</a></li>\r\n<li><a href=\"https://vuex.vuejs.org/en/\">Vuex</a>(included only when using the&nbsp;<a href=\"https://nuxtjs.org/guide/vuex-store\">store option</a>)</li>\r\n<li><a href=\"https://ssr.vuejs.org/en/\">Vue Server Renderer</a>(excluded when using&nbsp;<a href=\"https://nuxtjs.org/api/configuration-mode\">mode: \'spa\'</a>)</li>\r\n<li><a href=\"https://github.com/declandewet/vue-meta\">vue-meta</a></li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>Sebelum itu kita harus menginstall <a href=\"https://nodejs.org/en/\"><strong>Node Js</strong></a>&nbsp;terlebih dahulu di dalam komputer, karena paket-paket yang ada di dalam <strong><em>Nuxt Js</em></strong>&nbsp;akan diunduh menggunakan <strong><em>NPM</em></strong>&nbsp;yang ada di dalam <a href=\"https://nodejs.org/en/\"><strong>Node Js</strong></a>.</p>\r\n<h2><a name=\"_Toc77662639\"></a><strong>Membuat Project Baru di Nuxt Js</strong></h2>\r\n<p>Setelah Node Js berhasil terinstall, sekarang kita bisa memembuat project baru di Nuxt Js dengan menggunakan <strong><em>NPX</em></strong>. Silahkan masuk ke dalam folder dimana kita akan menyimpan project-nya. Dan jalankan perintah berikut ini di dalam terminal/CMD :</p>\r\n<p>npx&nbsp;create-nuxt-app nuxt-crud</p>\r\n<p>Perintah di atas digunakan untuk membuat project Nuxt Js baru dengan nama nuxt-crud. Jika keluar pilihan, bisa ikuti seperti berikut ini :</p>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>PERINTAH</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AKSI</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Project name:</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Programming language:</p>\r\n</td>\r\n<td>\r\n<p>Pilih JavaScript dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Package manager:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Npm dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>UI framework:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Bootstrap Vue dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Nuxt.js modules:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Axios dengan tekan SPACE, kemudian ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Linting tools:</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Testing framework:</p>\r\n</td>\r\n<td>\r\n<p>Pilih None dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Rendering mode:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Universal (SSR / SSG) dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Deployment target:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Server (Node.js hosting) dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Development tools:</p>\r\n</td>\r\n<td>\r\n<p>Pilih jsconfig.json dengan tekan SPACE dan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>What is your GitHub username?</p>\r\n</td>\r\n<td>\r\n<p>Tekan ENTER</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Version control system:</p>\r\n</td>\r\n<td>\r\n<p>Pilih Git dan ENTER</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Setelah itu, silahkan tunggu proses installasi Nuxt Js sampai selesai, disini akan memakan waktu lebih lama jika sebelumnya belum pernah melakukan installasi Nuxt Js.</p>\r\n<h2><a name=\"_Toc77662640\"></a><strong>Menjalankan Nuxt Js</strong></h2>\r\n<p>Setelah proses installasi selesai, sekarang kita lanjutkan untuk menjalankan project Nuxt Js kita. Silahkan jalankan perintah berikut ini :</p>\r\n<p>cd&nbsp;nuxt-crud</p>\r\n<p>Perintah cd di atas digunakan untuk masuk ke dalam folder nuxt-crud. Setelah itu, jalankan perintah berikut ini :</p>\r\n<p>npm&nbsp;run dev</p>\r\n<p>Silahkan tunggu proses compile sampai selesai dan jika sudah selsai, maka aplikasi Nuxt Js kita akan dijalankan menggunakan port 3000 di dalam localhost.</p>\r\n<p>SIlahkan buka di browser dengan mengetikkan <a href=\"http://localhost:3000\">http://localhost:3000</a>&nbsp;jika berhasil, maka kuurang lebih seperti berikut ini :</p>\r\n<p><img src=\"../images/materi/materi1_gambar1_nuxt.png\" alt=\"\" /></p>\r\n<h2><strong>Struktur Folder</strong></h2>\r\n<p>Pada artikel sebelumnya kita telah berhasil menginstall&nbsp;<strong><em>Nuxt</em></strong>&nbsp;pada PC / Laptop kita, kira-kira struktur foldernya seperti ini :</p>\r\n<p>Pada struktur folder di atas terdapat beberapa folder yang berarti sebagai berikut :</p>\r\n<ul>\r\n<li><strong><em>Assets&nbsp;</em></strong>&mdash; Folder yang berfungsi untuk menyimpan aset-aset seperti file SASS/SCSS, LESS atau JavaScript</li>\r\n<li><strong><em>Components</em></strong>&mdash; Folder yang berfungsi untuk menyimpan&nbsp;<strong>component</strong>&nbsp;yang kita buat dengan&nbsp;<strong><em>JS Component</em></strong></li>\r\n<li><strong><em>Layouts</em></strong>&mdash; Folder yang berisi file&nbsp;<strong><em>.vue</em></strong>&nbsp;yang menjadi layout halaman&nbsp;<strong>(parent templates)</strong></li>\r\n<li><strong><em>Middleware</em></strong>&mdash; Folder yang berisi file JavaScript yang bisa kita gunakan untuk membuat fungsi sebelum / sesudah halaman di&nbsp;<strong>render&nbsp;</strong>misal&nbsp;<strong>Auth</strong>,&nbsp;<strong>Checking Store&nbsp;</strong></li>\r\n<li><strong><em>Pages</em></strong>&mdash; Folder utama yang berisi file&nbsp;<strong><em>.vue</em></strong>, dimana file-file&nbsp;<strong><em>.vue&nbsp;</em></strong>didalam folder ini akan di render menjadi&nbsp;<strong>View</strong>&nbsp;dan&nbsp;<strong>Router</strong>&nbsp;oleh&nbsp;<strong><em>Nuxt</em></strong></li>\r\n<li><strong><em>Plugins</em></strong>&mdash; Folder yang berisi file JavaScript (sama dengan&nbsp;<strong>Middleware</strong>) dan dapat kita jalankan sebelum&nbsp;<strong>instantiating</strong>&nbsp;pada&nbsp;<strong>root</strong>&nbsp;aplikasi</li>\r\n<li><strong><em>Static</em></strong>&mdash; Berisi semua file statis yang akan kita gunakan di aplikasi seperti robot.txt, image, favicon dll. Semua file di folder ini dapat langsung di akses dari root URL, misal&nbsp;<strong>/favicon.ico</strong>&nbsp;atau&nbsp;<strong>/robot.txt</strong>.</li>\r\n<li><strong><em>config.js</em></strong>&mdash; File ini untuk meng&ndash;konfigurasi aplikasi</li>\r\n<li><strong><em>json</em></strong>&mdash; File yang berisi dependensi dan script yang kita gunakan untuk menjalankan&nbsp;<strong><em>Nuxt</em></strong></li>\r\n</ul>\r\n<p><strong><em>Catatan :</em></strong></p>\r\n<p>Sebagai alias anda dapat menggunakan ~ atau @ untuk menujukan <strong>source directory&nbsp;</strong>, misal&nbsp;<strong>~/components/mobile/header.vue&nbsp;</strong>atau&nbsp;<strong>~/assets/img/cat.jpg</strong></p>\r\n<p>Serta ~~ dan @@ untuk menunjukan&nbsp;<strong>root directory</strong>.</p>\r\n<p>&nbsp;</p>\r\n<h2><strong>Referensi<br /></strong></h2>\r\n<p><iframe title=\"YouTube video player\" src=\"https://www.youtube.com/embed/jE0mrhT3ZIc\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe></p>\r\n<h2><strong>Tugas Latihan</strong></h2>\r\n<p>Modifikasi tulisan \"NUXT CRUD\"&nbsp; pada tampilan aplikasi saat pertama kali dijalankan menjadi tulisan Nama Mahasiswa</p>', '-', '', '', NULL, NULL, NULL, 'Suryo Atmojo', NULL, NULL, NULL, NULL, 3, '2023-06-07 14:56:38', '2023-06-07 15:56:42');
+
+-- ----------------------------
+-- Table structure for akademik_praktikum_nilai
+-- ----------------------------
+DROP TABLE IF EXISTS `akademik_praktikum_nilai`;
+CREATE TABLE `akademik_praktikum_nilai`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_jurnal_praktikum` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nip_mhs` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `kehadiran` enum('true','false') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT 'false',
+  `nilai_keaktifan` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nilai_penguasaan_materi` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `tugas` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of akademik_praktikum_nilai
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for akademik_registrasi_praktikum
@@ -433,12 +476,17 @@ CREATE TABLE `akademik_tutor`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of akademik_tutor
 -- ----------------------------
 INSERT INTO `akademik_tutor` VALUES (1, '0709018901', 'suryo', NULL, 'suryoatm@gmail.com', NULL, '081217173406', NULL, NULL, NULL);
+INSERT INTO `akademik_tutor` VALUES (2, '20053021', 'Achmad Stevany Dwi Agustin', NULL, '20053021@mhs.uwp.ac.id', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_tutor` VALUES (3, '19053029', 'Dwi Setyo Wibisono', NULL, '19053029@mhs.uwp.ac.id', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_tutor` VALUES (4, '21053005', 'Laily Alfina Wulansari', NULL, '19053029@mhs.uwp.ac.id', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_tutor` VALUES (5, '19053032', 'Ahan Budiarta Harianto Putra', NULL, '19053029@mhs.uwp.ac.id', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `akademik_tutor` VALUES (6, '21053009', 'Muhammad Reyhan Rizqi', NULL, '19053029@mhs.uwp.ac.id', NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for blog_article_category_models
@@ -569,7 +617,6 @@ CREATE TABLE `model_has_roles`  (
 INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 1);
 INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 4);
 INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 7);
-INSERT INTO `model_has_roles` VALUES (2, 'App\\Models\\User', 3);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 2);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 5);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 6);
@@ -645,6 +692,8 @@ INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 75);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 76);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 77);
 INSERT INTO `model_has_roles` VALUES (3, 'App\\Models\\User', 78);
+INSERT INTO `model_has_roles` VALUES (4, 'App\\Models\\User', 3);
+INSERT INTO `model_has_roles` VALUES (4, 'App\\Models\\User', 79);
 
 -- ----------------------------
 -- Table structure for news
@@ -2156,7 +2205,7 @@ CREATE TABLE `permissions`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `permissions_name_guard_name_unique`(`name` ASC, `guard_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 72 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of permissions
@@ -2169,6 +2218,67 @@ INSERT INTO `permissions` VALUES (5, 'product-list', 'web', '2023-05-09 03:03:35
 INSERT INTO `permissions` VALUES (6, 'product-create', 'web', '2023-05-09 03:03:35', '2023-05-09 03:03:35');
 INSERT INTO `permissions` VALUES (7, 'product-edit', 'web', '2023-05-09 03:03:35', '2023-05-09 03:03:35');
 INSERT INTO `permissions` VALUES (8, 'product-delete', 'web', '2023-05-09 03:03:35', '2023-05-09 03:03:35');
+INSERT INTO `permissions` VALUES (9, 'akademik_mhs-menu', 'web', '2023-05-09 03:03:35', '2023-05-09 03:03:35');
+INSERT INTO `permissions` VALUES (10, 'akademik_mhs-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (13, 'akademik_mhs-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (14, 'akademik_mhs-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (15, 'akademik_mhs-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (16, 'akademik_dosen-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (17, 'akademik_dosen-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (18, 'akademik_dosen-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (19, 'akademik_dosen-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (20, 'akademik_dosen-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (21, 'akademik_tutor-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (22, 'akademik_tutor-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (23, 'akademik_tutor-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (24, 'akademik_tutor-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (25, 'akademik_tutor-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (26, 'akademik_mk-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (27, 'akademik_mk-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (28, 'akademik_mk-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (29, 'akademik_mk-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (30, 'akademik_mk-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (31, 'akademik_praktikum-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (32, 'akademik_praktikum-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (33, 'akademik_praktikum-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (34, 'akademik_praktikum-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (35, 'akademik_praktikum-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (36, 'akademik_krs-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (37, 'akademik_krs-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (38, 'akademik_krs-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (39, 'akademik_krs-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (40, 'akademik_krs-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (41, 'akademik_jadwal_mk-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (42, 'akademik_jadwal_mk-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (43, 'akademik_jadwal_mk-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (44, 'akademik_jadwal_mk-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (45, 'akademik_jadwal_mk-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (46, 'akademik_jadwal_praktikum-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (47, 'akademik_jadwal_praktikum-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (48, 'akademik_jadwal_praktikum-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (49, 'akademik_jadwal_praktikum-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (50, 'akademik_jadwal_praktikum-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (51, 'akademik_registrasi_praktikum-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (52, 'akademik_registrasi_praktikum-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (53, 'akademik_registrasi_praktikum-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (54, 'akademik_registrasi_praktikum-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (55, 'akademik_registrasi_praktikum-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (56, 'akademik_praktikum_materi-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (57, 'akademik_praktikum_materi-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (58, 'akademik_praktikum_materi-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (59, 'akademik_praktikum_materi-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (60, 'akademik_praktikum_materi-delete', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (61, 'MASTER-label', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (62, 'AKADEMIK-label', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (63, 'KULIAH-label', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (64, 'PRAKTIKUM-label', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (65, 'TUTORIAL-label', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (66, 'Auth-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (67, 'akademik_praktikum_jurnal-menu', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (68, 'akademik_praktikum_jurnal-list', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (69, 'akademik_praktikum_jurnal-create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (70, 'akademik_praktikum_jurnal-edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (71, 'akademik_praktikum_jurnal-delete', 'web', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -2189,27 +2299,110 @@ CREATE TABLE `role_has_permissions`  (
 INSERT INTO `role_has_permissions` VALUES (1, 1);
 INSERT INTO `role_has_permissions` VALUES (1, 2);
 INSERT INTO `role_has_permissions` VALUES (1, 3);
+INSERT INTO `role_has_permissions` VALUES (1, 4);
+INSERT INTO `role_has_permissions` VALUES (1, 5);
 INSERT INTO `role_has_permissions` VALUES (2, 1);
 INSERT INTO `role_has_permissions` VALUES (2, 2);
 INSERT INTO `role_has_permissions` VALUES (2, 3);
+INSERT INTO `role_has_permissions` VALUES (2, 4);
+INSERT INTO `role_has_permissions` VALUES (2, 5);
 INSERT INTO `role_has_permissions` VALUES (3, 1);
 INSERT INTO `role_has_permissions` VALUES (3, 2);
 INSERT INTO `role_has_permissions` VALUES (3, 3);
+INSERT INTO `role_has_permissions` VALUES (3, 4);
+INSERT INTO `role_has_permissions` VALUES (3, 5);
 INSERT INTO `role_has_permissions` VALUES (4, 1);
 INSERT INTO `role_has_permissions` VALUES (4, 2);
 INSERT INTO `role_has_permissions` VALUES (4, 3);
+INSERT INTO `role_has_permissions` VALUES (4, 4);
+INSERT INTO `role_has_permissions` VALUES (4, 5);
 INSERT INTO `role_has_permissions` VALUES (5, 1);
 INSERT INTO `role_has_permissions` VALUES (5, 2);
 INSERT INTO `role_has_permissions` VALUES (5, 3);
+INSERT INTO `role_has_permissions` VALUES (5, 4);
+INSERT INTO `role_has_permissions` VALUES (5, 5);
 INSERT INTO `role_has_permissions` VALUES (6, 1);
 INSERT INTO `role_has_permissions` VALUES (6, 2);
 INSERT INTO `role_has_permissions` VALUES (6, 3);
+INSERT INTO `role_has_permissions` VALUES (6, 4);
+INSERT INTO `role_has_permissions` VALUES (6, 5);
 INSERT INTO `role_has_permissions` VALUES (7, 1);
 INSERT INTO `role_has_permissions` VALUES (7, 2);
 INSERT INTO `role_has_permissions` VALUES (7, 3);
+INSERT INTO `role_has_permissions` VALUES (7, 4);
+INSERT INTO `role_has_permissions` VALUES (7, 5);
 INSERT INTO `role_has_permissions` VALUES (8, 1);
 INSERT INTO `role_has_permissions` VALUES (8, 2);
 INSERT INTO `role_has_permissions` VALUES (8, 3);
+INSERT INTO `role_has_permissions` VALUES (8, 4);
+INSERT INTO `role_has_permissions` VALUES (8, 5);
+INSERT INTO `role_has_permissions` VALUES (9, 1);
+INSERT INTO `role_has_permissions` VALUES (10, 1);
+INSERT INTO `role_has_permissions` VALUES (13, 1);
+INSERT INTO `role_has_permissions` VALUES (14, 1);
+INSERT INTO `role_has_permissions` VALUES (15, 1);
+INSERT INTO `role_has_permissions` VALUES (16, 1);
+INSERT INTO `role_has_permissions` VALUES (17, 1);
+INSERT INTO `role_has_permissions` VALUES (18, 1);
+INSERT INTO `role_has_permissions` VALUES (19, 1);
+INSERT INTO `role_has_permissions` VALUES (20, 1);
+INSERT INTO `role_has_permissions` VALUES (21, 1);
+INSERT INTO `role_has_permissions` VALUES (22, 1);
+INSERT INTO `role_has_permissions` VALUES (23, 1);
+INSERT INTO `role_has_permissions` VALUES (24, 1);
+INSERT INTO `role_has_permissions` VALUES (25, 1);
+INSERT INTO `role_has_permissions` VALUES (26, 1);
+INSERT INTO `role_has_permissions` VALUES (27, 1);
+INSERT INTO `role_has_permissions` VALUES (28, 1);
+INSERT INTO `role_has_permissions` VALUES (29, 1);
+INSERT INTO `role_has_permissions` VALUES (30, 1);
+INSERT INTO `role_has_permissions` VALUES (31, 1);
+INSERT INTO `role_has_permissions` VALUES (32, 1);
+INSERT INTO `role_has_permissions` VALUES (33, 1);
+INSERT INTO `role_has_permissions` VALUES (34, 1);
+INSERT INTO `role_has_permissions` VALUES (35, 1);
+INSERT INTO `role_has_permissions` VALUES (36, 1);
+INSERT INTO `role_has_permissions` VALUES (37, 1);
+INSERT INTO `role_has_permissions` VALUES (38, 1);
+INSERT INTO `role_has_permissions` VALUES (39, 1);
+INSERT INTO `role_has_permissions` VALUES (40, 1);
+INSERT INTO `role_has_permissions` VALUES (41, 1);
+INSERT INTO `role_has_permissions` VALUES (42, 1);
+INSERT INTO `role_has_permissions` VALUES (43, 1);
+INSERT INTO `role_has_permissions` VALUES (44, 1);
+INSERT INTO `role_has_permissions` VALUES (45, 1);
+INSERT INTO `role_has_permissions` VALUES (46, 1);
+INSERT INTO `role_has_permissions` VALUES (47, 1);
+INSERT INTO `role_has_permissions` VALUES (48, 1);
+INSERT INTO `role_has_permissions` VALUES (49, 1);
+INSERT INTO `role_has_permissions` VALUES (50, 1);
+INSERT INTO `role_has_permissions` VALUES (51, 1);
+INSERT INTO `role_has_permissions` VALUES (52, 1);
+INSERT INTO `role_has_permissions` VALUES (53, 1);
+INSERT INTO `role_has_permissions` VALUES (54, 1);
+INSERT INTO `role_has_permissions` VALUES (55, 1);
+INSERT INTO `role_has_permissions` VALUES (56, 1);
+INSERT INTO `role_has_permissions` VALUES (57, 1);
+INSERT INTO `role_has_permissions` VALUES (58, 1);
+INSERT INTO `role_has_permissions` VALUES (59, 1);
+INSERT INTO `role_has_permissions` VALUES (60, 1);
+INSERT INTO `role_has_permissions` VALUES (61, 1);
+INSERT INTO `role_has_permissions` VALUES (62, 1);
+INSERT INTO `role_has_permissions` VALUES (63, 1);
+INSERT INTO `role_has_permissions` VALUES (64, 1);
+INSERT INTO `role_has_permissions` VALUES (64, 4);
+INSERT INTO `role_has_permissions` VALUES (65, 1);
+INSERT INTO `role_has_permissions` VALUES (66, 1);
+INSERT INTO `role_has_permissions` VALUES (67, 1);
+INSERT INTO `role_has_permissions` VALUES (67, 4);
+INSERT INTO `role_has_permissions` VALUES (68, 1);
+INSERT INTO `role_has_permissions` VALUES (68, 4);
+INSERT INTO `role_has_permissions` VALUES (69, 1);
+INSERT INTO `role_has_permissions` VALUES (69, 4);
+INSERT INTO `role_has_permissions` VALUES (70, 1);
+INSERT INTO `role_has_permissions` VALUES (70, 4);
+INSERT INTO `role_has_permissions` VALUES (71, 1);
+INSERT INTO `role_has_permissions` VALUES (71, 4);
 
 -- ----------------------------
 -- Table structure for roles
@@ -2223,7 +2416,7 @@ CREATE TABLE `roles`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `roles_name_guard_name_unique`(`name` ASC, `guard_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of roles
@@ -2231,6 +2424,8 @@ CREATE TABLE `roles`  (
 INSERT INTO `roles` VALUES (1, 'Admin', 'web', '2023-05-09 03:05:47', '2023-05-09 03:05:47');
 INSERT INTO `roles` VALUES (2, 'Staff', 'web', '2023-05-11 08:48:14', '2023-05-11 08:48:14');
 INSERT INTO `roles` VALUES (3, 'Member', 'web', '2023-05-11 08:48:48', '2023-05-11 08:48:48');
+INSERT INTO `roles` VALUES (4, 'Tutor', 'web', '2023-06-08 07:11:20', '2023-06-08 07:11:20');
+INSERT INTO `roles` VALUES (5, 'Asisten Tutor', 'web', '2023-06-08 07:12:11', '2023-06-08 07:12:11');
 
 -- ----------------------------
 -- Table structure for setting_menu
@@ -2252,7 +2447,7 @@ CREATE TABLE `setting_menu`  (
   `created_at` datetime NULL DEFAULT NULL,
   `updated_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of setting_menu
@@ -2273,11 +2468,13 @@ INSERT INTO `setting_menu` VALUES (13, 'Praktikum', NULL, 'akademik_praktikum', 
 INSERT INTO `setting_menu` VALUES (14, 'KULIAH', NULL, NULL, NULL, 0, NULL, 'label', 3, NULL, NULL, 'false', NULL, NULL);
 INSERT INTO `setting_menu` VALUES (15, 'Resgistrasi Perkuliahan', NULL, 'akademik_krs', NULL, 14, 'ki-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (16, 'Jadwal Kuliah', NULL, 'akademik_jadwal_mk', NULL, 14, 'ki-book', 'menu', 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
-INSERT INTO `setting_menu` VALUES (17, 'PRAKTIKUM', NULL, NULL, NULL, 0, NULL, 'label', 4, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (17, 'PRAKTIKUM', NULL, NULL, NULL, 0, NULL, 'label', 5, NULL, NULL, 'false', NULL, '2023-06-08 07:50:49');
 INSERT INTO `setting_menu` VALUES (18, 'Jadwal Praktikum', NULL, 'akademik_jadwal_praktikum', NULL, 17, 'ki-book', 'menu', 1, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (19, 'Registrasi Praktikum', NULL, 'akademik_registrasi_praktikum', NULL, 17, 'ki-book', 'menu', 2, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
 INSERT INTO `setting_menu` VALUES (20, 'Materi Praktikum', NULL, 'akademik_praktikum_materi', NULL, 17, 'ki-book', 'menu', 3, NULL, NULL, 'false', NULL, '2023-06-07 04:17:33');
-INSERT INTO `setting_menu` VALUES (21, 'TUTORIAL', NULL, NULL, NULL, 0, NULL, 'label', 5, NULL, NULL, 'false', NULL, NULL);
+INSERT INTO `setting_menu` VALUES (21, 'TUTORIAL', NULL, NULL, NULL, 0, NULL, 'label', 6, NULL, NULL, 'false', NULL, '2023-06-08 07:50:49');
+INSERT INTO `setting_menu` VALUES (22, 'Permissions', NULL, 'permissions', NULL, 2, NULL, 'label', 4, NULL, NULL, 'false', NULL, '2023-06-08 09:37:18');
+INSERT INTO `setting_menu` VALUES (23, 'Jurnal Praktikum', NULL, 'akademik_praktikum_jurnal', NULL, 17, 'ki-book', 'menu', 4, NULL, NULL, 'false', NULL, '2023-06-08 09:35:20');
 
 -- ----------------------------
 -- Table structure for setting_route
@@ -2295,7 +2492,7 @@ CREATE TABLE `setting_route`  (
   `created_at` datetime NULL DEFAULT NULL,
   `update_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 95 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 98 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of setting_route
@@ -2394,6 +2591,9 @@ INSERT INTO `setting_route` VALUES (91, 'akademik_registrasi_praktikum', 'web', 
 INSERT INTO `setting_route` VALUES (92, 'akademik_praktikum_materi', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_praktikum_materi\\Akademik_praktikum_materiController', '', '', 'false', NULL, NULL);
 INSERT INTO `setting_route` VALUES (93, 'akademik_jadwal_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_praktikum\\Akademik_jadwal_praktikumController', '', '', 'false', NULL, NULL);
 INSERT INTO `setting_route` VALUES (94, 'akademik_jadwal_praktikum', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_jadwal_praktikum\\Akademik_jadwal_praktikumController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (95, 'permissions', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Permissions\\PermissionsController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (96, 'akademik_praktikum_jurnal', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_praktikum_jurnal\\Akademik_praktikum_jurnalController', '', '', 'false', NULL, NULL);
+INSERT INTO `setting_route` VALUES (97, 'akademik_praktikum_jurnal', 'web', 'resources', 'App\\Http\\Controllers\\Back\\Akademik_praktikum_jurnal\\Akademik_praktikum_jurnalController', '', '', 'false', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for setting_web
@@ -2442,14 +2642,14 @@ CREATE TABLE `users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (1, 'admin', 'admin@gmail.com', NULL, NULL, '081217173406', '$2y$10$Op0DTeCLqs0I37bW2p1c0eO3IYK5RrwOHMf2eBZr.YYwW2qK8MNpW', 'superwpdev.png', NULL, '2023-05-09 02:43:39', '2023-06-07 14:35:52');
 INSERT INTO `users` VALUES (2, 'Suryo Atmojo', 'member@gmail.com', NULL, NULL, '085649224822', '$2y$10$ssdSyJJFKjOiEjjf.kgw/OaSkTjgZDS5FggmpdQAuvW6Ap4ryF7Am', '', NULL, '2023-05-09 03:05:47', '2023-06-07 14:35:52');
-INSERT INTO `users` VALUES (3, 'atmojo', 'suryoatmojo@uwp.ac.id', NULL, NULL, NULL, '$2y$10$q5cr0tfbsKWqu0BGcTAtROjU351J5b62Y90Y9GXPfd2wsgyWZjQOW', NULL, NULL, '2023-05-11 08:37:39', '2023-06-07 14:35:52');
+INSERT INTO `users` VALUES (3, 'Suryo', 'suryoatmojo@uwp.ac.id', NULL, NULL, NULL, '$2y$10$q5cr0tfbsKWqu0BGcTAtROjU351J5b62Y90Y9GXPfd2wsgyWZjQOW', '', NULL, '2023-05-11 08:37:39', '2023-06-08 09:06:12');
 INSERT INTO `users` VALUES (4, 'sigit', 'sigitwahyu05@gmail.com', NULL, NULL, NULL, '$2y$10$U/ZZivfO7eko78u7nbbOuu7pC2Zfh6BxW4Q6Jltzf.WZWT7.zR/V2', '', NULL, '2023-05-11 09:09:28', '2023-06-07 14:35:52');
 INSERT INTO `users` VALUES (5, 'ARKILA RAKASYAH MERIYANTO ', '20053006@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$aVZTtatS87pydNELYOUQ1OCgGje0rHnoShqIjwVUXtbNQJ2DU7gaa', NULL, NULL, '2023-06-07 14:32:13', '2023-06-07 14:35:53');
 INSERT INTO `users` VALUES (6, 'FERDIANUS FERNANDO ', '20053013@mhs.uwp.ac.id', NULL, NULL, NULL, '$2y$10$xpHhunQs4eYJmmlugSf3FO3UZWnN2ES5bk2ypdIrmGGhuQ1B9vWYq', NULL, NULL, '2023-06-07 14:32:27', '2023-06-07 14:35:53');
@@ -2525,5 +2725,6 @@ INSERT INTO `users` VALUES (75, 'SULTAN AULIA RACHMAN ASNATH ', '21053008@mhs.uw
 INSERT INTO `users` VALUES (76, 'AMNDAN DWI YANTO ', '21053012@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
 INSERT INTO `users` VALUES (77, 'MOHAMMAD RAMADHAN ADLY NADIF ', '21053016@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
 INSERT INTO `users` VALUES (78, 'BAYU TRIYA SAPUTRA ', '20053012@mhs.uwp.ac.id', NULL, NULL, NULL, '12345678', NULL, NULL, '2023-06-07 14:32:33', '2023-06-07 14:32:33');
+INSERT INTO `users` VALUES (79, 'ISNAINI MUHANDHIS', 'imuhandis@gmail.com', NULL, NULL, NULL, '$2y$10$AqcwU7NtG4EgQOPR/gXyQOvfmLgamXQNWJ.OJIWUCIljUQkJySKt2', NULL, NULL, '2023-06-08 08:53:42', '2023-06-08 08:53:42');
 
 SET FOREIGN_KEY_CHECKS = 1;
