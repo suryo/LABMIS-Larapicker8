@@ -14,7 +14,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../../../"/>
-		<title>Informatics UWP</title>
+		<title>Indraco Digital Menu</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -73,48 +73,22 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Body-->
 				<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
 					<!--begin::Card-->
-					<div class="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-20">
+					<div class="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-20" style="background-color: rgba(255,255,255,.7) !important">
 						<!--begin::Wrapper-->
 						<div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
 							<!--begin::Form-->
 							<form class="form w-100" method="POST" action="{{ route('login') }}">
                                 @csrf
-								<!--begin::Heading-->
+								
 								<div class="text-center mb-11">
 									<!--begin::Title-->
 									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
 									<!--end::Title-->
 									<!--begin::Subtitle-->
-									<div class="text-gray-500 fw-semibold fs-6">INFORMATICS LAB - MANAGEMENT INFORMATION SYSTEM</div>
+									<div class="text-dark-500 fw-semibold fs-6">INFORMATICS LAB</div>
 									<!--end::Subtitle=-->
 								</div>
-								<!--begin::Heading-->
-								<!--begin::Login options-->
-								<div class="row g-3 mb-9 d-none">
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::Google link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ url("template") }}/assets/media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />Sign in with Google</a>
-										<!--end::Google link=-->
-									</div>
-									<!--end::Col-->
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::Google link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ url("template") }}/assets/media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
-										<img alt="Logo" src="{{ url("template") }}/assets/media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
-										<!--end::Google link=-->
-									</div>
-									<!--end::Col-->
-								</div>
-								<!--end::Login options-->
-								<!--begin::Separator-->
-								<div class="separator separator-content my-14 d-none">
-									<span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
-								</div>
-								<!--end::Separator-->
+							
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
@@ -123,7 +97,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control" />
 									<!--end::Email-->
 								</div>
 								<!--end::Input group=-->
@@ -134,21 +108,21 @@ License: For each use you must have a valid license purchased only from above li
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
+									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control" />
 									<!--end::Password-->
 								</div>
 								<!--end::Input group=-->
 								<!--begin::Wrapper-->
-								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8 d-none">
+								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
 									<div></div>
 									<!--begin::Link-->
-									<a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a>
+									<a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-dark">Forgot Password ?</a>
 									<!--end::Link-->
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Submit button-->
 								<div class="d-grid mb-10">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+									<button type="submit" id="kt_sign_in_submit" class="btn btn-dark">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Sign In</span>
 										<!--end::Indicator label-->
@@ -160,8 +134,8 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6 d-none">Not a Member yet?
-								<a href="{{ route('register') }}" class="link-primary">Sign up</a></div>
+								<div class="d-none text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
+								<a href="{{ route('register') }}" class="link-dark">Sign up</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->
