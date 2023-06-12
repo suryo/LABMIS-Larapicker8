@@ -142,8 +142,10 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
+                    @can('akademik_mk-create')
                     <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_mk">
                       <i class="ki-duotone ki-plus "></i>Add MATAKULIAH</button>
+                    @endcan
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -461,18 +463,21 @@
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_mk-edit')
                   <div class="menu-item px-3">
                     <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_mk{{ $akademik_mk->id }}">Edit</a>
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_mk-delete')
                   <div class="menu-item px-3">
                     {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_mk.destroy", $akademik_mk->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
                     <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_mks-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
-                  
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                 </div>
                 <!--end::Menu-->

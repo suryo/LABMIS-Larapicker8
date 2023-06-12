@@ -564,18 +564,21 @@
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_dosen-edit')
                   <div class="menu-item px-3">
                     <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_dosen{{ $akademik_dosen->id }}">Edit</a>
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_dosen-delete')
                   <div class="menu-item px-3">
                     {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_dosen.destroy", $akademik_dosen->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
                     <a onclick="document.getElementById('form-id').submit();" class="menu-link px-3" data-kt-akademik_dosens-table-filter="delete_row"> Delete</a>
                     {!! Form::close() !!} 
-                  
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                 </div>
                 <!--end::Menu-->

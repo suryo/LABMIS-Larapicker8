@@ -142,8 +142,10 @@
                     <!--end::Secondary button-->
                     <!--begin::Primary button-->
                     {{-- <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a> --}}
+                    @can('akademik_mhs-create')
                     <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_Akademik_mhs">
                       <i class="ki-duotone ki-plus "></i>Add MAHASISWA</button>
+                      @endcan
                     <!--end::Primary button-->
                   </div>
                   <!--end::Actions-->
@@ -593,11 +595,14 @@
                   </div>
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_mhs-edit')
                   <div class="menu-item px-3">
                     <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_akademik_mhs{{ $akademik_mhs->id }}">Edit</a>
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                   <!--begin::Menu item-->
+                  @can('akademik_mhs-delete')
                   <div class="menu-item px-3">
                     {!! Form::open(["id" =>"form-id","method" => "DELETE","route" => ["akademik_mhs.destroy", $akademik_mhs->id],"style"=>"display:inline"]) !!}
                     {{-- {!! Form::submit("Delete", ["class" => "menu-link px-3"]) !!}  --}}
@@ -605,6 +610,7 @@
                     {!! Form::close() !!} 
                   
                   </div>
+                  @endcan
                   <!--end::Menu item-->
                 </div>
                 <!--end::Menu-->
